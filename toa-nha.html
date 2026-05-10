@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tòa nhà — KTX Đại học Vinh</title>
+    <style>
+/* KTX Đại học Vinh — giao diện demo theo đặc tả UC */
+:root {
+  --primary: #0c4a6e;
+  --primary-light: #0369a1;
+  --accent: #b91c1c;
+  --bg: #f0f4f8;
+  --surface: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #64748b;
+  --success: #15803d;
+  --warning: #ca8a04;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+  --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+a {
+  color: var(--primary-light);
+}
+
+/* ----- Login ----- */
+.login-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: linear-gradient(145deg, #0c4a6e 0%, #075985 40%, #e0f2fe 100%);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  padding: 32px;
+}
+
+.login-card h1 {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.login-card .subtitle {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 2px solid #7dd3fc;
+  border-color: var(--primary-light);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 6px;
+}
+
+/* ----- Buttons ----- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-light);
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+.btn-danger {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background: #991b1b;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+  border: 1px solid var(--border);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}
+
+/* ----- App shell ----- */
+.app {
+  display: none;
+  min-height: 100vh;
+  grid-template-columns: 260px 1fr;
+}
+
+.app.is-visible {
+  display: grid;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.is-open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    max-width: 280px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.15);
+  }
+
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+}
+
+.sidebar {
+  background: var(--primary);
+  color: #e0f2fe;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.sidebar-brand {
+  padding: 0 20px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  margin-bottom: 12px;
+}
+
+.sidebar-brand strong {
+  display: block;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.sidebar-brand span {
+  font-size: 0.75rem;
+  opacity: 0.85;
+}
+
+.nav-section {
+  padding: 8px 12px 4px;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.65;
+  display: none;
+}
+
+body.role-admin .nav-section.nav-item--all,
+body.role-canbo .nav-section.nav-item--all,
+body.role-sinhvien .nav-section.nav-item--all {
+  display: block;
+}
+
+body.role-admin .nav-section.nav-item--admin,
+body.role-canbo .nav-section.nav-item--canbo,
+body.role-sinhvien .nav-section.nav-item--sinhvien {
+  display: block;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  color: #bae6fd;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-left: 3px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-left-color: #38bdf8;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 24px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.role-badge {
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e0f2fe;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.content {
+  padding: 24px;
+  flex: 1;
+}
+
+.panel {
+  display: none;
+  animation: fadeIn 0.2s ease;
+}
+
+.panel.is-active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.page-title {
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.page-desc {
+  margin: 0 0 24px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card h2 {
+  margin: 0 0 16px;
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+tr:hover td {
+  background: #fafbfc;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.badge-success {
+  background: #dcfce7;
+  color: var(--success);
+}
+
+.badge-warning {
+  background: #fef9c3;
+  color: var(--warning);
+}
+
+.badge-muted {
+  background: #f1f5f9;
+  color: var(--muted);
+}
+
+.badge-danger {
+  background: #fee2e2;
+  color: var(--accent);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-placeholder {
+  height: 220px;
+  background: linear-gradient(180deg, #f8fafc 0%, #e2e8f0 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 0.9rem;
+  border: 1px dashed var(--border);
+}
+
+.toast-area {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+
+.toast {
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: var(--text);
+  color: #fff;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow);
+}
+
+.toast.success {
+  background: var(--success);
+}
+
+.toast.error {
+  background: var(--accent);
+}
+
+.modal-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  z-index: 150;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-backdrop.is-open {
+  display: flex;
+}
+
+.modal {
+  background: var(--surface);
+  border-radius: var(--radius);
+  max-width: 480px;
+  width: 100%;
+  padding: 24px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal h3 {
+  margin: 0 0 16px;
+  font-size: 1.1rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.checkbox-list label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.uc-ref {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.uc-ref code {
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Nav items: use classes on li wrappers */
+.nav-item {
+  display: none;
+}
+
+body.role-admin .nav-item--admin,
+body.role-admin .nav-item--all,
+body.role-canbo .nav-item--canbo,
+body.role-canbo .nav-item--all,
+body.role-sinhvien .nav-item--sinhvien,
+body.role-sinhvien .nav-item--all {
+  display: block;
+}
+
+
+/* Fix: menu sidebar luon hien; muc admin an voi can bo */
+.sidebar .nav-section { display: block !important; }
+body:not(.role-admin) .bql-nav-admin { display: none !important; }
+</style>
+  </head>
+  <body data-bql-page="toa-nha">
+    <div id="app" class="app is-visible">
+      <aside id="sidebar" class="sidebar"></aside>
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Mở menu">☰ Menu</button>
+            <span class="role-badge" id="current-role-label">Cán bộ</span>
+          </div>
+          <div class="topbar-actions">
+            <button type="button" class="btn btn-ghost btn-sm" id="quick-password">Đổi mật khẩu</button>
+            <button type="button" id="btn-logout" class="btn btn-secondary btn-sm">Đăng xuất</button>
+          </div>
+        </header>
+        <main class="content">
+          <h1 class="page-title">Thêm mới tòa nhà</h1>
+          <p class="page-desc"><code>UC 2.1</code></p>
+          <div class="card" style="max-width: 520px">
+            <form data-demo="Đã lưu tòa nhà (demo — UC 2.1).">
+              <div class="form-group">
+                <label for="building-name">Tên tòa nhà</label>
+                <input id="building-name" placeholder="vd: Tòa A" required />
+              </div>
+              <div class="form-group">
+                <label for="building-floors">Số tầng</label>
+                <input id="building-floors" type="number" min="1" value="5" required />
+              </div>
+              <button type="submit" class="btn btn-primary">Lưu tòa nhà</button>
+            </form>
+          </div>
+          <div class="card">
+            <h2>Danh sách tòa</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Mã</th>
+                    <th>Tên</th>
+                    <th>Số tầng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>A</td>
+                    <td>Tòa A</td>
+                    <td>5</td>
+                  </tr>
+                  <tr>
+                    <td>B</td>
+                    <td>Tòa B</td>
+                    <td>6</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div id="toast-area" class="toast-area" aria-live="polite"></div>
+    <script src="js/bql-shell.js"></script>
+    <script src="js/common-demo.js"></script>
+  </body>
+</html>
