@@ -570,20 +570,64 @@ body.role-sinhvien .nav-item--all {
 /* Fix: menu sidebar luon hien; muc admin an voi can bo */
 .sidebar .nav-section { display: block !important; }
 body:not(.role-admin) .bql-nav-admin { display: none !important; }
+
+/* --- Không JS: modal :target, mobile, ẩn vùng toast --- */
+.modal-backdrop { display: none; }
+.modal-backdrop:target { display: flex; }
+.modal { position: relative; }
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--muted);
+}
+.toast-area { display: none !important; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: flex !important; position: relative; width: 100%; max-width: none; }
+  .menu-toggle { display: none !important; }
+}
+
 </style>
   </head>
-  <body data-bql-page="quan-ly-tai-khoan" data-bql-admin-only="1">
+  <body>
     <div id="app" class="app is-visible">
-      <aside id="sidebar" class="sidebar"></aside>
+      <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
+      <div class="nav-section">Chung</div>
+      <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
+      <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
+      <div class="nav-section">Quản trị</div>
+      <a href="quan-ly-tai-khoan.html" class="nav-link is-active">Tài khoản & phân quyền</a>
+      <a href="thong-ke-doanh-thu.html" class="nav-link">Thống kê doanh thu</a>
+      <div class="nav-section">Danh mục & phòng</div>
+      <a href="toa-nha.html" class="nav-link">Tòa nhà</a>
+      <a href="thiet-lap-phong.html" class="nav-link">Thiết lập phòng KTX</a>
+      <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+      <a href="vat-tu-phong.html" class="nav-link">Vật tư trong phòng</a>
+      <div class="nav-section">Đăng ký & hợp đồng</div>
+      <a href="phe-duyet-don.html" class="nav-link">Phê duyệt đơn đăng ký</a>
+      <a href="thanh-ly-hop-dong.html" class="nav-link">Thanh lý hợp đồng</a>
+      <div class="nav-section">Cư trú</div>
+      <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
+      <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <div class="nav-section">Báo cáo</div>
+      <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
+      <div class="nav-section">Tích hợp</div>
+      <a href="tich-hop.html" class="nav-link">VNPay & tác vụ hệ thống</a>
+      </aside>
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
-            <button type="button" id="menu-toggle" class="menu-toggle" aria-label="Mở menu">☰ Menu</button>
-            <span class="role-badge" id="current-role-label">Quản trị</span>
+            <span class="role-badge">BQL (demo tĩnh)</span>
           </div>
           <div class="topbar-actions">
-            <button type="button" class="btn btn-ghost btn-sm" id="quick-password">Đổi mật khẩu</button>
-            <button type="button" id="btn-logout" class="btn btn-secondary btn-sm">Đăng xuất</button>
+            <a href="doi-mat-khau.html" class="btn btn-ghost btn-sm">Đổi mật khẩu</a>
+            <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Trang đăng nhập</a>
           </div>
         </header>
         <main class="content">
@@ -591,7 +635,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
           <p class="page-desc"><code>UC 1.1</code> · <code>UC 1.3</code> · <code>UC 1.4</code> — Chỉ quản trị hệ thống.</p>
           <div class="card">
             <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px">
-              <button type="button" class="btn btn-primary" data-open-modal="modal-add-user">Thêm tài khoản</button>
+              <a href="#modal-add-user" class="btn btn-primary">Thêm tài khoản</a>
             </div>
             <div class="table-wrap">
               <table>
@@ -611,8 +655,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                     <td>Cán bộ KTX</td>
                     <td><span class="badge badge-success">Hoạt động</span></td>
                     <td>
-                      <button type="button" class="btn btn-ghost btn-sm" data-open-modal="modal-roles">Phân quyền</button>
-                      <button type="button" class="btn btn-danger btn-sm" data-open-modal="modal-lock">Khóa</button>
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
                     </td>
                   </tr>
                   <tr>
@@ -631,10 +675,10 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
     </div>
 
     <div id="modal-add-user" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal"><a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h3>Thêm tài khoản người dùng</h3>
         <p class="hint" style="margin-top: -8px"><code>UC 1.1</code></p>
-        <form id="form-add-user">
+        <div>
           <div class="form-group">
             <label>Tên đăng nhập</label>
             <input required />
@@ -648,32 +692,32 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
             <input type="password" required />
           </div>
           <div class="modal-actions">
-            <button type="button" class="btn btn-secondary" data-close-modal>Hủy</button>
-            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a href="#" class="btn btn-secondary">Hủy</a>
+            <a href="#" class="btn btn-primary">Lưu (demo)</a>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
     <div id="modal-lock" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal"><a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h3>Khóa tài khoản</h3>
         <p class="hint"><code>UC 1.3</code></p>
-        <form id="form-lock-confirm">
+        <div>
           <p>Bạn có chắc muốn <strong>khóa</strong> tài khoản <code>canbo01</code>?</p>
           <div class="modal-actions">
-            <button type="button" class="btn btn-secondary" data-close-modal>Hủy</button>
-            <button type="submit" class="btn btn-danger">Xác nhận khóa</button>
+            <a href="#" class="btn btn-secondary">Hủy</a>
+            <a href="#" class="btn btn-danger">Xác nhận khóa (demo)</a>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
     <div id="modal-roles" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal"><a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h3>Phân quyền người dùng</h3>
         <p class="hint"><code>UC 1.4</code></p>
-        <form id="form-roles-save">
+        <div>
           <ul class="checkbox-list">
             <li>
               <label><input type="checkbox" checked /> Quản lý phòng &amp; tòa nhà</label>
@@ -689,15 +733,12 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
             </li>
           </ul>
           <div class="modal-actions">
-            <button type="button" class="btn btn-secondary" data-close-modal>Hủy</button>
-            <button type="submit" class="btn btn-primary">Lưu phân quyền</button>
+            <a href="#" class="btn btn-secondary">Hủy</a>
+            <a href="#" class="btn btn-primary">Lưu phân quyền (demo)</a>
           </div>
-        </form>
+        </div>
       </div>
     </div>
 
-    <div id="toast-area" class="toast-area" aria-live="polite"></div>
-    <script src="js/bql-shell.js"></script>
-    <script src="js/common-demo.js"></script>
-  </body>
+    </body>
 </html>

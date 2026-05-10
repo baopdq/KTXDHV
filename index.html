@@ -586,6 +586,27 @@ body.role-sinhvien .nav-item--all {
 /* Fix: menu sidebar luon hien; muc admin an voi can bo */
 .sidebar .nav-section { display: block !important; }
 body:not(.role-admin) .bql-nav-admin { display: none !important; }
+
+/* --- Không JS: modal :target, mobile, ẩn vùng toast --- */
+.modal-backdrop { display: none; }
+.modal-backdrop:target { display: flex; }
+.modal { position: relative; }
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 1.4rem;
+  line-height: 1;
+  text-decoration: none;
+  color: var(--muted);
+}
+.toast-area { display: none !important; }
+@media (max-width: 900px) {
+  .app { grid-template-columns: 1fr; }
+  .sidebar { display: flex !important; position: relative; width: 100%; max-width: none; }
+  .menu-toggle { display: none !important; }
+}
+
 </style>
   </head>
   <body>
@@ -594,9 +615,9 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <p style="color: var(--muted)">Giao diện HTML tĩnh đã tách <strong>mỗi chức năng một file</strong>. Vào khu vực cần dùng:</p>
       <ul>
         <li><a href="dang-nhap.html">Đăng nhập &amp; khu quản lý (cán bộ / quản trị)</a></li>
-        <li><a href="sinhvien/dang-nhap.html">Cổng sinh viên</a></li>
+        <li><a href="sinhvien/trang-chu.html">Cổng sinh viên</a></li>
       </ul>
-      <p class="hint">BQL: các trang trong <code>web/*.html</code> (menu do <code>js/bql-shell.js</code> tạo). Sinh viên: các trang trong <code>web/sinhvien/*.html</code> (menu <code>sinhvien/js/sv-shell.js</code>).</p>
+      <p class="hint">Toàn bộ <strong>không dùng JavaScript</strong> — menu và nội dung nằm sẵn trong từng file <code>*.html</code>.</p>
     </div>
   </body>
 </html>
