@@ -192,11 +192,12 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .sidebar {
+  /* Chỉ ẩn sidebar mobile cho BQL (có JS menu); cổng SV luôn có .student-app */
+  .app:not(.student-app) .sidebar {
     display: none;
   }
 
-  .sidebar.is-open {
+  .app:not(.student-app) .sidebar.is-open {
     display: flex;
     position: fixed;
     inset: 0;
