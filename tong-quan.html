@@ -453,6 +453,173 @@ tr:hover td {
   border: 1px dashed var(--border);
 }
 
+/* ----- Bản đồ minh họa tổng quan ----- */
+.ktx-map-overview h2 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.ktx-map-overview .page-desc-inner {
+  margin: 0 0 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.ktx-map-body {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .ktx-map-body {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ktx-svg-wrap {
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 19px,
+      rgba(226, 232, 240, 0.5) 19px,
+      rgba(226, 232, 240, 0.5) 20px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 19px,
+      rgba(226, 232, 240, 0.5) 19px,
+      rgba(226, 232, 240, 0.5) 20px
+    ),
+    linear-gradient(180deg, #f8fafc 0%, #e8eef5 100%);
+  overflow: hidden;
+}
+
+.ktx-svg-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.building-shape {
+  stroke: rgba(15, 23, 42, 0.2);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 2px 6px rgba(15, 23, 42, 0.08));
+}
+
+.ktx-road {
+  fill: #e8ecf1;
+}
+
+.map-lbl-num {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.map-lbl-name {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.map-pin {
+  font-size: 11px;
+  fill: var(--muted);
+}
+
+.ktx-map-legend {
+  min-width: 160px;
+  padding: 12px 14px;
+  background: #f8fafc;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  font-size: 0.8rem;
+}
+
+.ktx-map-legend strong {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.ktx-leg-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.ktx-leg-row:last-child {
+  margin-bottom: 0;
+}
+
+.ktx-leg-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  flex-shrink: 0;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+}
+
+.ktx-heat-low {
+  fill: #a7f3d0;
+}
+
+.ktx-heat-mid {
+  fill: #fde68a;
+}
+
+.ktx-heat-high {
+  fill: #fda4af;
+}
+
+.ktx-heat-crit {
+  fill: #f87171;
+}
+
+.ktx-leg-swatch.ktx-heatal-low {
+  background: #a7f3d0;
+}
+
+.ktx-leg-swatch.ktx-heatal-mid {
+  background: #fde68a;
+}
+
+.ktx-leg-swatch.ktx-heatal-high {
+  background: #fda4af;
+}
+
+.ktx-leg-swatch.ktx-heatal-crit {
+  background: #f87171;
+}
+
+.ktx-map-foot {
+  margin-top: 18px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px 24px;
+  font-size: 0.82rem;
+  color: var(--muted);
+}
+
+.ktx-map-foot strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.92rem;
+  margin-bottom: 2px;
+}
+
 .toast-area {
   position: fixed;
   bottom: 24px;
@@ -599,6 +766,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link is-active">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
       <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
@@ -615,6 +783,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Cư trú</div>
       <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <div class="nav-section">Thông báo</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -633,11 +803,63 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Trang chủ</h1>
           <p class="page-desc">Tổng quan vận hành (minh họa).</p>
+          <div class="card ktx-map-overview">
+            <h2>Khu KTX — lấp đầy trên bản đồ (số liệu mẫu)</h2>
+            <p class="page-desc-inner">Sơ đồ chỉ mang tính minh họa giao diện; không phải bản đồ địa lý.</p>
+            <div class="ktx-map-body">
+              <div class="ktx-svg-wrap">
+                <!-- Khu ví dụ 640×320: lối đi + các tòa với opacity theo % lấp đầy -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 320" role="img" aria-label="Sơ đồ khu KTX với các tòa và tỉ lệ lấp đầy">
+                  <rect class="ktx-road" x="260" y="0" width="120" height="320" rx="4" />
+                  <rect class="ktx-road" x="0" y="140" width="640" height="56" rx="4" />
+
+                  <!-- Tòa A: rất đông -->
+                  <rect class="building-shape ktx-heat-crit" x="48" y="40" width="180" height="180" rx="10" opacity="0.92" />
+                  <text class="map-lbl-name" fill="#1e293b" x="138" y="108" text-anchor="middle">Tòa A</text>
+                  <text class="map-lbl-num" fill="#991b1b" x="138" y="140" text-anchor="middle">96%</text>
+
+                  <!-- Tòa B -->
+                  <rect class="building-shape ktx-heat-high" x="420" y="36" width="168" height="96" rx="10" opacity="0.94" />
+                  <text class="map-lbl-name" fill="#1e293b" x="504" y="78" text-anchor="middle">Tòa B</text>
+                  <text class="map-lbl-num" fill="#9f1239" x="504" y="102" text-anchor="middle">88%</text>
+
+                  <!-- Tòa C (< 75%) -->
+                  <rect class="building-shape ktx-heat-low" x="420" y="180" width="168" height="104" rx="10" opacity="0.94" />
+                  <text class="map-lbl-name" fill="#1e293b" x="504" y="226" text-anchor="middle">Tòa C</text>
+                  <text class="map-lbl-num" fill="#047857" x="504" y="252" text-anchor="middle">68%</text>
+
+                  <!-- HC / VP -->
+                  <rect class="building-shape ktx-heat-low" x="288" y="220" width="64" height="72" rx="8" opacity="0.95" />
+                  <text class="map-lbl-name" fill="#1e293b" x="320" y="256" text-anchor="middle">VP</text>
+                  <text class="map-pin" x="320" y="276" text-anchor="middle">BQL</text>
+
+                  <!-- nhà xe -->
+                  <rect class="building-shape ktx-heat-low" fill="#bfdbfe" x="280" y="48" width="80" height="56" rx="8" opacity="1" stroke="#94a3b8" />
+                  <text class="map-lbl-name" fill="#1e3a8a" x="320" y="82" text-anchor="middle">Nhà xe</text>
+
+                  <text class="map-pin" x="32" y="308" fill="#64748b">↑ Bắc</text>
+                </svg>
+              </div>
+              <aside class="ktx-map-legend">
+                <strong>Màu theo % lấp đầy</strong>
+                <div class="ktx-leg-row"><span class="ktx-leg-swatch ktx-heatal-low"></span> &lt; 75%</div>
+                <div class="ktx-leg-row"><span class="ktx-leg-swatch ktx-heatal-mid"></span> 75–85%</div>
+                <div class="ktx-leg-row"><span class="ktx-leg-swatch ktx-heatal-high"></span> 85–94%</div>
+                <div class="ktx-leg-row"><span class="ktx-leg-swatch ktx-heatal-crit"></span> ≥ 95%</div>
+              </aside>
+            </div>
+            <div class="ktx-map-foot">
+              <div><strong>892</strong> giường khai báo · <strong>751</strong> đang có hợp đồng</div>
+              <div><strong>141</strong> giường trống toàn cụm</div>
+              <div><strong>23</strong> đơn đăng ký chờ duyệt</div>
+            </div>
+            <p class="uc-ref" style="margin: 14px 0 0"><code>Tham chiếu: lấp đầy UC 7.1 · <a href="thong-ke-lap-day.html">Thống kê lấp đầy</a></code></p>
+          </div>
           <div class="grid-2">
             <div class="card">
               <h2>Trạng thái</h2>
               <p>Phòng trống: <strong>142</strong> giường · Đơn chờ duyệt: <strong>23</strong> · Phiếu sửa chữa: <strong>5</strong></p>
-              <p class="uc-ref"><code>UC 2.3, 4.3, 3.3</code></p>
+              <p class="uc-ref"><code>UC 2.3, 4.3, 3.3</code> · <a href="so-do-uc.html">Sơ đồ UC toàn site</a></p>
             </div>
             <div class="card">
               <h2>Tác nhân</h2>

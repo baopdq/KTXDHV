@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sơ đồ Use Case — KTX Đại học Vinh (demo web)</title>
+    <style>
+      :root {
+        --primary: #0c4a6e;
+        --primary-light: #0369a1;
+        --bg: #f0f4f8;
+        --surface: #ffffff;
+        --border: #e2e8f0;
+        --text: #0f172a;
+        --muted: #64748b;
+        --radius: 10px;
+        --shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+        --font: "Segoe UI", system-ui, -apple-system, sans-serif;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: var(--font);
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+      }
+      a {
+        color: var(--primary-light);
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 18px 48px;
+      }
+      .breadcrumb {
+        font-size: 0.875rem;
+        color: var(--muted);
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 1.4rem;
+        color: var(--primary);
+      }
+      .lead {
+        margin: 0 0 24px;
+        color: var(--muted);
+        max-width: 62ch;
+      }
+      .note {
+        background: #fefce8;
+        border: 1px solid #fde047;
+        border-radius: var(--radius);
+        padding: 12px 16px;
+        font-size: 0.875rem;
+        margin-bottom: 24px;
+        color: #713f12;
+      }
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 22px;
+        box-shadow: var(--shadow);
+      }
+      .card h2 {
+        margin: 0 0 12px;
+        font-size: 1.07rem;
+        color: var(--text);
+      }
+      .diagram-box {
+        overflow-x: auto;
+        padding: 16px;
+        border-radius: 8px;
+        background: #f8fafc;
+        border: 1px solid var(--border);
+      }
+      .mermaid {
+        display: flex;
+        justify-content: center;
+      }
+      .table-wrap {
+        overflow-x: auto;
+      }
+      table.uc-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.88rem;
+      }
+      .uc-table th,
+      .uc-table td {
+        text-align: left;
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+      }
+      .uc-table th {
+        background: #f1f5f9;
+        font-weight: 600;
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--muted);
+      }
+      .uc-table code {
+        background: #e0f2fe;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.82em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <p class="breadcrumb">
+        <a href="index.html">Mục lục</a> · <a href="tong-quan.html">Trang chủ BQL</a> ·
+        <a href="sinhvien/trang-chu.html">Cổng sinh viên</a>
+      </p>
+
+      <h1>Sơ đồ Use Case (UC) — Demo web KTX Đại học Vinh</h1>
+      <p class="lead">
+        Sơ đồ được vẽ bằng <strong>Mermaid</strong> và bảng tham chiếu tới từng file HTML trong repo. Hai hình nhìn: cây chức
+        năng và tác nhân → các gói UC.
+      </p>
+      <p class="note">
+        Trang này dùng <strong>một đoạn script Mermaid qua CDN</strong> chỉ để hiển thị đồ thị. Phần còn lại của site demo
+        vẫn có thể mở tắt JS; nếu không bật JS, xem tiếp bảng ánh xạ UC ⇄ đường dẫn bên dưới.
+      </p>
+
+      <div class="card">
+        <h2>Hình 1 — Cấu trúc UC theo nhóm (mindmap)</h2>
+        <div class="diagram-box">
+<div class="mermaid">
+mindmap
+  root((Demo web<br/>QL KTX))
+    Nhóm 1 Tài khoản UC 1.x
+      QT 11 13 14 quan ly tai khoan
+      12 dang nhap BQL VA SV
+      15 doi mat khau hai khu
+
+    Phòng và vật tư UC 2 3.x
+      21 toa nha
+      22 thiet lap phong
+      23 tra cuu phong BQL VA SV
+      31 32 vat tu phong CB
+      33 bao cao hu hong SV
+
+    Đăng ký và hợp đồng UC 4.x
+      41 dang ky thue SV
+      42 minh chung uu tien SV
+      43 phe duyet don CB
+      44 thanh ly hop dong CB
+
+    Tài chính và tích hợp UC 5.x
+      52 hoa don thanh toan SV
+      51 va 53 lich dong He thong
+      VNPay ngoai vien
+
+    Cu tru UC 6.x
+      61 ho so noi tru CB
+      62 diem danh CB
+
+    Thong bao BQL VA SV
+      QL ban hanh TB
+      doc tin tren coc SV
+
+    Bao cao UC 7.x
+      71 thong ke lap day CB
+      72 doanh thu QT
+
+    Xuat Excel UC 73
+      thong ke phu tro
+</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Hình 2 — Tác nhân và các gói chức năng liên quan</h2>
+        <div class="diagram-box">
+<div class="mermaid">
+flowchart TB
+  SV(((Sinh viên)))
+  CB(((Cán bộ KTX)))
+  QT(((Quản trị HT)))
+  SYS[[Hệ thống định kỳ]]
+  PAY[[VNPay]]
+
+  P1["N1 Tai khoan<br/>UC 1.x"]
+  P2["N2 Danh muc phòng<br/>UC 2.x"]
+  P3["N3 Van hanh tai san<br/>UC 3.x"]
+  P4["N4 DK va hop dong<br/>UC 4.x"]
+  P5["N5 Tai chinh hen gio<br/>UC 5.x"]
+  P6["N6 Cu tru SV<br/>UC 6.x"]
+  P7["N7 Thong ke bao cao<br/>UC 7.x + QL thong bao"]
+
+  QT --> P1
+  CB --> P1
+  SV --> P1
+
+  CB --> P2
+  SV --> P2
+
+  CB --> P3
+  SV --> P3
+
+  CB --> P4
+  SV --> P4
+
+  SYS --> P5
+  CB --> P5
+  SV --> P5
+  P5 -.-> PAY
+
+  CB --> P6
+
+  CB --> P7
+  QT --> P7
+</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Bảng ánh xạ UC → Trang demo</h2>
+        <div class="table-wrap">
+          <table class="uc-table">
+            <thead>
+              <tr>
+                <th>UC</th>
+                <th>Ý niệm / màn trong demo</th>
+                <th>Đường dẫn</th>
+                <th>Tác nhân típ.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>1.1 · 1.3 · 1.4</code></td>
+                <td>Tài khoản, phân quyền, khóa mở</td>
+                <td><code>quan-ly-tai-khoan.html</code></td>
+                <td>Quản trị</td>
+              </tr>
+              <tr>
+                <td><code>1.2</code></td>
+                <td>Đăng nhập</td>
+                <td><code>dang-nhap.html</code> · <code>sinhvien/dang-nhap.html</code></td>
+                <td>BQL / SV</td>
+              </tr>
+              <tr>
+                <td><code>1.5</code></td>
+                <td>Đổi mật khẩu</td>
+                <td><code>doi-mat-khau.html</code> · <code>sinhvien/doi-mat-khau.html</code></td>
+                <td>Tất cả</td>
+              </tr>
+              <tr>
+                <td><code>2.1</code></td>
+                <td>Tòa nhà</td>
+                <td><code>toa-nha.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>2.2</code></td>
+                <td>Thiết lập phòng</td>
+                <td><code>thiet-lap-phong.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>2.3</code></td>
+                <td>Tra cứu phòng trống</td>
+                <td><code>tra-cuu-phong.html</code> · <code>sinhvien/tra-cuu-phong.html</code></td>
+                <td>Cán bộ / SV</td>
+              </tr>
+              <tr>
+                <td><code>3.1 · 3.2</code></td>
+                <td>Vật tư trong phòng</td>
+                <td><code>vat-tu-phong.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>3.3</code></td>
+                <td>Báo cáo hư hỏng</td>
+                <td><code>sinhvien/bao-cao-hu-hong.html</code></td>
+                <td>Sinh viên</td>
+              </tr>
+              <tr>
+                <td><code>4.1</code></td>
+                <td>Đăng ký thuê phòng</td>
+                <td><code>sinhvien/dang-ky-phong.html</code></td>
+                <td>Sinh viên</td>
+              </tr>
+              <tr>
+                <td><code>4.2</code></td>
+                <td>Minh chứng ưu tiên</td>
+                <td><code>sinhvien/minh-chung-uu-tien.html</code></td>
+                <td>Sinh viên</td>
+              </tr>
+              <tr>
+                <td><code>4.3</code></td>
+                <td>Phê duyệt đơn</td>
+                <td><code>phe-duyet-don.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>4.4</code></td>
+                <td>Thanh lý hợp đồng</td>
+                <td><code>thanh-ly-hop-dong.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>5.1 · 5.3</code></td>
+                <td>Lập hóa đơn định kỳ · nhắc nợ</td>
+                <td><code>tich-hop.html</code>, <code>tong-quan.html</code> · <code>sinhvien/thong-bao.html</code></td>
+                <td>Hệ thống / CB</td>
+              </tr>
+              <tr>
+                <td><code>5.2</code></td>
+                <td>Hóa đơn &amp; thanh toán qua cổng</td>
+                <td><code>sinhvien/hoa-don-thanh-toan.html</code> · <code>tich-hop.html</code></td>
+                <td>Sinh viên (+ VNPay)</td>
+              </tr>
+              <tr>
+                <td><code>6.1</code></td>
+                <td>Hồ sơ nội trú</td>
+                <td><code>ho-so-noi-tru.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>6.2</code></td>
+                <td>Điểm danh sinh viên</td>
+                <td><code>diem-danh.html</code></td>
+                <td>Cán bộ</td>
+              </tr>
+              <tr>
+                <td><code>7.1 · 7.3</code></td>
+                <td>Thống kê lấp đầy · xuất file minh họa</td>
+                <td><code>thong-ke-lap-day.html</code></td>
+                <td>Cán bộ / QT</td>
+              </tr>
+              <tr>
+                <td><code>7.2</code></td>
+                <td>Thống kê doanh thu</td>
+                <td><code>thong-ke-doanh-thu.html</code></td>
+                <td>Quản trị</td>
+              </tr>
+              <tr>
+                <td>—</td>
+                <td>Đơn của tôi (hỗ trợ theo dõi 4.x)</td>
+                <td><code>sinhvien/don-cua-toi.html</code></td>
+                <td>Sinh viên</td>
+              </tr>
+              <tr>
+                <td>—</td>
+                <td>Đọc thông báo đã đăng</td>
+                <td><code>sinhvien/thong-bao.html</code></td>
+                <td>Sinh viên</td>
+              </tr>
+              <tr>
+                <td>—</td>
+                <td>Quản lý &amp; phát hành thông báo</td>
+                <td><code>quan-ly-thong-bao.html</code></td>
+                <td>Cán bộ / QT</td>
+              </tr>
+              <tr>
+                <td>—</td>
+                <td>Tổng quan có bản đồ minh họa lấp đầy · liên UC 7.1</td>
+                <td><code>tong-quan.html</code></td>
+                <td>BQL xem demo</td>
+              </tr>
+              <tr>
+                <td>—</td>
+                <td>Trang tài liệu sơ đồ UC ↔ file HTML</td>
+                <td><code>so-do-uc.html</code></td>
+                <td>Toàn cục đọc tài liệu</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.4.0/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({
+        startOnLoad: true,
+        theme: "neutral",
+        flowchart: { curve: "basis", padding: 12 },
+      });
+    </script>
+  </body>
+</html>

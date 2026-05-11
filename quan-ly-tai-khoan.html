@@ -592,6 +592,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="css/ktx-ui.css" />
   </head>
   <body>
     <div id="app" class="app is-visible">
@@ -599,6 +600,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
       <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
@@ -615,6 +617,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Cư trú</div>
       <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <div class="nav-section">Thông báo</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -633,7 +637,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Quản lý tài khoản người dùng</h1>
           <p class="page-desc"><code>UC 1.1</code> · <code>UC 1.3</code> · <code>UC 1.4</code> — Chỉ quản trị hệ thống.</p>
-          <div class="card">
+          <div class="card table-cards-on-mobile">
             <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 16px">
               <a href="#modal-add-user" class="btn btn-primary">Thêm tài khoản</a>
             </div>
@@ -650,21 +654,91 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                 </thead>
                 <tbody>
                   <tr>
-                    <td>canbo01</td>
-                    <td>Nguyễn Văn A</td>
-                    <td>Cán bộ KTX</td>
-                    <td><span class="badge badge-success">Hoạt động</span></td>
-                    <td>
+                    <td data-label="Tên đăng nhập">canbo01</td>
+                    <td data-label="Họ tên">Nguyễn Văn An</td>
+                    <td data-label="Vai trò">Cán bộ KTX</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
                       <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
                       <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
                     </td>
                   </tr>
                   <tr>
-                    <td>sv001</td>
-                    <td>Trần Thị B</td>
-                    <td>Sinh viên</td>
-                    <td><span class="badge badge-muted">Đã khóa</span></td>
-                    <td><button type="button" class="btn btn-ghost btn-sm" disabled>Mở khóa</button></td>
+                    <td data-label="Tên đăng nhập">canbo02</td>
+                    <td data-label="Họ tên">Phạm Thị Lan</td>
+                    <td data-label="Vai trò">Cán bộ KTX</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">admin01</td>
+                    <td data-label="Họ tên">Lê Văn Tuấn</td>
+                    <td data-label="Vai trò">Quản trị hệ thống</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv001</td>
+                    <td data-label="Họ tên">Trần Thị Bình</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-muted">Đã khóa</span></td>
+                    <td data-label="Thao tác"><button type="button" class="btn btn-ghost btn-sm" disabled>Mở khóa</button></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv002</td>
+                    <td data-label="Họ tên">Hoàng Văn Dũng</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv003</td>
+                    <td data-label="Họ tên">Võ Thị Phương</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv004</td>
+                    <td data-label="Họ tên">Đặng Văn Giang</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv005</td>
+                    <td data-label="Họ tên">Ngô Thị Hương</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Tên đăng nhập">sv006</td>
+                    <td data-label="Họ tên">Bùi Văn Khoa</td>
+                    <td data-label="Vai trò">Sinh viên</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Hoạt động</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#modal-roles" class="btn btn-ghost btn-sm">Phân quyền</a>
+                      <a href="#modal-lock" class="btn btn-danger btn-sm">Khóa</a>
+                    </td>
                   </tr>
                 </tbody>
               </table>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đổi mật khẩu — KTX Đại học Vinh</title>
+    <title>Quản lý thông báo — KTX Đại học Vinh</title>
     <style>
 /* KTX Đại học Vinh — giao diện demo theo đặc tả UC */
 :root {
@@ -600,7 +600,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link">Trang chủ</a>
       <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
-      <a href="doi-mat-khau.html" class="nav-link is-active">Đổi mật khẩu</a>
+      <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
       <a href="quan-ly-tai-khoan.html" class="nav-link">Tài khoản & phân quyền</a>
@@ -617,7 +617,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
       <div class="nav-section">Thông báo</div>
-      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
+      <a href="quan-ly-thong-bao.html" class="nav-link is-active">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -634,24 +634,60 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
           </div>
         </header>
         <main class="content">
-          <h1 class="page-title">Đổi mật khẩu cá nhân</h1>
-          <p class="page-desc"><code>UC 1.5</code></p>
-          <div class="card" style="max-width: 480px">
-            <form id="form-change-password" data-demo="Đã đổi mật khẩu (demo — UC 1.5).">
+          <h1 class="page-title">Quản lý thông báo</h1>
+          <p class="page-desc">Soạn và phát hành thông báo tới sinh viên trong KTX (<code>BQL</code>).</p>
+          <div class="card">
+            <h2>Đăng thông báo mới</h2>
+            <div class="form-group">
+              <label>Tiêu đề</label>
+              <input type="text" placeholder="Ví dụ: Nhắc đóng phí tháng …" />
+            </div>
+            <div class="form-group">
+              <label>Nội dung</label>
+              <textarea rows="4" placeholder="Nội dung hiển thị trên cổng sinh viên …"></textarea>
+            </div>
+            <div class="form-row">
               <div class="form-group">
-                <label for="old-pw">Mật khẩu hiện tại</label>
-                <input id="old-pw" type="password" required />
+                <label>Hiển thị từ</label>
+                <input type="date" />
               </div>
               <div class="form-group">
-                <label for="new-pw">Mật khẩu mới</label>
-                <input id="new-pw" type="password" required />
+                <label>Đối tượng</label>
+                <select>
+                  <option>Tất cả SV đang nội trú</option>
+                  <option>Theo tòa / khu</option>
+                  <option>Theo phòng</option>
+                </select>
               </div>
-              <div class="form-group">
-                <label for="new-pw2">Nhập lại mật khẩu mới</label>
-                <input id="new-pw2" type="password" required />
-              </div>
-              <button type="button" class="btn btn-primary">Lưu</button>
-            </form>
+            </div>
+            <button type="button" class="btn btn-primary">Đăng tin (demo)</button>
+          </div>
+          <div class="card">
+            <h2>Đã gửi gần đây</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ngày</th>
+                    <th>Tiêu đề</th>
+                    <th>Trạng thái</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>08/05/2026</td>
+                    <td>Nhắc đóng phí tháng 5</td>
+                    <td><span class="badge badge-success">Đã gửi</span></td>
+                  </tr>
+                  <tr>
+                    <td>01/05/2026</td>
+                    <td>Mở đợt đăng ký KTX hè</td>
+                    <td><span class="badge badge-success">Đã gửi</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="uc-ref" style="margin-top: 16px"><code>Kèm cổng SV: <a href="sinhvien/thong-bao.html">Thông báo (sinh viên)</a></code></p>
           </div>
         </main>
       </div>

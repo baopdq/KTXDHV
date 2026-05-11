@@ -8,6 +8,7 @@ ROOT = Path(__file__).resolve().parent
 BQL_NAV = [
     ("Chung", None),
     ("tong-quan", "Trang chủ"),
+    ("so-do-uc", "Sơ đồ UC"),
     ("doi-mat-khau", "Đổi mật khẩu"),
     ("_sv", "Cổng sinh viên →"),
     ("Quản trị", None),
@@ -24,6 +25,8 @@ BQL_NAV = [
     ("Cư trú", None),
     ("ho-so-noi-tru", "Hồ sơ nội trú"),
     ("diem-danh", "Điểm danh sinh viên"),
+    ("Thông báo", None),
+    ("quan-ly-thong-bao", "Quản lý thông báo"),
     ("Báo cáo", None),
     ("thong-ke-lap-day", "Thống kê lấp đầy"),
     ("Tích hợp", None),
@@ -236,11 +239,59 @@ def process_bql(path: Path):
     path.write_text(html, encoding="utf-8")
 
 
+def ensure_student_sidebar_visible(html: str) -> str:
+    """`.sidebar{display:none}` trong @media (mobile) che menu; SV không JS cần sidebar luôn hiện."""
+    old = """.student-app .sidebar {
+  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+}"""
+    new = """.student-app .sidebar {
+  display: flex !important;
+  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+}"""
+    if old in html:
+        return html.replace(old, new, 1)
+    return html
+
+
+def fix_sv_mobile_sidebar_scope(html: str) -> str:
+    """@media mobile ẩn mọi .sidebar — trên cổng SV (có .student-app) làm mất menu."""
+    old = """  .sidebar {
+    display: none;
+  }
+
+  .sidebar.is-open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    max-width: 280px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.15);
+  }"""
+    new = """  /* Chỉ ẩn sidebar mobile cho BQL (có JS menu); cổng SV luôn có .student-app */
+  .app:not(.student-app) .sidebar {
+    display: none;
+  }
+
+  .app:not(.student-app) .sidebar.is-open {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    max-width: 280px;
+    box-shadow: 8px 0 24px rgba(0, 0, 0, 0.15);
+  }"""
+    if old in html:
+        return html.replace(old, new, 1)
+    return html
+
+
 def process_sv(path: Path):
     stem = path.stem
     html = path.read_text(encoding="utf-8")
     html = strip_scripts(html)
     html = inject_css(html)
+    html = fix_sv_mobile_sidebar_scope(html)
+    html = ensure_student_sidebar_visible(html)
     html = replace_aside(html, sv_sidebar(stem))
     html = replace_topbar(html, "sv")
     html = re.sub(r'<div id="toast-area"[^>]*></div>\s*', "", html)

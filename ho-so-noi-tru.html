@@ -592,6 +592,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="css/ktx-ui.css" />
   </head>
   <body>
     <div id="app" class="app is-visible">
@@ -599,6 +600,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
       <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
@@ -615,6 +617,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Cư trú</div>
       <a href="ho-so-noi-tru.html" class="nav-link is-active">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <div class="nav-section">Thông báo</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -647,6 +651,66 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
             <p><strong>Họ tên:</strong> Trần Thị B · <strong>Lớp:</strong> K62-CNTT · <strong>Phòng:</strong> A-302</p>
             <p><strong>Liên hệ khẩn:</strong> 090x xxx xxx</p>
             <div class="chart-placeholder" style="height: 120px; margin-top: 12px">Ảnh thẻ SV</div>
+          </div>
+          <div class="card table-cards-on-mobile">
+            <h2>Danh sách sinh viên đang nội trú (minh họa)</h2>
+            <p class="page-desc" style="margin-top: -8px; font-size: 0.9rem">Tổng 7 sinh viên trong ví dụ — dễ nhìn trên điện thoại và máy tính.</p>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>MSSV</th>
+                    <th>Họ tên</th>
+                    <th>Lớp</th>
+                    <th>Phòng</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="MSSV">221001</td>
+                    <td data-label="Họ tên">Nguyễn Văn An</td>
+                    <td data-label="Lớp">K62-CNTT</td>
+                    <td data-label="Phòng">A-302</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221002</td>
+                    <td data-label="Họ tên">Trần Thị Bình</td>
+                    <td data-label="Lớp">K62-QTKD</td>
+                    <td data-label="Phòng">A-302</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221003</td>
+                    <td data-label="Họ tên">Lê Văn Cường</td>
+                    <td data-label="Lớp">K63-Điện</td>
+                    <td data-label="Phòng">B-105</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221004</td>
+                    <td data-label="Họ tên">Phạm Thị Dung</td>
+                    <td data-label="Lớp">K61-Kế toán</td>
+                    <td data-label="Phòng">B-105</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221005</td>
+                    <td data-label="Họ tên">Hoàng Văn Em</td>
+                    <td data-label="Lớp">K62-CNTT</td>
+                    <td data-label="Phòng">A-401</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221006</td>
+                    <td data-label="Họ tên">Võ Thị Phương</td>
+                    <td data-label="Lớp">K62-Ngữ văn</td>
+                    <td data-label="Phòng">C-118</td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221007</td>
+                    <td data-label="Họ tên">Đặng Văn Giang</td>
+                    <td data-label="Lớp">K63-Cơ khí</td>
+                    <td data-label="Phòng">B-210</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </main>
       </div>

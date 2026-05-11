@@ -592,6 +592,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="css/ktx-ui.css" />
   </head>
   <body>
     <div id="app" class="app is-visible">
@@ -599,6 +600,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
       <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
@@ -615,6 +617,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Cư trú</div>
       <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link is-active">Điểm danh sinh viên</a>
+      <div class="nav-section">Thông báo</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -633,7 +637,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Điểm danh sinh viên</h1>
           <p class="page-desc"><code>UC 6.2</code></p>
-          <div class="card">
+          <div class="card table-cards-on-mobile">
             <form data-demo="Đã lưu điểm danh (UC 6.2).">
               <div class="form-group">
                 <label>Phòng</label>
@@ -653,14 +657,39 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                   </thead>
                   <tbody>
                     <tr>
-                      <td>221001</td>
-                      <td>Nguyễn Văn C</td>
-                      <td><input type="checkbox" aria-label="Vắng" /></td>
+                      <td data-label="MSSV">221001</td>
+                      <td data-label="Họ tên">Nguyễn Văn An</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221001" /></td>
                     </tr>
                     <tr>
-                      <td>221002</td>
-                      <td>Lê Thị D</td>
-                      <td><input type="checkbox" aria-label="Vắng" /></td>
+                      <td data-label="MSSV">221002</td>
+                      <td data-label="Họ tên">Trần Thị Bình</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221002" /></td>
+                    </tr>
+                    <tr>
+                      <td data-label="MSSV">221003</td>
+                      <td data-label="Họ tên">Lê Văn Cường</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221003" /></td>
+                    </tr>
+                    <tr>
+                      <td data-label="MSSV">221004</td>
+                      <td data-label="Họ tên">Phạm Thị Dung</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221004" /></td>
+                    </tr>
+                    <tr>
+                      <td data-label="MSSV">221005</td>
+                      <td data-label="Họ tên">Hoàng Văn Em</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221005" /></td>
+                    </tr>
+                    <tr>
+                      <td data-label="MSSV">221006</td>
+                      <td data-label="Họ tên">Võ Thị Phương</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221006" /></td>
+                    </tr>
+                    <tr>
+                      <td data-label="MSSV">221007</td>
+                      <td data-label="Họ tên">Đặng Văn Giang</td>
+                      <td data-label="Vắng"><input type="checkbox" aria-label="Vắng 221007" /></td>
                     </tr>
                   </tbody>
                 </table>

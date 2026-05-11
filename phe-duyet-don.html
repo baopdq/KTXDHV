@@ -592,6 +592,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="css/ktx-ui.css" />
   </head>
   <body>
     <div id="app" class="app is-visible">
@@ -599,6 +600,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="sidebar-brand"><strong>KTX Đại học Vinh</strong><span>BQL — HTML tĩnh (không JS)</span></div>
       <div class="nav-section">Chung</div>
       <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
       <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
       <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
       <div class="nav-section">Quản trị</div>
@@ -615,6 +617,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="nav-section">Cư trú</div>
       <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
       <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <div class="nav-section">Thông báo</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Quản lý thông báo</a>
       <div class="nav-section">Báo cáo</div>
       <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
       <div class="nav-section">Tích hợp</div>
@@ -633,7 +637,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Phê duyệt đơn đăng ký</h1>
           <p class="page-desc"><code>UC 4.3</code></p>
-          <div class="card">
+          <div class="card table-cards-on-mobile">
             <div class="table-wrap">
               <table>
                 <thead>
@@ -646,10 +650,55 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                 </thead>
                 <tbody>
                   <tr>
-                    <td>221xxxx</td>
-                    <td>A-302</td>
-                    <td><span class="badge badge-warning">Chờ duyệt</span></td>
-                    <td>
+                    <td data-label="MSSV">221045</td>
+                    <td data-label="Phòng đăng ký">A-302</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chờ duyệt</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#" class="btn btn-primary btn-sm">Duyệt (demo)</a>
+                      <a href="#" class="btn btn-secondary btn-sm">Từ chối (demo)</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221112</td>
+                    <td data-label="Phòng đăng ký">B-105</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chờ duyệt</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#" class="btn btn-primary btn-sm">Duyệt (demo)</a>
+                      <a href="#" class="btn btn-secondary btn-sm">Từ chối (demo)</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221203</td>
+                    <td data-label="Phòng đăng ký">A-401</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                    <td data-label="Thao tác"><span class="badge badge-muted">—</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221088</td>
+                    <td data-label="Phòng đăng ký">B-210</td>
+                    <td data-label="Trạng thái"><span class="badge badge-muted">Đã từ chối</span></td>
+                    <td data-label="Thao tác"><span class="badge badge-muted">—</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221156</td>
+                    <td data-label="Phòng đăng ký">A-302</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chờ duyệt</span></td>
+                    <td data-label="Thao tác">
+                      <a href="#" class="btn btn-primary btn-sm">Duyệt (demo)</a>
+                      <a href="#" class="btn btn-secondary btn-sm">Từ chối (demo)</a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221067</td>
+                    <td data-label="Phòng đăng ký">C-118</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                    <td data-label="Thao tác"><span class="badge badge-muted">—</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="MSSV">221234</td>
+                    <td data-label="Phòng đăng ký">B-105</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chờ duyệt</span></td>
+                    <td data-label="Thao tác">
                       <a href="#" class="btn btn-primary btn-sm">Duyệt (demo)</a>
                       <a href="#" class="btn btn-secondary btn-sm">Từ chối (demo)</a>
                     </td>
