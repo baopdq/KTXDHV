@@ -1,0 +1,192 @@
+/* Bổ sung UI: đăng nhập, mobile cổng SV — override sau block style inline */
+
+.login-page {
+  position: relative;
+  overflow: hidden;
+}
+
+.login-page::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.18) 0%, transparent 45%),
+    radial-gradient(circle at 80% 70%, rgba(56, 189, 248, 0.12) 0%, transparent 40%);
+  pointer-events: none;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 14px;
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
+.login-brand__logo {
+  width: 88px;
+  height: 88px;
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(6, 95, 70, 0.2);
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+}
+
+.login-brand .login-title {
+  margin: 0.65rem 0 0.35rem;
+  font-size: 1.35rem;
+  line-height: 1.25;
+}
+
+.login-brand .subtitle {
+  margin: 0 0 0.25rem;
+}
+
+.student-login .login-brand__logo {
+  box-shadow: 0 8px 24px rgba(6, 95, 70, 0.25);
+}
+
+/* Bảng: thẻ chồng trên mobile (cần data-label trên td) */
+@media (max-width: 600px) {
+  .table-cards-on-mobile .table-wrap table,
+  .table-cards-on-mobile .table-wrap thead {
+    display: none;
+  }
+
+  .table-cards-on-mobile .table-wrap tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .table-cards-on-mobile .table-wrap tr {
+    display: block;
+    background: var(--surface, #fff);
+    border: 1px solid var(--border, #e2e8f0);
+    border-radius: 10px;
+    padding: 12px 14px;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  }
+
+  .table-cards-on-mobile .table-wrap td {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border, #e2e8f0);
+    font-size: 0.875rem;
+  }
+
+  .table-cards-on-mobile .table-wrap td:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .table-cards-on-mobile .table-wrap td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: var(--muted, #64748b);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    max-width: 45%;
+  }
+}
+
+/* Cổng sinh viên: thanh menu dưới màn hình nhỏ */
+@media (max-width: 768px) {
+  .app.student-app {
+    display: flex !important;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .student-app .main {
+    order: 1;
+    flex: 1;
+    min-width: 0;
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .student-app .content {
+    padding: 16px 14px calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .student-app .topbar {
+    padding: 10px 14px;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    box-shadow: 0 1px 0 rgba(226, 232, 240, 0.9);
+  }
+
+  .student-app .sidebar {
+    order: 2;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: auto;
+    z-index: 40;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 8px 10px calc(10px + env(safe-area-inset-bottom, 0px));
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow: 0 -6px 24px rgba(0, 0, 0, 0.12);
+    gap: 4px;
+    max-width: none;
+  }
+
+  .student-app .sidebar-brand {
+    display: none;
+  }
+
+  .student-app .nav-section {
+    display: none !important;
+  }
+
+  .student-app .nav-link {
+    flex: 0 0 auto;
+    padding: 10px 11px;
+    font-size: 0.7rem;
+    border-left: none;
+    border-radius: 10px;
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+    max-width: 104px;
+  }
+
+  .student-app .tile-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .student-app .tile {
+    padding: 14px;
+  }
+
+  .student-app .tile h3 {
+    font-size: 0.92rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .app.student-app {
+    display: grid !important;
+    grid-template-columns: 260px 1fr;
+  }
+}
