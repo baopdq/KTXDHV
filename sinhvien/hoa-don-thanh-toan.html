@@ -723,6 +723,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="../css/ktx-ui.css" />
   </head>
   <body>
     <div class="app student-app is-visible">
@@ -752,7 +753,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Hóa đơn &amp; thanh toán</h1>
           <p class="page-desc"><code>UC 5.2</code> · Nhắc nợ <code>UC 5.3</code></p>
-          <div class="card">
+          <div class="card table-cards-on-mobile">
             <div class="table-wrap">
               <table>
                 <thead>
@@ -767,20 +768,60 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                 </thead>
                 <tbody>
                   <tr>
-                    <td>04/2026</td>
-                    <td>Phòng + điện nước</td>
-                    <td>485.000 ₫</td>
-                    <td>10/05/2026</td>
-                    <td><span class="badge badge-warning">Chưa thanh toán</span></td>
-                    <td><a href="#" id="btn-vnpay" class="btn btn-primary btn-sm">VNPay (demo)</a></td>
+                    <td data-label="Kỳ">04/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">485.000 ₫</td>
+                    <td data-label="Hạn">10/05/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chưa thanh toán</span></td>
+                    <td data-label="Thao tác"><a href="#" id="btn-vnpay" class="btn btn-primary btn-sm">VNPay (demo)</a></td>
                   </tr>
                   <tr>
-                    <td>03/2026</td>
-                    <td>Phòng + điện nước</td>
-                    <td>472.000 ₫</td>
-                    <td>10/04/2026</td>
-                    <td><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td>—</td>
+                    <td data-label="Kỳ">03/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">472.000 ₫</td>
+                    <td data-label="Hạn">10/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">02/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">468.000 ₫</td>
+                    <td data-label="Hạn">10/03/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">01/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">460.000 ₫</td>
+                    <td data-label="Hạn">10/02/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">12/2025</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">455.000 ₫</td>
+                    <td data-label="Hạn">10/01/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">11/2025</td>
+                    <td data-label="Nội dung">Cọc + phí đăng ký</td>
+                    <td data-label="Số tiền">200.000 ₫</td>
+                    <td data-label="Hạn">05/12/2025</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">11/2025</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">448.000 ₫</td>
+                    <td data-label="Hạn">10/12/2025</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác">—</td>
                   </tr>
                 </tbody>
               </table>

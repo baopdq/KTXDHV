@@ -723,6 +723,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 }
 
 </style>
+    <link rel="stylesheet" href="../css/ktx-ui.css" />
   </head>
   <body>
     <div class="app student-app is-visible">
@@ -752,7 +753,7 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         <main class="content">
           <h1 class="page-title">Đơn đăng ký của tôi</h1>
           <p class="page-desc">Liên quan <code>UC 4.1</code> / <code>UC 4.3</code></p>
-          <div class="card">
+          <div class="card table-cards-on-mobile">
             <div class="table-wrap">
               <table>
                 <thead>
@@ -765,10 +766,46 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
                 </thead>
                 <tbody>
                   <tr>
-                    <td>DK-2026-0042</td>
-                    <td>A-302</td>
-                    <td>02/05/2026</td>
-                    <td><span class="badge badge-warning">Chờ duyệt</span></td>
+                    <td data-label="Mã đơn">DK-2026-0042</td>
+                    <td data-label="Phòng">A-302</td>
+                    <td data-label="Ngày gửi">02/05/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chờ duyệt</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0038</td>
+                    <td data-label="Phòng">B-105</td>
+                    <td data-label="Ngày gửi">28/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0021</td>
+                    <td data-label="Phòng">A-401</td>
+                    <td data-label="Ngày gửi">15/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-muted">Đã hủy</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0015</td>
+                    <td data-label="Phòng">C-118</td>
+                    <td data-label="Ngày gửi">08/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0009</td>
+                    <td data-label="Phòng">A-302</td>
+                    <td data-label="Ngày gửi">01/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0003</td>
+                    <td data-label="Phòng">B-210</td>
+                    <td data-label="Ngày gửi">22/03/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
+                  </tr>
+                  <tr>
+                    <td data-label="Mã đơn">DK-2026-0001</td>
+                    <td data-label="Phòng">B-105</td>
+                    <td data-label="Ngày gửi">10/03/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã duyệt</span></td>
                   </tr>
                 </tbody>
               </table>
