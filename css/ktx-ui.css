@@ -28,14 +28,17 @@
 }
 
 .login-brand__logo {
-  width: 88px;
-  height: 88px;
   display: inline-block;
-  border-radius: 50%;
+  max-width: min(200px, 85vw);
+  width: auto;
+  height: auto;
+  max-height: 96px;
+  border-radius: 10px;
   box-shadow: 0 8px 24px rgba(6, 95, 70, 0.2);
   object-fit: contain;
   background: #fff;
-  padding: 4px;
+  padding: 6px 8px;
+  vertical-align: middle;
 }
 
 .login-brand .login-title {
