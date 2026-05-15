@@ -89,7 +89,7 @@ def bql_sidebar(active: str) -> str:
 
 def sv_sidebar(active: str) -> str:
     parts = [
-        '<div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>'
+        '<div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>'
     ]
     for item in SV_NAV:
         if item[1] is None:
@@ -114,6 +114,37 @@ def inject_css(html: str) -> str:
     return html.replace("</style>", CSS_NOJS + "\n</style>", 1)
 
 
+def inject_student_css(html: str, depth: int = 1) -> str:
+    if "ktx-student.css" in html:
+        return html
+    prefix = "../" * depth if depth else ""
+    link = f'    <link rel="stylesheet" href="{prefix}css/ktx-student.css" />\n'
+    needle = f'    <link rel="stylesheet" href="{prefix}css/ktx-ui.css" />'
+    if needle in html:
+        return html.replace(needle, needle + "\n" + link, 1)
+    return html
+
+
+def inject_print_css(html: str, depth: int = 0) -> str:
+    """Thêm ktx-print.css nếu chưa có."""
+    if "ktx-print.css" in html:
+        return html
+    prefix = "../" * depth if depth else ""
+    link = f'    <link rel="stylesheet" href="{prefix}css/ktx-print.css" />\n'
+    needle = f'    <link rel="stylesheet" href="{prefix}css/ktx-ui.css" />'
+    if needle in html:
+        return html.replace(needle, needle + "\n" + link, 1)
+    return html
+
+
+def wire_print_buttons(html: str) -> str:
+    html = html.replace(
+        '<button type="button" class="btn-mgmt-outline">In danh sách (demo)</button>',
+        '<button type="button" class="btn-mgmt-outline" onclick="window.print()">In danh sách</button>',
+    )
+    return html
+
+
 def topbar_bql():
     return """<header class="topbar">
           <div class="topbar-left">
@@ -129,6 +160,13 @@ def topbar_bql():
 def topbar_sv():
     return """<header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">
@@ -228,6 +266,8 @@ def process_bql(path: Path):
     html = path.read_text(encoding="utf-8")
     html = strip_scripts(html)
     html = inject_css(html)
+    html = inject_print_css(html, 0)
+    html = wire_print_buttons(html)
     html = replace_aside(html, bql_sidebar(stem))
     html = replace_topbar(html, "bql")
     html = re.sub(r'<div id="toast-area"[^>]*></div>\s*', "", html)
@@ -246,7 +286,7 @@ def ensure_student_sidebar_visible(html: str) -> str:
 }"""
     new = """.student-app .sidebar {
   display: flex !important;
-  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+  background: var(--primary);
 }"""
     if old in html:
         return html.replace(old, new, 1)
@@ -290,6 +330,8 @@ def process_sv(path: Path):
     html = path.read_text(encoding="utf-8")
     html = strip_scripts(html)
     html = inject_css(html)
+    html = inject_print_css(html, 1)
+    html = inject_student_css(html, 1)
     html = fix_sv_mobile_sidebar_scope(html)
     html = ensure_student_sidebar_visible(html)
     html = replace_aside(html, sv_sidebar(stem))
