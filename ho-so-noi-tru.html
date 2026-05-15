@@ -75,11 +75,17 @@
             <header class="mgmt-head">
               <div class="mgmt-head__title">
                 <h1 class="page-title">Hồ sơ nội trú</h1>
-                <p class="mgmt-sub"><code>UC 6.1</code> — Danh sách &amp; tra cứu theo MSSV.</p>
+                <p class="mgmt-sub"><code>UC 6.1</code> — Quản lý danh mục hồ sơ nội trú CRUD+demo xuất/nhập: thêm · sửa · xóa · xem theo MSSV/phòng/lớp.</p>
               </div>
-              <div class="mgmt-head__actions">
-                <button type="button" class="btn-mgmt-outline">Xuất Excel (demo)</button>
-                <button type="button" class="btn-mgmt-outline" onclick="window.print()">In danh sách</button>
+                            <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                <a href="#drawer-them-hoso" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm hồ sơ nội trú</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách hồ sơ nội trú theo MSSV, phòng và lớp (Excel/CSV demo).">Xuất</a>
+                <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
+                  Nhập
+                  <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
+                </label>
               </div>
             </header>
             <div class="mgmt-split mgmt-split--rail">
@@ -102,7 +108,7 @@
                     <button type="button" class="btn-bql btn-bql-primary">Tìm kiếm</button>
                     <button type="button" class="btn-bql btn-bql-default">Làm mới</button>
                   </form>
-                  <h2 class="mgmt-panel__title">Sinh viên đang nội trú (minh họa)</h2>
+                  <h2 class="mgmt-panel__title">Danh sách hồ sơ nội trú (minh họa)</h2>
                   <div class="table-wrap">
                     <table class="table-bql table-cards-on-mobile">
                       <thead>
@@ -126,7 +132,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -139,7 +147,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -152,7 +162,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -165,7 +177,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -178,7 +192,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -191,7 +207,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -204,7 +222,9 @@
                           <td data-label="TT"><span class="badge-bql badge-bql--success">Đang ở</span></td>
                           <td data-label="Thao tác">
                             <div class="table-bql-actions table-bql-actions--tight">
-                              <a href="#drawer-hoso-demo" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem hồ sơ" aria-label="Xem hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
+                              <a href="#drawer-hoso-chi-tiet" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa hồ sơ" aria-label="Sửa hồ sơ"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
+                              <a href="#modal-xoa-muc-hoso" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa hồ sơ" aria-label="Xóa hồ sơ (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                             </div>
                           </td>
                         </tr>
@@ -246,32 +266,194 @@
       </div>
     </div>
 
-    <div id="drawer-hoso-demo" class="mgmt-drawer-host">
+    <div id="drawer-hoso-chi-tiet" class="mgmt-drawer-host">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
-      <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="hoso-title" aria-modal="true">
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="hoso-chitiet-title" aria-modal="true">
         <div class="mgmt-drawer-head">
-          <h2 id="hoso-title">Thông tin sinh viên</h2>
+          <h2 id="hoso-chitiet-title">Chi tiết hồ sơ nội trú</h2>
           <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
         </div>
         <div class="mgmt-drawer-body">
-          <div class="chart-placeholder" style="height: 100px; margin-bottom: 14px">Ảnh thẻ SV</div>
-          <dl class="mgmt-dl">
-            <dt>Họ tên</dt>
-            <dd>Trần Thị B</dd>
-            <dt>MSSV</dt>
-            <dd>221002</dd>
-            <dt>Lớp</dt>
-            <dd>K62-CNTT</dd>
-            <dt>Phòng</dt>
-            <dd>A-302</dd>
-            <dt>Liên hệ khẩn</dt>
-            <dd>090x xxx xxx</dd>
-          </dl>
+          <div class="mgmt-profile">
+            <span class="mgmt-profile__avatar" aria-hidden="true">NV</span>
+            <div class="mgmt-profile__meta">
+              <strong>Nguyễn Văn An</strong>
+              <span>MSSV 221001 · K62-CNTT</span>
+              <span class="badge-bql badge-bql--success">Đang nội trú</span>
+            </div>
+          </div>
+          <div class="chart-placeholder" style="height: 88px; margin-bottom: 14px">Ảnh thẻ / minh chứng (demo)</div>
+          <section class="mgmt-drawer-section">
+            <h3>Thông tin hồ sơ</h3>
+            <dl class="mgmt-dl mgmt-dl--grid">
+              <div><dt>Tòa</dt><dd>Tòa A</dd></div>
+              <div><dt>Phòng</dt><dd>A-302</dd></div>
+              <div><dt>Giường</dt><dd>Giường 2</dd></div>
+              <div><dt>Ngày vào ở</dt><dd>01/09/2024</dd></div>
+              <div><dt>Ngày hết hạn (theo HĐ)</dt><dd>31/08/2025</dd></div>
+              <div><dt>Mã đơn gốc</dt><dd>DK-2395</dd></div>
+              <div><dt>Số HĐ đang áp</dt><dd>HD-2024-0892</dd></div>
+              <div><dt>SĐT SV</dt><dd>0987 654 321</dd></div>
+              <div><dt>Liên hệ khẩn</dt><dd>Nguyễn Thị Lan (me) · 0912 345 678</dd></div>
+              <div><dt>Ghi chú BQL</dt><dd>Không</dd></div>
+            </dl>
+          </section>
+          <section class="mgmt-drawer-section">
+            <h3>Cập nhật nhanh (demo)</h3>
+            <form data-demo="Đã cập nhật hồ sơ nội trú UC 6.1 (demo).">
+              <div class="form-group">
+                <label>Trạng thái hồ sơ</label>
+                <select>
+                  <option>Đang nội trú</option>
+                  <option>Tạm vắng có phép</option>
+                  <option>Chờ chuyển phòng</option>
+                  <option>Đã trả chỗ</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Ghi chú</label>
+                <textarea rows="2" placeholder="Ghi nhận theo đợt kiểm tra phòng…"></textarea>
+              </div>
+            </form>
+          </section>
         </div>
         <div class="mgmt-drawer-foot">
-          <button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Cập nhật (demo)</button>
+          <button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Lưu thay đổi (demo)</button>
         </div>
       </aside>
     </div>
-    </body>
+
+    <div id="drawer-them-hoso" class="mgmt-drawer-host">
+      <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="hoso-them-title" aria-modal="true">
+        <div class="mgmt-drawer-head">
+          <h2 id="hoso-them-title">Thêm hồ sơ nội trú</h2>
+          <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
+        </div>
+        <div class="mgmt-drawer-body">
+          <p class="hint" style="margin-top: 0">Gắn sinh viên đã có trên hệ thống vào phòng KTX; thực triển sẽ kiểm tra trùng HĐ/công nợ.</p>
+          <form data-demo="Đã tạo hồ sơ nội trú mới (UC 6.1 — demo).">
+            <div class="form-group">
+              <label>Mã sinh viên <span style="color: #dc2626">*</span></label>
+              <input required placeholder="221xxx" />
+            </div>
+            <div class="form-group">
+              <label>Họ và tên <span style="color: #dc2626">*</span></label>
+              <input required />
+            </div>
+            <div class="form-group">
+              <label>Lớp / khóa <span style="color: #dc2626">*</span></label>
+              <input required placeholder="K62-CNTT" />
+            </div>
+            <div class="form-group">
+              <label>Phòng <span style="color: #dc2626">*</span></label>
+              <select required>
+                <option>A-302</option>
+                <option>A-401</option>
+                <option>B-105</option>
+                <option>B-210</option>
+                <option>C-118</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Giường</label>
+              <input placeholder="VD: Giường 2" />
+            </div>
+            <div class="form-group">
+              <label>Ngày vào ở <span style="color: #dc2626">*</span></label>
+              <input type="date" required />
+            </div>
+            <div class="form-group">
+              <label>Trạng thái</label>
+              <select>
+                <option>Đang nội trú</option>
+                <option>Chờ bổ sung giấy tờ</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input type="tel" />
+            </div>
+            <div class="form-group">
+              <label>Liên hệ khẩn</label>
+              <input placeholder="Họ tên · SĐT" />
+            </div>
+            <div class="form-group">
+              <label>Ghi chú</label>
+              <textarea rows="2"></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="mgmt-drawer-foot">
+          <div style="display: flex; gap: 8px">
+            <a href="#" class="btn-mgmt-outline" style="flex: 1; justify-content: center">Hủy</a>
+            <button type="button" class="btn-mgmt-block btn-mgmt-block--blue" style="flex: 1">Lưu hồ sơ (demo)</button>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div id="modal-xoa-muc-hoso" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Xác nhận xóa hồ sơ nội trú</h2>
+        <p>Bạn sắp <strong>gỡ hồ sơ nội trú</strong> khỏi danh mục vận hành (một dòng đang chọn). <strong>Demo:</strong> không xóa dữ liệu thật.</p>
+        <p class="hint" style="margin-top:14px;margin-bottom:0">Hệ thống thật cần đảm bảo đã <strong>trả phòng / thanh lý HĐ</strong>, không còn công nợ mở; có thể chuyển sang lưu trữ thay vì xóa vật lý.</p>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#" class="btn btn-danger">Đồng ý xóa (demo)</a>
+        </div>
+      </div>
+    </div>
+    <div id="modal-mgmt-batch-edit" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal modal--mgmt-crud-tip">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h3>Sửa theo lựa chọn (demo)</h3>
+        <p class="hint">Giao diện tĩnh: thực triển sẽ đồng bộ với checkbox trên lưới dữ liệu.</p>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#" class="btn btn-primary">Tiếp tục chỉnh sửa (demo)</a>
+        </div>
+      </div>
+    </div>
+    <div id="modal-mgmt-batch-delete" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal modal--mgmt-crud-tip">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h3>Xóa theo lựa chọn (demo)</h3>
+        <p class="hint">Mockup chỉ làm động học UX — không có xóa dữ liệu thật trên máy chủ.</p>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#" class="btn btn-danger">Xác nhận xóa (demo)</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất danh sách hồ sơ nội trú</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Hồ sơ nội trú · UC 6.1 — vận hành &amp; tra cứu</dd>
+          <dt>Nội dung file xuất</dt><dd>MSSV, họ tên, lớp/ghi nhận khóa, phòng và tòa, giường, ngày vào ở, ngày hết hạn hồ sơ/HĐ gắn kèm, trạng thái đang nội trú, SĐT, liên hệ khẩn, ghi chú BQL.</dd>
+          <dt>Phạm vi · bộ lọc</dt><dd>Theo kết quả tìm MSSV và lọc phòng · lớp trên form — xuất đúng các dòng đang hiển thị sau lọc.</dd>
+          <dt>Định dạng gợi ý</dt><dd>Excel (.xlsx) · CSV UTF-8 (demo).</dd>
+          <dt>Nhập ngược chiều</dt><dd>Mẫu CSV đối chiếu với cổng sinh viên khi có API đồng bộ.</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSHSNT-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số lượng bản ghi</span><strong>Giống tổng dòng trong bảng sau lọc (demo)</strong></div>
+        <p class="invoice-sheet__note">Hồ sơ nội trú trong mockup chỉ là tầng nhìn danh mục; master SV đầy đủ có thể mở từ Quản lý sinh viên.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+</body>
 </html>

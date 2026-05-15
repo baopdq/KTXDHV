@@ -295,9 +295,32 @@ PAGE_EXPORT: dict[str, dict] = {
         "amount_value": "Khớp với «Quản lý phòng» sau khi duyệt cấu hình",
         "note": "Khác trang «Quản lý phòng» ở chỗ tập trung thiết lập giá và quy tắc trước khi vận hành.",
     },
+    "ho-so-noi-tru.html": {
+        "export_hint": "Xuất danh sách hồ sơ nội trú theo MSSV, phòng và lớp (Excel/CSV demo).",
+        "ref_tag": "DSHSNT",
+        "sheet_title": "Phiếu xuất danh sách hồ sơ nội trú",
+        "rows": [
+            ("Chức năng", "Hồ sơ nội trú · UC 6.1 — vận hành & tra cứu"),
+            (
+                "Nội dung file xuất",
+                "MSSV, họ tên, lớp/ghi nhận khóa, phòng và tòa, giường, ngày vào ở, ngày hết hạn hồ sơ/HĐ gắn kèm, trạng thái đang nội trú, "
+                "SĐT, liên hệ khẩn, ghi chú BQL.",
+            ),
+            (
+                "Phạm vi · bộ lọc",
+                "Theo kết quả tìm MSSV và lọc phòng · lớp trên form — xuất đúng các dòng đang hiển thị sau lọc.",
+            ),
+            ("Định dạng gợi ý", "Excel (.xlsx) · CSV UTF-8 (demo)."),
+            ("Nhập ngược chiều", "Mẫu CSV đối chiếu với cổng sinh viên khi có API đồng bộ."),
+        ],
+        "amount_label": "Số lượng bản ghi",
+        "amount_value": "Giống tổng dòng trong bảng sau lọc (demo)",
+        "note": "Hồ sơ nội trú trong mockup chỉ là tầng nhìn danh mục; master SV đầy đủ có thể mở từ Quản lý sinh viên.",
+    },
 }
 
 PAGES: list[tuple[str, str, str]] = [
+    ("ho-so-noi-tru.html", "#drawer-them-hoso", "+ Thêm hồ sơ nội trú"),
     ("quan-ly-sinh-vien.html", "#drawer-them-sv", "+ Thêm sinh viên"),
     ("quan-ly-phong.html", "#drawer-them-phong", "+ Thêm phòng"),
     ("quan-ly-dang-ky.html", "#drawer-dk-detail", "+ Thêm đơn (form chi tiết)"),
