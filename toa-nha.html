@@ -100,6 +100,8 @@
                         <th>Mã</th>
                         <th>Tên</th>
                         <th>Số tầng</th>
+                        <th>Tổng phòng</th>
+                        <th>Đang ở</th>
                         <th>Chức năng</th>
                       </tr>
                     </thead>
@@ -109,8 +111,12 @@
                         <td data-label="Mã">A</td>
                         <td data-label="Tên">Tòa A</td>
                         <td data-label="Tầng">5</td>
+                        <td data-label="Tổng phòng">48</td>
+                        <td data-label="Đang ở">192</td>
                         <td data-label="Thao tác">
+                          
                           <div class="table-bql-actions table-bql-actions--tight">
+                            <a href="#drawer-toa-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
                             <a href="#drawer-them-toa" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
                             <a href="#modal-xoa-toa-a" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa tòa A"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                           </div>
@@ -121,8 +127,11 @@
                         <td data-label="Mã">B</td>
                         <td data-label="Tên">Tòa B</td>
                         <td data-label="Tầng">6</td>
+                        <td data-label="Tổng phòng">56</td>
+                        <td data-label="Đang ở">198</td>
                         <td data-label="Thao tác">
                           <div class="table-bql-actions table-bql-actions--tight">
+                            <a href="#drawer-toa-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a>
                             <a href="#drawer-them-toa" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
                             <a href="#modal-xoa-toa-b" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa tòa B"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                           </div>
@@ -132,7 +141,7 @@
                   </table>
                 </div>
                 <div class="pagination-bql">
-                  <span>Hiển thị 1 đến 2 của 2 tòa</span>
+                  <span>Hiển thị 1 đến 2 của 2 tòa · Tổng <strong>104</strong> phòng · <strong>390</strong> SV đang ở</span>
                   <div class="pagination-bql__pages">
                     <button type="button" disabled>‹</button>
                     <button type="button" class="is-active">1</button>
@@ -152,6 +161,45 @@
       </div>
     </div>
 
+    <div id="drawer-toa-detail" class="mgmt-drawer-host">
+      <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="toa-detail-title" aria-modal="true">
+        
+        <div class="mgmt-drawer-head">
+          <h2 id="toa-detail-title">Chi tiết tòa nhà</h2>
+          <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
+        </div>
+        <div class="mgmt-drawer-body">
+          <section class="mgmt-drawer-section">
+            <h3>Thông tin tòa</h3>
+            <dl class="mgmt-dl mgmt-dl--grid">
+              <div><dt>Mã tòa</dt><dd>A</dd></div>
+              <div><dt>Tên tòa</dt><dd>Tòa A</dd></div>
+              
+              
+              
+              <div><dt>Số tầng</dt><dd>5</dd></div>
+              <div><dt>Tổng phòng</dt><dd>48</dd></div>
+              <div><dt>Phòng đang dùng</dt><dd>48</dd></div>
+              <div><dt>Tổng giường</dt><dd>192</dd></div>
+              <div><dt>SV đang ở</dt><dd>192</dd></div>
+              <div><dt>Giường trống</dt><dd>0</dd></div>
+              <div><dt>% lấp đầy</dt><dd>96%</dd></div>
+              <div><dt>Loại tòa</dt><dd>Nam</dd></div>
+              <div><dt>Năm đưa vào sử dụng</dt><dd>2018</dd></div>
+              <div><dt>Vị trí trong khu</dt><dd>Khu trung tâm — cạnh nhà xe</dd></div>
+              <div><dt>Trạng thái</dt><dd><span class="badge-bql badge-bql--success">Đang hoạt động</span></dd></div>
+              <div><dt>Ghi chú</dt><dd>Có thang máy tầng 1–3</dd></div>
+            </dl>
+          </section>
+        </div>
+        <div class="mgmt-drawer-foot">
+          <a href="thiet-lap-phong.html" class="btn-mgmt-block btn-mgmt-block--outline" style="text-align:center;text-decoration:none">Xem danh sách phòng</a>
+          <button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Cập nhật (demo)</button>
+        </div>
+      </aside>
+    </div>
+
     <div id="drawer-them-toa" class="mgmt-drawer-host">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="them-toa-title" aria-modal="true">
@@ -161,6 +209,11 @@
         </div>
         <div class="mgmt-drawer-body">
           <form data-demo="Đã lưu tòa nhà (demo — UC 2.1).">
+            
+            <div class="form-group">
+              <label for="building-code">Mã tòa</label>
+              <input id="building-code" placeholder="vd: A" required />
+            </div>
             <div class="form-group">
               <label for="building-name">Tên tòa nhà</label>
               <input id="building-name" placeholder="vd: Tòa A" required />
@@ -168,6 +221,26 @@
             <div class="form-group">
               <label for="building-floors">Số tầng</label>
               <input id="building-floors" type="number" min="1" value="5" required />
+            </div>
+            <div class="form-group">
+              <label for="building-type">Loại tòa</label>
+              <select id="building-type" required>
+                <option>Nam</option>
+                <option>Nữ</option>
+                <option>Hỗn hợp</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="building-year">Năm đưa vào sử dụng</label>
+              <input id="building-year" type="number" min="1990" value="2018" />
+            </div>
+            <div class="form-group">
+              <label for="building-location">Vị trí / mô tả</label>
+              <input id="building-location" placeholder="Khu trung tâm…" />
+            </div>
+            <div class="form-group">
+              <label for="building-note">Ghi chú</label>
+              <textarea id="building-note" rows="2"></textarea>
             </div>
           </form>
         </div>
