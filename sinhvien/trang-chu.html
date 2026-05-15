@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-bql-components.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
 
   </head>
   <body>
     <div id="student-app" class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>
+      <div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
       <div class="nav-section">Menu</div>
       <a href="trang-chu.html" class="nav-link is-active">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
@@ -27,6 +28,13 @@
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">
@@ -35,8 +43,31 @@
           </div>
         </header>
         <main class="content">
-          <h1 class="page-title">Xin chào</h1>
-          <p class="page-desc">Chọn chức năng (mỗi mục là một trang riêng).</p>
+          <section class="sv-welcome" aria-label="Thông tin sinh viên">
+            <div>
+              <h1>Xin chào, Nguyễn Văn An</h1>
+              <p>Phòng <strong>A-302</strong> · Tòa A · Học kỳ II 2025–2026. Tra cứu phòng, đóng phí và theo dõi đơn tại đây.</p>
+            </div>
+            <div class="sv-welcome__meta">
+              <span>MSSV</span>
+              <strong>2157010001</strong>
+            </div>
+          </section>
+          <div class="sv-stat-row">
+            <div class="sv-stat">
+              <div class="sv-stat__label">Hóa đơn chưa TT</div>
+              <div class="sv-stat__value sv-stat__value--warn">1 kỳ</div>
+            </div>
+            <div class="sv-stat">
+              <div class="sv-stat__label">Đơn chờ duyệt</div>
+              <div class="sv-stat__value">1</div>
+            </div>
+            <div class="sv-stat">
+              <div class="sv-stat__label">Thông báo mới</div>
+              <div class="sv-stat__value">2</div>
+            </div>
+          </div>
+          <h2 class="page-title" style="font-size:1.1rem;margin-bottom:12px">Chức năng nhanh</h2>
           <div class="tile-grid">
             <a href="tra-cuu-phong.html" class="tile">
               <div class="tile-icon" aria-hidden="true">🔍</div>

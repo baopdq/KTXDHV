@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-bql-components.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
+    <link rel="stylesheet" href="../css/ktx-print.css" />
 
   </head>
   <body>
     <div class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>
+      <div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
       <div class="nav-section">Menu</div>
       <a href="trang-chu.html" class="nav-link">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
@@ -27,6 +29,13 @@
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">
@@ -37,6 +46,13 @@
         <main class="content">
           <h1 class="page-title">Đơn đăng ký của tôi</h1>
           <p class="page-desc">Liên quan <code>UC 4.1</code> / <code>UC 4.3</code></p>
+          <div class="print-only print-only__head">
+            <strong>KTX Đại học Vinh — Cổng sinh viên</strong>
+            <span>Đơn đăng ký của tôi</span>
+          </div>
+          <p class="page-actions no-print">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">In</button>
+          </p>
           <div class="card table-cards-on-mobile">
             <div class="table-wrap">
               <table>

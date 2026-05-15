@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-bql-components.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
+    <link rel="stylesheet" href="../css/ktx-print.css" />
 
   </head>
   <body>
     <div class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>
+      <div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
       <div class="nav-section">Menu</div>
       <a href="trang-chu.html" class="nav-link">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
@@ -27,6 +29,13 @@
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">
@@ -37,6 +46,14 @@
         <main class="content">
           <h1 class="page-title">Hóa đơn &amp; thanh toán</h1>
           <p class="page-desc"><code>UC 5.2</code> · Nhắc nợ <code>UC 5.3</code></p>
+          <div class="print-only print-only__head">
+            <strong>KTX Đại học Vinh — Cổng sinh viên</strong>
+            <span>Hóa đơn &amp; thanh toán</span>
+          </div>
+          <p class="page-actions no-print">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">In lịch sử thanh toán</button>
+          </p>
+          <p class="hint no-print" style="margin: -8px 0 16px">Bấm <strong>In HĐ</strong> từng dòng để xuất phiếu / hóa đơn theo tháng (demo).</p>
           <div class="card table-cards-on-mobile">
             <div class="table-wrap">
               <table>
@@ -47,7 +64,7 @@
                     <th>Số tiền</th>
                     <th>Hạn</th>
                     <th>Trạng thái</th>
-                    <th></th>
+                    <th>Thao tác</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -57,7 +74,10 @@
                     <td data-label="Số tiền">485.000 ₫</td>
                     <td data-label="Hạn">10/05/2026</td>
                     <td data-label="Trạng thái"><span class="badge badge-warning">Chưa thanh toán</span></td>
-                    <td data-label="Thao tác"><a href="#" id="btn-vnpay" class="btn btn-primary btn-sm">VNPay (demo)</a></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <a href="#" class="btn btn-primary btn-sm">VNPay (demo)</a>
+                      <a href="#phieu-hd-042026" class="btn btn-ghost btn-sm">In HĐ</a>
+                    </td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">03/2026</td>
@@ -65,7 +85,7 @@
                     <td data-label="Số tiền">472.000 ₫</td>
                     <td data-label="Hạn">10/04/2026</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-032026" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">02/2026</td>
@@ -73,7 +93,7 @@
                     <td data-label="Số tiền">468.000 ₫</td>
                     <td data-label="Hạn">10/03/2026</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-022026" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">01/2026</td>
@@ -81,7 +101,7 @@
                     <td data-label="Số tiền">460.000 ₫</td>
                     <td data-label="Hạn">10/02/2026</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-012026" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">12/2025</td>
@@ -89,7 +109,7 @@
                     <td data-label="Số tiền">455.000 ₫</td>
                     <td data-label="Hạn">10/01/2026</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-122025" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">11/2025</td>
@@ -97,7 +117,7 @@
                     <td data-label="Số tiền">200.000 ₫</td>
                     <td data-label="Hạn">05/12/2025</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-112025-coc" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                   <tr>
                     <td data-label="Kỳ">11/2025</td>
@@ -105,7 +125,7 @@
                     <td data-label="Số tiền">448.000 ₫</td>
                     <td data-label="Hạn">10/12/2025</td>
                     <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
-                    <td data-label="Thao tác">—</td>
+                    <td data-label="Thao tác" class="no-print"><a href="#phieu-hd-112025" class="btn btn-ghost btn-sm">In HĐ</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -114,5 +134,181 @@
         </main>
       </div>
     </div>
+
+    <div id="phieu-hd-042026" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>04/2026</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/05/2026</dd>
+          <dt>Trạng thái</dt><dd>Chưa thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>485.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-032026" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>03/2026</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/04/2026</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>472.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-022026" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>02/2026</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/03/2026</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>468.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-012026" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>01/2026</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/02/2026</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>460.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-122025" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>12/2025</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/01/2026</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>455.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-112025-coc" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>11/2025</dd>
+          <dt>Nội dung</dt><dd>Cọc + phí đăng ký</dd>
+          <dt>Hạn</dt><dd>05/12/2025</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>200.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="phieu-hd-112025" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dhv.svg" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu thu / Hóa đơn KTX</h3>
+        <dl>
+          <dt>Sinh viên</dt><dd>Nguyễn Văn An (2157010001)</dd>
+          <dt>Phòng</dt><dd>A-302 · Tòa A</dd>
+          <dt>Kỳ</dt><dd>11/2025</dd>
+          <dt>Nội dung</dt><dd>Phòng + điện nước</dd>
+          <dt>Hạn</dt><dd>10/12/2025</dd>
+          <dt>Trạng thái</dt><dd>Đã thanh toán</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Số tiền</span><strong>448.000 ₫</strong></div>
+        <p class="invoice-sheet__note">Bản in minh họa — demo HTML tĩnh.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
     </body>
 </html>

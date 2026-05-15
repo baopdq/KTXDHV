@@ -570,20 +570,20 @@ body.role-sinhvien .nav-item--all {
 
 /* Cổng sinh viên KTX — chồng lên ../css/style.css */
 :root {
-  --st-primary: #047857;
-  --st-primary-dark: #065f46;
-  --st-accent: #0d9488;
+  --st-primary: #0369a1;
+  --st-primary-dark: #0c4a6e;
+  --st-accent: #075985;
   --st-warm: #fff7ed;
 }
 
 body.student-logged {
   --primary: var(--st-primary-dark);
   --primary-light: var(--st-accent);
-  background: #ecfdf5;
+  background: #f0f4f8;
 }
 
 .student-login.login-page {
-  background: linear-gradient(160deg, #065f46 0%, #0d9488 45%, #ccfbf1 100%);
+  background: linear-gradient(145deg, #0c4a6e 0%, #075985 40%, #e0f2fe 100%);
 }
 
 .student-login .login-card h1 {
@@ -592,7 +592,7 @@ body.student-logged {
 
 .student-app .sidebar {
   display: flex !important;
-  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+  background: #0c4a6e;
 }
 
 .student-app .sidebar-brand strong {
@@ -601,12 +601,12 @@ body.student-logged {
 
 .student-app .nav-link:hover,
 .student-app .nav-link.is-active {
-  border-left-color: #5eead4;
+  border-left-color: #38bdf8;
 }
 
 .student-app .role-badge {
-  background: #d1fae5;
-  color: #065f46;
+  background: #e0f2fe;
+  color: #0c4a6e;
 }
 
 .student-app .page-title {
@@ -817,11 +817,12 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 
 </style>
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
   </head>
   <body>
     <div class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>
+      <div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
       <div class="nav-section">Menu</div>
       <a href="trang-chu.html" class="nav-link">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
@@ -836,6 +837,13 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">

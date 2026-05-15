@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-bql-components.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
+    <link rel="stylesheet" href="../css/ktx-print.css" />
 
   </head>
   <body>
     <div class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand"><strong>Cổng SV · KTX DH Vinh</strong><span>Sinh viên</span></div>
+      <div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dhv.svg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
       <div class="nav-section">Menu</div>
       <a href="trang-chu.html" class="nav-link">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link is-active">Tra cứu phòng trống</a>
@@ -27,6 +29,13 @@
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dhv.svg" alt="" width="32" height="32" />
+              <div>
+                <strong>Đại học Vinh</strong>
+                <small>KTX · Cổng sinh viên</small>
+              </div>
+            </div>
             <span class="role-badge">Sinh viên</span>
           </div>
           <div class="topbar-actions">
@@ -39,6 +48,11 @@
           <p class="page-desc"><code>UC 2.3</code></p>
           <div class="card">
             <form data-demo="Đã tìm kiếm (demo).">
+              <div class="form-group">
+                <label for="sv-room-q">Số phòng</label>
+                <input id="sv-room-q" type="search" name="so-phong" placeholder="vd: A-302, B-105…" autocomplete="off" />
+                <p class="hint">Nhập mã phòng cụ thể hoặc để trống khi chỉ lọc theo tòa / giá.</p>
+              </div>
               <div class="form-row">
                 <div class="form-group">
                   <label>Khu / Tòa</label>
@@ -56,6 +70,13 @@
               <button type="button" class="btn btn-primary">Tìm kiếm</button>
             </form>
           </div>
+          <div class="print-only print-only__head">
+            <strong>KTX Đại học Vinh — Cổng sinh viên</strong>
+            <span>Tra cứu phòng trống — kết quả</span>
+          </div>
+          <p class="page-actions no-print">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">In kết quả</button>
+          </p>
           <div class="card">
             <h2>Kết quả</h2>
             <div class="table-wrap">
