@@ -71,7 +71,7 @@ CSS_NOJS = """
 
 def bql_sidebar(active: str) -> str:
     parts = [
-        '<div class="sidebar-brand sidebar-brand--logo"><img class="sidebar-brand__logo" src="assets/logo-dai-hoc-vinh.jpg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Trường Đại học Vinh</strong><span>KTX · Ban quản lý</span></div></div>'
+        '<div class="sidebar-brand sidebar-brand--logo"><img class="sidebar-brand__logo" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Trường Đại học Vinh</strong><span>KTX · Ban quản lý</span></div></div>'
     ]
     for item in BQL_NAV:
         if item[1] is None:
@@ -89,7 +89,7 @@ def bql_sidebar(active: str) -> str:
 
 def sv_sidebar(active: str) -> str:
     parts = [
-        '<div class="sidebar-brand sidebar-brand--sv"><img class="sidebar-brand__logo" src="../assets/logo-dai-hoc-vinh.jpg" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>'
+        '<div class="sidebar-brand sidebar-brand--sv sidebar-brand--logo"><img class="sidebar-brand__logo" src="../assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>'
     ]
     for item in SV_NAV:
         if item[1] is None:
@@ -161,7 +161,7 @@ def topbar_sv():
     return """<header class="topbar">
           <div class="topbar-left">
             <div class="student-topbar-brand">
-              <img src="../assets/logo-dai-hoc-vinh.jpg" alt="" width="32" height="32" />
+              <img src="../assets/logo-dai-hoc-vinh.webp" alt="" width="32" height="32" />
               <div>
                 <strong>Đại học Vinh</strong>
                 <small>KTX · Cổng sinh viên</small>
