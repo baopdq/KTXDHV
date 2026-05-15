@@ -229,6 +229,51 @@ a {
   opacity: 0.85;
 }
 
+/* Logo Đại học Vinh — hình tròn (mọi vị trí dùng file JPG) */
+img[src*="logo-dai-hoc-vinh"] {
+  border-radius: 50%;
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+/* Sidebar menu — logo Đại học Vinh (BQL + cổng SV) */
+.sidebar-brand--logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px !important;
+}
+
+.sidebar-brand--logo .sidebar-brand__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 3px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-brand--logo > div:last-child {
+  min-width: 0;
+}
+
+.sidebar-brand--logo strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.sidebar-brand--logo span {
+  display: block;
+  font-size: 0.72rem;
+  color: #bae6fd;
+  margin-top: 2px;
+  opacity: 1;
+}
+
 .nav-section {
   padding: 8px 12px 4px;
   font-size: 0.7rem;
@@ -561,7 +606,7 @@ body.role-sinhvien .nav-item--all {
 }
 
 
-/* Cổng sinh viên — cùng palette xanh dương với BQL */
+/* Cổng sinh viên — menu & palette giống BQL */
 body.student-logged {
   background: var(--bg);
 }
@@ -577,15 +622,28 @@ body.student-logged {
 .student-app .sidebar {
   display: flex !important;
   background: var(--primary);
+  color: #e0f2fe;
 }
 
-.student-app .sidebar-brand strong {
-  font-size: 1.05rem;
+.student-app .nav-link {
+  color: #bae6fd;
 }
 
 .student-app .nav-link:hover,
 .student-app .nav-link.is-active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
   border-left-color: #38bdf8;
+}
+
+.student-app .sidebar-brand strong {
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.student-app .sidebar-brand span {
+  color: #bae6fd;
+  opacity: 1;
 }
 
 .student-app .role-badge {
@@ -595,6 +653,14 @@ body.student-logged {
 
 .student-app .page-title {
   color: var(--primary);
+}
+
+.student-app .btn-primary {
+  background: var(--primary);
+}
+
+.student-app .btn-primary:hover {
+  background: var(--primary-light);
 }
 
 .student-app .tile:hover {
@@ -699,6 +765,59 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
   .app { grid-template-columns: 1fr; }
   .sidebar { display: flex !important; position: relative; width: 100%; max-width: none; }
   .menu-toggle { display: none !important; }
+}
+
+/* ----- Hub / trang không sidebar ----- */
+.hub-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.hub-brand__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 4px;
+  box-shadow: var(--shadow);
+  flex-shrink: 0;
+}
+
+.hub-brand h1 {
+  margin: 0 0 4px;
+  font-size: 1.35rem;
+  color: var(--primary);
+}
+
+.hub-brand p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.hub-brand--compact {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hub-brand--compact img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 3px;
+  box-shadow: var(--shadow);
+}
+
+.hub-brand--compact span {
+  font-weight: 600;
+  color: var(--primary);
 }
 
 /* ----- index.html (mục lục hub) ----- */

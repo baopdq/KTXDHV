@@ -1,40 +1,4 @@
-/* Cổng sinh viên — branding, trang chủ, phiếu hóa đơn */
-
-.sidebar-brand--sv {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding-bottom: 16px !important;
-}
-
-.sidebar-brand--sv .sidebar-brand__logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 10px;
-  object-fit: contain;
-  background: #fff;
-  padding: 4px;
-  flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.sidebar-brand--sv > div:last-child {
-  min-width: 0;
-}
-
-.sidebar-brand--sv strong {
-  display: block;
-  font-size: 0.95rem;
-  line-height: 1.25;
-  color: #fff;
-}
-
-.sidebar-brand--sv span {
-  display: block;
-  font-size: 0.72rem;
-  color: #bae6fd;
-  margin-top: 2px;
-}
+/* Cổng sinh viên — branding, trang chủ, phiếu hóa đơn (menu: xem .sidebar-brand--logo trong ktx-base.css) */
 
 .student-topbar-brand {
   display: flex;
@@ -46,10 +10,10 @@
 .student-topbar-brand img {
   width: 32px;
   height: 32px;
-  border-radius: 8px;
+  border-radius: 50%;
   background: #fff;
   padding: 2px;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .student-topbar-brand small {
@@ -185,6 +149,11 @@
 .invoice-sheet__brand img {
   width: 56px;
   height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #fff;
+  padding: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
 }
 
 .invoice-sheet__brand h2 {

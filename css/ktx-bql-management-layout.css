@@ -37,15 +37,15 @@
 .topbar--dashboard .dash-logo-img {
   width: 36px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: 50%;
   background: linear-gradient(145deg, var(--mgmt-navy-mid), #0369a1);
   color: #fff;
   display: grid;
   place-items: center;
   font-size: 1.1rem;
   flex-shrink: 0;
-  object-fit: contain;
-  padding: 3px;
+  object-fit: cover;
+  padding: 2px;
   box-sizing: border-box;
 }
 

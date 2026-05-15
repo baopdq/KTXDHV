@@ -29,15 +29,15 @@
 
 .login-brand__logo {
   display: inline-block;
-  max-width: min(200px, 85vw);
-  width: auto;
-  height: auto;
-  max-height: 96px;
-  border-radius: 10px;
+  width: 96px;
+  height: 96px;
+  max-width: min(96px, 28vw);
+  max-height: min(96px, 28vw);
+  object-fit: cover;
+  border-radius: 50%;
   box-shadow: 0 8px 24px rgba(12, 74, 110, 0.2);
-  object-fit: contain;
   background: #fff;
-  padding: 6px 8px;
+  padding: 4px;
   vertical-align: middle;
 }
 
@@ -171,6 +171,13 @@
     line-height: 1.2;
     text-align: center;
     max-width: 104px;
+    color: #bae6fd;
+  }
+
+  .student-app .nav-link:hover,
+  .student-app .nav-link.is-active {
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
   }
 
   .student-app .tile-grid {
