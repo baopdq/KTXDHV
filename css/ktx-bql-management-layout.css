@@ -548,3 +548,136 @@ a.mgmt-drawer-scrim {
   border: 1px solid #e2e8f0;
   color: #64748b;
 }
+
+/* Panel chi tiết (drawer) — 10–15 trường */
+.mgmt-drawer-panel--wide {
+  width: min(520px, 100%);
+}
+
+.mgmt-profile {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--mgmt-border);
+}
+
+.mgmt-profile__avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #e0f2fe, #bae6fd);
+  display: grid;
+  place-items: center;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--mgmt-navy-mid);
+  flex-shrink: 0;
+}
+
+.mgmt-profile__meta strong {
+  display: block;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.mgmt-profile__meta span {
+  font-size: 0.82rem;
+  color: #64748b;
+}
+
+.mgmt-profile__meta .badge-bql {
+  margin-top: 6px;
+}
+
+.mgmt-drawer-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--mgmt-border);
+}
+
+.mgmt-drawer-tabs span {
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+}
+
+.mgmt-drawer-tabs span.is-active {
+  color: var(--mgmt-navy-mid);
+  border-bottom-color: var(--mgmt-navy-mid);
+}
+
+.mgmt-drawer-section {
+  margin-top: 4px;
+}
+
+.mgmt-drawer-section h3 {
+  margin: 0 0 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--mgmt-navy-mid);
+}
+
+.mgmt-dl--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 18px;
+}
+
+.mgmt-dl--grid dt {
+  margin-bottom: 2px;
+}
+
+.mgmt-dl--grid dd {
+  margin: 0;
+}
+
+.mgmt-history-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.mgmt-history-list li {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--mgmt-border);
+  background: #f8fafc;
+  font-size: 0.85rem;
+}
+
+.mgmt-history-list time {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-bottom: 4px;
+}
+
+.btn-mgmt-block--outline {
+  background: #fff;
+  border: 1px solid var(--mgmt-border);
+  color: #334155;
+}
+
+.btn-mgmt-block--danger {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #b91c1c;
+}
+
+@media (max-width: 480px) {
+  .mgmt-dl--grid {
+    grid-template-columns: 1fr;
+  }
+}

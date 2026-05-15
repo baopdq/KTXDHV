@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý thanh toán — KTX Đại học Vinh</title>
+    <link rel="stylesheet" href="css/ktx-base.css" />
+    <link rel="stylesheet" href="css/ktx-bql-components.css" />
+    <link rel="stylesheet" href="css/ktx-ui.css" />
+    <link rel="stylesheet" href="css/ktx-print.css" />
+
+    <link rel="stylesheet" href="css/ktx-bql-management-layout.css" />
+  </head>
+  <body>
+    <div id="app" class="app is-visible">
+      <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand sidebar-brand--logo"><img class="sidebar-brand__logo" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Trường Đại học Vinh</strong><span>KTX · Ban quản lý</span></div></div>
+      <div class="nav-section">Tổng quan</div>
+      <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
+      <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
+      <div class="nav-section">Quản lý</div>
+      <a href="quan-ly-sinh-vien.html" class="nav-link">Quản lý sinh viên</a>
+      <a href="quan-ly-phong.html" class="nav-link">Quản lý phòng</a>
+      <a href="quan-ly-dang-ky.html" class="nav-link">Quản lý đăng ký</a>
+      <a href="quan-ly-hop-dong.html" class="nav-link">Quản lý hợp đồng</a>
+      <a href="vat-tu-phong.html" class="nav-link">Quản lý vật tư phòng</a>
+      <a href="quan-ly-thanh-toan.html" class="nav-link is-active">Quản lý thanh toán</a>
+      <div class="nav-section">Vận hành</div>
+      <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
+      <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <a href="phe-duyet-don.html" class="nav-link">Phê duyệt đơn (nhanh)</a>
+      <a href="thiet-lap-phong.html" class="nav-link">Thiết lập phòng KTX</a>
+      <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+      <a href="toa-nha.html" class="nav-link">Tòa nhà</a>
+      <div class="nav-section">Báo cáo — thống kê</div>
+      <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
+      <a href="thong-ke-doanh-thu.html" class="nav-link">Thống kê doanh thu</a>
+      <div class="nav-section">Hệ thống</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Thông báo</a>
+      <a href="quan-ly-tai-khoan.html" class="nav-link">Người dùng</a>
+      <a href="doi-mat-khau.html" class="nav-link">Cài đặt / đổi mật khẩu</a>
+      <a href="tich-hop.html" class="nav-link">VNPay & tích hợp</a>
+      </aside>
+      <div class="main">
+        <header class="topbar topbar--dashboard">
+          <div class="topbar-dash-left">
+            <img class="dash-logo-img" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="36" height="36" />
+            <span class="dash-logo-text">KTX — Đại học Vinh</span>
+          </div>
+          <div class="topbar-dash-title">Hệ thống quản lý ký túc xá</div>
+          <div class="topbar-dash-right">
+            <a href="quan-ly-thong-bao.html" class="dash-notify" title="Thông báo (demo)" aria-label="Thông báo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+              <span class="dash-notify-badge">3</span>
+            </a>
+            <div class="dash-user">
+              <span class="dash-user-avatar" aria-hidden="true">N</span>
+              <div class="dash-user-meta">
+                <strong>Nguyễn Văn A</strong>
+                <small>Cán bộ quản lý</small>
+              </div>
+            </div>
+            <div class="dash-quick-links">
+              <a href="doi-mat-khau.html" class="btn btn-ghost btn-sm">Đổi mật khẩu</a>
+              <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Đăng nhập</a>
+            </div>
+          </div>
+        </header>
+        <main class="content content--mgmt">
+          <div class="mgmt-page">
+            <nav class="mgmt-breadcrumb" aria-label="Breadcrumb"><a href="tong-quan.html">Trang chủ</a><span class="sep">/</span><span>Quản lý thanh toán</span></nav>
+            <header class="mgmt-head">
+              <div class="mgmt-head__title">
+                <h1 class="page-title">Quản lý thanh toán</h1>
+                <p class="mgmt-sub"><code>UC 5.1</code> — Theo dõi công nợ, thu phí và đối soát VNPay.</p>
+              </div>
+              <div class="mgmt-head__actions">
+                <button type="button" class="btn-mgmt-outline">Xuất báo cáo (demo)</button>
+              </div>
+            </header>
+            <div class="mgmt-split mgmt-split--rail">
+              <div>
+                <div class="mgmt-panel data-panel-bql">
+                  <form class="toolbar-bql" data-demo="Đã áp dụng bộ lọc (demo)." style="border-bottom: 0; padding-bottom: 0; margin-bottom: 14px">
+                    <label class="toolbar-bql__grow" style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #64748b">
+                      Tháng
+                      <input type="number" min="1" max="12" value="4" style="padding: 8px 10px; border-radius: 8px; border: 1px solid #d9d9d9; font: inherit" />
+                    </label>
+                    <label style="display: flex; flex-direction: column; gap: 4px; font-size: 12px; font-weight: 600; color: #64748b">
+                      Năm
+                      <input type="number" value="2026" style="padding: 8px 10px; border-radius: 8px; border: 1px solid #d9d9d9; font: inherit; width: 100px" />
+                    </label>
+                    <button type="button" class="btn-bql btn-bql-primary">Áp dụng</button>
+                    <button type="button" class="btn-bql btn-bql-default">Làm mới</button>
+                  </form>
+                  <h2 class="mgmt-panel__title">Chi tiết theo tòa</h2>
+                  <div class="table-wrap">
+                    <table class="table-bql table-cards-on-mobile">
+                      <thead><tr>
+      <th>STT</th><th>Mã phiếu</th><th>MSSV</th><th>Họ tên</th><th>Phòng</th>
+      <th>Kỳ thu</th><th>Tổng tiền</th><th>Hạn TT</th><th>Trạng thái</th><th>Chức năng</th>
+    </tr></thead>
+                      <tbody>
+<tr><td>1</td><td>PT-0526-001</td><td>221001</td><td>Nguyễn Văn An</td><td>A-302</td><td>05/2026</td><td>1.420.000 ₫</td><td>25/05/2026</td><td><span class="badge-bql badge-bql--warning">Chưa thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+<tr><td>2</td><td>PT-0526-002</td><td>221002</td><td>Trần Thị Bình</td><td>A-302</td><td>05/2026</td><td>1.420.000 ₫</td><td>25/05/2026</td><td><span class="badge-bql badge-bql--success">Đã thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+<tr><td>3</td><td>PT-0426-001</td><td>221001</td><td>Nguyễn Văn An</td><td>A-302</td><td>04/2026</td><td>1.400.000 ₫</td><td>25/04/2026</td><td><span class="badge-bql badge-bql--success">Đã thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pagination-bql">
+                    <span>2 dòng tổng hợp (minh họa)</span>
+                    <a href="#" id="btn-export-revenue" class="btn-bql btn-bql-default">Xuất Excel (demo)</a>
+                  </div>
+                </div>
+              </div>
+              <aside class="mgmt-rail">
+                <div class="mgmt-panel">
+                  <h2 class="mgmt-panel__title">Chỉ số</h2>
+                  <div class="mgmt-stat">
+                    <span class="mgmt-stat__icon mgmt-stat__icon--blue" aria-hidden="true">💰</span>
+                    <div class="mgmt-stat__body">
+                      <strong>1.258.400.000 ₫</strong>
+                      <span>Tổng đã thu</span>
+                    </div>
+                  </div>
+                  <div class="mgmt-stat">
+                    <span class="mgmt-stat__icon mgmt-stat__icon--amber" aria-hidden="true">📉</span>
+                    <div class="mgmt-stat__body">
+                      <strong>42,15 tr ₫</strong>
+                      <span>Công nợ</span>
+                    </div>
+                  </div>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    </body>
+</html>

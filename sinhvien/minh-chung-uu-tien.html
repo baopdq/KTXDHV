@@ -765,6 +765,8 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
 </style>
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-print.css" />
+
     <link rel="stylesheet" href="../css/ktx-student.css" />
   </head>
   <body>
@@ -841,126 +843,6 @@ body:not(.role-admin) .bql-nav-admin { display: none !important; }
         </main>
       </div>
     </div>
-    <script>
-(function () {
-  var CHARS = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
-  var LEN = 5;
-  var canvas = document.getElementById("captcha-canvas");
-  var ctx = canvas && canvas.getContext("2d");
-  var input = document.getElementById("captcha-input");
-  var btnRefresh = document.getElementById("captcha-refresh");
-  var btnUpload = document.getElementById("btn-upload-minh-chung");
-  var errEl = document.getElementById("captcha-error");
-  var form = document.getElementById("form-minh-chung");
-  var fileInput = document.getElementById("file-minh-chung");
-  var secret = "";
-
-  function randomChar() {
-    return CHARS[Math.floor(Math.random() * CHARS.length)];
-  }
-
-  function generateSecret() {
-    var s = "";
-    for (var i = 0; i < LEN; i++) s += randomChar();
-    return s;
-  }
-
-  function drawCaptcha(code) {
-    if (!ctx || !canvas) return;
-    var w = canvas.width;
-    var h = canvas.height;
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = "#f0f9ff";
-    ctx.fillRect(0, 0, w, h);
-
-    for (var n = 0; n < 12; n++) {
-      ctx.strokeStyle = n % 2 ? "rgba(45, 212, 191, 0.35)" : "rgba(56, 189, 248, 0.4)";
-      ctx.lineWidth = 1;
-      ctx.beginPath();
-      ctx.moveTo(Math.random() * w, Math.random() * h);
-      ctx.lineTo(Math.random() * w, Math.random() * h);
-      ctx.stroke();
-    }
-
-    ctx.strokeStyle = "rgba(100, 116, 139, 0.55)";
-    ctx.lineWidth = 2.2;
-    ctx.beginPath();
-    var y0 = h * 0.35 + Math.random() * 8;
-    for (var x = 0; x <= w; x += 6) {
-      var y = y0 + Math.sin(x * 0.08 + Math.random()) * 6;
-      if (x === 0) ctx.moveTo(x, y);
-      else ctx.lineTo(x, y);
-    }
-    ctx.stroke();
-
-    ctx.font = "bold 22px Segoe UI, system-ui, sans-serif";
-    ctx.textBaseline = "middle";
-    var spacing = w / (code.length + 1);
-    for (var i = 0; i < code.length; i++) {
-      var ch = code[i];
-      var x = spacing * (i + 0.5);
-      var y = h / 2 + (Math.random() - 0.5) * 6;
-      var rot = (Math.random() - 0.5) * 0.35;
-      ctx.save();
-      ctx.translate(x, y);
-      ctx.rotate(rot);
-      ctx.fillStyle = "#0f172a";
-      ctx.fillText(ch, -ctx.measureText(ch).width / 2, 0);
-      ctx.restore();
-    }
-  }
-
-  function regenerate() {
-    secret = generateSecret();
-    drawCaptcha(secret);
-  }
-
-  function refresh() {
-    regenerate();
-    if (input) {
-      input.value = "";
-      input.focus();
-    }
-    if (errEl) errEl.classList.add("hidden");
-  }
-
-  function normalize(s) {
-    return (s || "").replace(/\s/g, "").toUpperCase();
-  }
-
-  function validateCaptcha() {
-    if (!input) return false;
-    return normalize(input.value) === secret;
-  }
-
-  if (btnRefresh) btnRefresh.addEventListener("click", refresh);
-
-  if (btnUpload && form) {
-    btnUpload.addEventListener("click", function () {
-      if (errEl) errEl.classList.add("hidden");
-      if (fileInput && !fileInput.files.length) {
-        fileInput.reportValidity();
-        return;
-      }
-      if (!validateCaptcha()) {
-        if (errEl) errEl.classList.remove("hidden");
-        regenerate();
-        if (input) input.value = "";
-        return;
-      }
-      alert(form.getAttribute("data-demo") || "OK");
-      refresh();
-    });
-  }
-
-  if (input) {
-    input.addEventListener("input", function () {
-      if (errEl) errEl.classList.add("hidden");
-    });
-  }
-
-  refresh();
-})();
-    </script>
+    
     </body>
 </html>

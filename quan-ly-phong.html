@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý phòng — KTX Đại học Vinh</title>
+    <link rel="stylesheet" href="css/ktx-base.css" />
+    <link rel="stylesheet" href="css/ktx-bql-components.css" />
+    <link rel="stylesheet" href="css/ktx-ui.css" />
+    <link rel="stylesheet" href="css/ktx-print.css" />
+
+    <link rel="stylesheet" href="css/ktx-bql-management-layout.css" />
+  </head>
+  <body>
+    <div id="app" class="app is-visible">
+      <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand sidebar-brand--logo"><img class="sidebar-brand__logo" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Trường Đại học Vinh</strong><span>KTX · Ban quản lý</span></div></div>
+      <div class="nav-section">Tổng quan</div>
+      <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
+      <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
+      <div class="nav-section">Quản lý</div>
+      <a href="quan-ly-sinh-vien.html" class="nav-link">Quản lý sinh viên</a>
+      <a href="quan-ly-phong.html" class="nav-link is-active">Quản lý phòng</a>
+      <a href="quan-ly-dang-ky.html" class="nav-link">Quản lý đăng ký</a>
+      <a href="quan-ly-hop-dong.html" class="nav-link">Quản lý hợp đồng</a>
+      <a href="vat-tu-phong.html" class="nav-link">Quản lý vật tư phòng</a>
+      <a href="quan-ly-thanh-toan.html" class="nav-link">Quản lý thanh toán</a>
+      <div class="nav-section">Vận hành</div>
+      <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
+      <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <a href="phe-duyet-don.html" class="nav-link">Phê duyệt đơn (nhanh)</a>
+      <a href="thiet-lap-phong.html" class="nav-link">Thiết lập phòng KTX</a>
+      <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+      <a href="toa-nha.html" class="nav-link">Tòa nhà</a>
+      <div class="nav-section">Báo cáo — thống kê</div>
+      <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
+      <a href="thong-ke-doanh-thu.html" class="nav-link">Thống kê doanh thu</a>
+      <div class="nav-section">Hệ thống</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Thông báo</a>
+      <a href="quan-ly-tai-khoan.html" class="nav-link">Người dùng</a>
+      <a href="doi-mat-khau.html" class="nav-link">Cài đặt / đổi mật khẩu</a>
+      <a href="tich-hop.html" class="nav-link">VNPay & tích hợp</a>
+      </aside>
+      <div class="main">
+        <header class="topbar topbar--dashboard">
+          <div class="topbar-dash-left">
+            <img class="dash-logo-img" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="36" height="36" />
+            <span class="dash-logo-text">KTX — Đại học Vinh</span>
+          </div>
+          <div class="topbar-dash-title">Hệ thống quản lý ký túc xá</div>
+          <div class="topbar-dash-right">
+            <a href="quan-ly-thong-bao.html" class="dash-notify" title="Thông báo (demo)" aria-label="Thông báo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+              <span class="dash-notify-badge">3</span>
+            </a>
+            <div class="dash-user">
+              <span class="dash-user-avatar" aria-hidden="true">N</span>
+              <div class="dash-user-meta">
+                <strong>Nguyễn Văn A</strong>
+                <small>Cán bộ quản lý</small>
+              </div>
+            </div>
+            <div class="dash-quick-links">
+              <a href="doi-mat-khau.html" class="btn btn-ghost btn-sm">Đổi mật khẩu</a>
+              <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Đăng nhập</a>
+            </div>
+          </div>
+        </header>
+        <main class="content content--mgmt">
+          <div class="mgmt-page">
+            <nav class="mgmt-breadcrumb" aria-label="Breadcrumb"><a href="tong-quan.html">Trang chủ</a><span class="sep">/</span><span>Quản lý phòng</span></nav>
+            <header class="mgmt-head">
+              <div class="mgmt-head__title">
+                <h1 class="page-title">Quản lý phòng</h1>
+                <p class="mgmt-sub"><code>UC 2.2</code> — Danh mục phòng, sức chứa và trạng thái lấp đầy.</p>
+              </div>
+              <div class="mgmt-head__actions">
+                <a href="#drawer-them-phong" class="btn-mgmt-primary">+ Thêm phòng</a>
+                <button type="button" class="btn-mgmt-outline">Xuất Excel (demo)</button>
+              </div>
+            </header>
+            <div class="mgmt-panel data-panel-bql">
+              <form class="toolbar-bql" style="border-bottom: 0; padding-bottom: 0; margin-bottom: 14px">
+                <div class="toolbar-bql__grow toolbar-bql__search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+                  <input type="search" placeholder="Tìm theo số phòng…" autocomplete="off" />
+                </div>
+                <select aria-label="Tòa"><option>Tất cả</option><option>Tòa A</option><option>Tòa B</option></select>
+                <select aria-label="Loại"><option>Loại phòng</option><option>Tiêu chuẩn</option><option>VIP</option></select>
+                <button type="button" class="btn-bql btn-bql-primary">Tìm kiếm</button>
+              </form>
+              <div class="table-wrap">
+                <table class="table-bql table-cards-on-mobile">
+                  <thead>
+                        <tr>
+                          <th>STT</th><th>Mã phòng</th><th>Tòa</th><th>Tầng</th><th>Loại</th>
+                          <th>Sức chứa</th><th>Đã ở</th><th>Trống</th><th>Giá/tháng</th><th>Trạng thái</th><th>Chức năng</th>
+                        </tr>
+                      </thead>
+                  <tbody>
+                        <tr><td>1</td><td>A-302</td><td>A</td><td>3</td><td>Tiêu chuẩn</td><td>4</td><td>4</td><td>0</td><td>350.000 ₫</td><td><span class="badge-bql badge-bql--success">Đang sử dụng</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                        <tr><td>2</td><td>A-401</td><td>A</td><td>4</td><td>Tiêu chuẩn</td><td>4</td><td>3</td><td>1</td><td>350.000 ₫</td><td><span class="badge-bql badge-bql--success">Đang sử dụng</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                        <tr><td>3</td><td>B-105</td><td>B</td><td>1</td><td>VIP</td><td>2</td><td>2</td><td>0</td><td>500.000 ₫</td><td><span class="badge-bql badge-bql--success">Đang sử dụng</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                        <tr><td>4</td><td>B-210</td><td>B</td><td>2</td><td>Tiêu chuẩn</td><td>4</td><td>2</td><td>2</td><td>350.000 ₫</td><td><span class="badge-bql badge-bql--warning">Bảo trì</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                        <tr><td>5</td><td>C-118</td><td>C</td><td>1</td><td>Tiêu chuẩn</td><td>4</td><td>1</td><td>3</td><td>320.000 ₫</td><td><span class="badge-bql badge-bql--success">Đang sử dụng</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-phong-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                      </tbody>
+                </table>
+              </div>
+              <div class="pagination-bql">
+                <span>Hiển thị 1 đến 2 của 2 phòng (mẫu)</span>
+                <div class="pagination-bql__pages">
+                  <button type="button" disabled>‹</button>
+                  <button type="button" class="is-active">1</button>
+                  <button type="button" disabled>›</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+
+    <div id="drawer-phong-detail" class="mgmt-drawer-host">
+      <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="drawer-phong-detail-title" aria-modal="true">
+        <div class="mgmt-drawer-head">
+          <h2 id="drawer-phong-detail-title">Chi tiết phòng</h2>
+          <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
+        </div>
+        <div class="mgmt-drawer-body">
+          <section class="mgmt-drawer-section">
+            <h3>Thông tin phòng</h3>
+            <dl class="mgmt-dl mgmt-dl--grid">
+              <div><dt>Mã phòng</dt><dd>A-302</dd></div>
+              <div><dt>Tòa</dt><dd>Tòa A</dd></div>
+              <div><dt>Tầng</dt><dd>3</dd></div>
+              <div><dt>Loại phòng</dt><dd>Tiêu chuẩn 4 người</dd></div>
+              <div><dt>Diện tích</dt><dd>28 m²</dd></div>
+              <div><dt>Sức chứa</dt><dd>4 giường</dd></div>
+              <div><dt>Đã ở</dt><dd>4</dd></div>
+              <div><dt>Còn trống</dt><dd>0</dd></div>
+              <div><dt>Giá phòng/tháng</dt><dd>350.000 ₫</dd></div>
+              <div><dt>Tiền điện</dt><dd>Theo đồng hồ</dd></div>
+              <div><dt>Tiền nước</dt><dd>20.000 ₫/người</dd></div>
+              <div><dt>Trạng thái</dt><dd>Đang sử dụng</dd></div>
+              <div><dt>Ngày thiết lập</dt><dd>15/08/2023</dd></div>
+              <div><dt>Ghi chú</dt><dd>Có máy lạnh</dd></div>
+            </dl>
+          </section>
+        </div>
+        <div class="mgmt-drawer-foot"><button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Cập nhật (demo)</button></div>
+      </aside>
+    </div>    </body>
+</html>

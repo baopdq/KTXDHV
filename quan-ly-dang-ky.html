@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý đăng ký — KTX Đại học Vinh</title>
+    <link rel="stylesheet" href="css/ktx-base.css" />
+    <link rel="stylesheet" href="css/ktx-bql-components.css" />
+    <link rel="stylesheet" href="css/ktx-ui.css" />
+    <link rel="stylesheet" href="css/ktx-print.css" />
+    <link rel="stylesheet" href="css/ktx-bql-management-layout.css" />
+
+  </head>
+  <body>
+    <div id="app" class="app is-visible">
+      <aside id="sidebar" class="sidebar">
+      <div class="sidebar-brand sidebar-brand--logo"><img class="sidebar-brand__logo" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Trường Đại học Vinh</strong><span>KTX · Ban quản lý</span></div></div>
+      <div class="nav-section">Tổng quan</div>
+      <a href="tong-quan.html" class="nav-link">Trang chủ</a>
+      <a href="so-do-uc.html" class="nav-link">Sơ đồ UC</a>
+      <a href="sinhvien/trang-chu.html" class="nav-link">Cổng sinh viên →</a>
+      <div class="nav-section">Quản lý</div>
+      <a href="quan-ly-sinh-vien.html" class="nav-link">Quản lý sinh viên</a>
+      <a href="quan-ly-phong.html" class="nav-link">Quản lý phòng</a>
+      <a href="quan-ly-dang-ky.html" class="nav-link is-active">Quản lý đăng ký</a>
+      <a href="quan-ly-hop-dong.html" class="nav-link">Quản lý hợp đồng</a>
+      <a href="vat-tu-phong.html" class="nav-link">Quản lý vật tư phòng</a>
+      <a href="quan-ly-thanh-toan.html" class="nav-link">Quản lý thanh toán</a>
+      <div class="nav-section">Vận hành</div>
+      <a href="ho-so-noi-tru.html" class="nav-link">Hồ sơ nội trú</a>
+      <a href="diem-danh.html" class="nav-link">Điểm danh sinh viên</a>
+      <a href="phe-duyet-don.html" class="nav-link">Phê duyệt đơn (nhanh)</a>
+      <a href="thiet-lap-phong.html" class="nav-link">Thiết lập phòng KTX</a>
+      <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+      <a href="toa-nha.html" class="nav-link">Tòa nhà</a>
+      <div class="nav-section">Báo cáo — thống kê</div>
+      <a href="thong-ke-lap-day.html" class="nav-link">Thống kê lấp đầy</a>
+      <a href="thong-ke-doanh-thu.html" class="nav-link">Thống kê doanh thu</a>
+      <div class="nav-section">Hệ thống</div>
+      <a href="quan-ly-thong-bao.html" class="nav-link">Thông báo</a>
+      <a href="quan-ly-tai-khoan.html" class="nav-link">Người dùng</a>
+      <a href="doi-mat-khau.html" class="nav-link">Cài đặt / đổi mật khẩu</a>
+      <a href="tich-hop.html" class="nav-link">VNPay & tích hợp</a>
+      </aside>
+      <div class="main">
+        <header class="topbar topbar--dashboard">
+          <div class="topbar-dash-left">
+            <img class="dash-logo-img" src="assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="36" height="36" />
+            <span class="dash-logo-text">KTX — Đại học Vinh</span>
+          </div>
+          <div class="topbar-dash-title">Hệ thống quản lý ký túc xá</div>
+          <div class="topbar-dash-right">
+            <a href="quan-ly-thong-bao.html" class="dash-notify" title="Thông báo (demo)" aria-label="Thông báo">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" /><path d="M13.73 21a2 2 0 0 1-3.46 0" /></svg>
+              <span class="dash-notify-badge">3</span>
+            </a>
+            <div class="dash-user">
+              <span class="dash-user-avatar" aria-hidden="true">N</span>
+              <div class="dash-user-meta">
+                <strong>Nguyễn Văn A</strong>
+                <small>Cán bộ quản lý</small>
+              </div>
+            </div>
+            <div class="dash-quick-links">
+              <a href="doi-mat-khau.html" class="btn btn-ghost btn-sm">Đổi mật khẩu</a>
+              <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Đăng nhập</a>
+            </div>
+          </div>
+        </header>
+        <main class="content content--mgmt">
+          <div class="mgmt-page">
+            <nav class="mgmt-breadcrumb" aria-label="Breadcrumb"><a href="tong-quan.html">Trang chủ</a><span class="sep">/</span><span>Quản lý đăng ký</span></nav>
+            <header class="mgmt-head">
+              <div class="mgmt-head__title">
+                <h1 class="page-title">Quản lý đăng ký</h1>
+                <p class="mgmt-sub"><code>UC 4.3</code> — Tiếp nhận, duyệt và theo dõi đơn đăng ký ở KTX.</p>
+              </div>
+              <div class="mgmt-head__actions">
+                <button type="button" class="btn-mgmt-outline">Xuất Excel (demo)</button>
+                <button type="button" class="btn-mgmt-outline" onclick="window.print()">In danh sách</button>
+              </div>
+            </header>
+            <div class="mgmt-panel data-panel-bql">
+              <form class="toolbar-bql" style="border-bottom: 0; padding-bottom: 0; margin-bottom: 14px">
+                <div class="toolbar-bql__grow toolbar-bql__search">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8" /><path d="m21 21-4.3-4.3" /></svg>
+                  <input type="search" placeholder="Tìm theo MSSV…" autocomplete="off" />
+                </div>
+                <select aria-label="Phòng">
+                  <option>Tất cả phòng</option>
+                  <option>A-302</option>
+                  <option>B-105</option>
+                </select>
+                <select aria-label="Trạng thái">
+                  <option>Tất cả</option>
+                  <option>Chờ duyệt</option>
+                  <option>Đã duyệt</option>
+                  <option>Đã từ chối</option>
+                </select>
+                <button type="button" class="btn-bql btn-bql-primary">Tìm kiếm</button>
+                <button type="button" class="btn-bql btn-bql-default">Làm mới</button>
+              </form>
+              <div class="table-wrap">
+                <table class="table-bql table-cards-on-mobile">
+                  <thead><tr>
+      <th>STT</th><th>Mã đơn</th><th>MSSV</th><th>Họ tên</th><th>Phòng DK</th>
+      <th>Ngày nộp</th><th>Ưu tiên</th><th>Trạng thái</th><th>Chức năng</th>
+    </tr></thead>
+                  <tbody>
+<tr><td>1</td><td>DK-2401</td><td>221045</td><td>Lê Văn Cường</td><td>A-302</td><td>10/05/2026</td><td>Có</td><td><span class="badge-bql badge-bql--warning">Chờ duyệt</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+<tr><td>2</td><td>DK-2402</td><td>221112</td><td>Hoàng Văn Em</td><td>B-105</td><td>11/05/2026</td><td>Không</td><td><span class="badge-bql badge-bql--warning">Chờ duyệt</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+<tr><td>3</td><td>DK-2398</td><td>221203</td><td>Đặng Văn Giang</td><td>A-401</td><td>08/05/2026</td><td>Không</td><td><span class="badge-bql badge-bql--success">Đã duyệt</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+<tr><td>4</td><td>DK-2390</td><td>221088</td><td>Phạm Thị Dung</td><td>B-210</td><td>01/05/2026</td><td>Có</td><td><span class="badge-bql badge-bql--muted">Đã từ chối</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-dk-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                      </tbody>
+                </table>
+              </div>
+              <div class="pagination-bql">
+                <span>Hiển thị 1 đến 7 của 7 đơn</span>
+                <div class="pagination-bql__pages">
+                  <button type="button" disabled aria-label="Trước">‹</button>
+                  <button type="button" class="is-active">1</button>
+                  <button type="button" disabled aria-label="Sau">›</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+
+    <div id="drawer-dk-detail" class="mgmt-drawer-host">
+      <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="drawer-dk-detail-title" aria-modal="true">
+        <div class="mgmt-drawer-head">
+          <h2 id="drawer-dk-detail-title">Chi tiết đơn đăng ký</h2>
+          <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
+        </div>
+        <div class="mgmt-drawer-body">
+          <section class="mgmt-drawer-section">
+            <h3>Thông tin đơn</h3>
+            <dl class="mgmt-dl mgmt-dl--grid">
+              <div><dt>Mã đơn</dt><dd>DK-2401</dd></div>
+              <div><dt>MSSV</dt><dd>221045</dd></div>
+              <div><dt>Họ tên</dt><dd>Lê Văn Cường</dd></div>
+              <div><dt>Khoa</dt><dd>Điện — Kỹ thuật</dd></div>
+              <div><dt>Khóa</dt><dd>K63</dd></div>
+              <div><dt>Lớp</dt><dd>ĐT63A</dd></div>
+              <div><dt>Phòng đăng ký</dt><dd>A-302</dd></div>
+              <div><dt>Ngày nộp</dt><dd>10/05/2026 14:32</dd></div>
+              <div><dt>Loại đăng ký</dt><dd>Nội trú học kỳ II</dd></div>
+              <div><dt>Minh chứng ưu tiên</dt><dd>Hộ nghèo — đã nộp</dd></div>
+              <div><dt>Trạng thái</dt><dd>Chờ duyệt</dd></div>
+              <div><dt>Người duyệt</dt><dd>—</dd></div>
+              <div><dt>Ngày duyệt</dt><dd>—</dd></div>
+              <div><dt>Lý do từ chối</dt><dd>—</dd></div>
+            </dl>
+          </section>
+        </div>
+        <div class="mgmt-drawer-foot"><button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Cập nhật (demo)</button><a href="#" class="btn-bql btn-bql-primary" style="margin-top:8px">Duyệt (demo)</a></div>
+      </aside>
+    </div>    </body>
+</html>
