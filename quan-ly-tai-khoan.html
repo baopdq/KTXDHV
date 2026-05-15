@@ -78,11 +78,11 @@
                 <h1 class="page-title">Quản lý tài khoản người dùng</h1>
                 <p class="mgmt-sub"><code>UC 1.1</code> · <code>UC 1.3</code> · <code>UC 1.4</code> — Chỉ quản trị hệ thống.</p>
               </div>
-                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#modal-add-user" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm tài khoản</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách tài khoản hệ thống theo vai trò và trạng thái hoạt động.">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -342,6 +342,32 @@
           <a href="#" class="btn btn-danger">Xác nhận xóa (demo)</a>
         </div>
       </div>
+    </div>
+
+        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất danh sách người dùng · tài khoản</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Quản lý tài khoản · UC 1.1 / 1.3 / 1.4</dd>
+          <dt>Nội dung file xuất</dt><dd>Tên đăng nhập, họ tên, vai trò (quản trị/cán bộ/SV), trạng thái, email/liên hệ (khi có).</dd>
+          <dt>Bộ lọc đi kèm</dt><dd>Theo vai trò và «Hoạt động/Đã khóa».</dd>
+          <dt>Định dạng gợi ý</dt><dd>Excel — ẩn cột nhạy cảm khi export (thiết kế bảo mật).</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSTK-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Cảnh báo</span><strong>Chỉ dùng nội bộ Bộ phận CNTT / BQL được ủy quyền</strong></div>
+        <p class="invoice-sheet__note">Kèm Audit log khi có hệ thống thật.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
     </div>
 
 </body>

@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý sinh viên</h1>
                 <p class="mgmt-sub"><code>UC 6.1</code> — Danh sách, tra cứu và cập nhật hồ sơ sinh viên nội trú KTX.</p>
               </div>
-                                          <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                      <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-sv" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm sinh viên</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách sinh viên theo bộ lọc; nhóm và lọc theo tòa · phòng đang ở (CSV/Excel demo).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -370,6 +370,34 @@
           <a href="#" class="btn btn-danger">Xác nhận xóa (demo)</a>
         </div>
       </div>
+    </div>
+
+        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất danh sách sinh viên nội trú</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Quản lý sinh viên · UC 6.1</dd>
+          <dt>Nội dung file xuất</dt><dd>MSSV, họ tên, khoa, khóa, phòng đang ở, ngày đăng ký KTX, trạng thái (đang ở/đã trả/chờ duyệt), SĐT, ghi chú.</dd>
+          <dt>Phạm vi theo tòa · phòng</dt><dd>Áp dụng bộ lọc và cột «Phòng» trên danh sách: có thể xuất theo một phòng cụ thể (vd. A-302), theo một tòa (mọi phòng có mã A-…), hoặc toàn KTX.</dd>
+          <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tìm kiếm, khoa, khóa, trạng thái — đúng như thanh công cụ phía trên bảng.</dd>
+          <dt>Định dạng gợi ý</dt><dd>Microsoft Excel (.xlsx) · CSV UTF-8 (mẫu demo).</dd>
+          <dt>Nhập ngược chiều</dt><dd>Nhập CSV/Excel mẫu để bổ sung/cập nhật hàng loạt (khi triển khai backend).</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSSV-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Ước tính số dòng</span><strong>Theo số dòng đang hiển thị trên lưới (demo)</strong></div>
+        <p class="invoice-sheet__note">Phiếu minh họa — dữ liệu thật sẽ khớp bộ lọc và quyền người dùng khi có API.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
     </div>
 
 </body>

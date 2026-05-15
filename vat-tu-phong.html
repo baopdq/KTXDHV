@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý vật tư phòng</h1>
                 <p class="mgmt-sub"><code>UC 3.1</code> · <code>UC 3.2</code></p>
               </div>
-                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-vattu" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm vật tư</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất kiểm kê vật tư phòng (theo mã VT, phòng, số lượng, tình trạng).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -311,6 +311,32 @@
           <a href="#" class="btn btn-danger">Xác nhận xóa (demo)</a>
         </div>
       </div>
+    </div>
+
+        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất kiểm kê vật tư phòng</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Quản lý vật tư phòng · UC 3.1 · UC 3.2</dd>
+          <dt>Nội dung file xuất</dt><dd>Mã vật tư, tên, phòng đặt VT, số lượng, tình trạng (tốt/hỏng/đang sửa), ngày cập nhật.</dd>
+          <dt>Phạm vi theo phòng</dt><dd>Lọc «Phòng» hoặc xuất toàn KTX để báo hỏng và mua sắm bổ sung.</dd>
+          <dt>Định dạng gợi ý</dt><dd>Excel (.xlsx) — nhóm Sheet theo tòa/phòng (khi triển khai).</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSVT-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Mục đích</span><strong>Báo cáo bảo trì · đối soát tài sản</strong></div>
+        <p class="invoice-sheet__note">Có thể in phiếu giao nhận kèm chữ ký BQL.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
     </div>
 
 </body>

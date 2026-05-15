@@ -77,11 +77,11 @@
                 <h1 class="page-title">Thiết lập phòng KTX</h1>
                 <p class="mgmt-sub"><code>UC 2.2</code></p>
               </div>
-                            <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-phong" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm phòng</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất cấu hình phòng KTX đang thiết lập (theo tòa, loại, giá, sức chứa).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -246,5 +246,31 @@
         </div>
       </div>
     </div>
-    </body>
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất cấu hình · thiết lập phòng KTX</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Thiết lập phòng · UC 2.2</dd>
+          <dt>Nội dung file xuất</dt><dd>Phòng, tòa, loại giường/phòng, sức chứa quy định, đơn giá theo học kỳ·tháng (theo mockup hiện tại).</dd>
+          <dt>Phạm vi theo tòa</dt><dd>Lọc «Tòa» + «Loại phòng» trên thanh công cụ.</dd>
+          <dt>Định dạng gợi ý</dt><dd>Excel — dùng làm mẫu import hàng loạt khi mở đợt KTX mới.</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSPHCFG-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Ghi chú</span><strong>Khớp với «Quản lý phòng» sau khi duyệt cấu hình</strong></div>
+        <p class="invoice-sheet__note">Khác trang «Quản lý phòng» ở chỗ tập trung thiết lập giá và quy tắc trước khi vận hành.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+</body>
 </html>

@@ -140,6 +140,28 @@
   .print-only {
     display: block !important;
   }
+
+  /* Phieu xuat BQL (#phieu-xuat-mgmt): in giong cong sinh vien */
+  .invoice-sheet-host {
+    display: block !important;
+    position: static !important;
+    padding: 0 !important;
+  }
+
+  .invoice-sheet-scrim {
+    display: none !important;
+  }
+
+  .invoice-sheet .invoice-sheet__foot {
+    display: none !important;
+  }
+
+  .invoice-sheet {
+    box-shadow: none !important;
+    max-height: none !important;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
 }
 
 .print-only {

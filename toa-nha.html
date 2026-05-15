@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý tòa nhà</h1>
                 <p class="mgmt-sub"><code>UC 2.1</code></p>
               </div>
-                            <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-toa" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm tòa nhà</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh mục tòa nhà (mã, tên, số tầng, tổng phòng, số SV đang ở).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -304,5 +304,31 @@
         </div>
       </div>
     </div>
-    </body>
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet">
+        <header class="invoice-sheet__brand">
+          <img src="assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <h3 class="invoice-sheet__title">Phiếu xuất danh mục tòa nhà</h3>
+        <dl>
+          <dt>Chức năng</dt><dd>Quản lý tòa nhà · UC 2.1</dd>
+          <dt>Nội dung file xuất</dt><dd>Mã tòa, tên hiển thị, số tầng, tổng phòng, số sinh viên đang ở (tổng hợp).</dd>
+          <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tìm theo tên hoặc mã tòa.</dd>
+          <dt>Định dạng gợi ý</dt><dd>Excel · PDF bảng tóm tắt (demo).</dd>
+          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSTOA-20260516-001</dd>
+          <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
+        </dl>
+        <div class="invoice-sheet__amount"><span>Phạm vi</span><strong>Toàn danh mục tòa hiện có (demo)</strong></div>
+        <p class="invoice-sheet__note">Là master data trước khi thêm phòng vào từng tòa.</p>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In phiếu</button>
+        </footer>
+      </article>
+    </div>
+
+</body>
 </html>
