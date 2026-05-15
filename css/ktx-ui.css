@@ -34,7 +34,7 @@
   height: auto;
   max-height: 96px;
   border-radius: 10px;
-  box-shadow: 0 8px 24px rgba(6, 95, 70, 0.2);
+  box-shadow: 0 8px 24px rgba(12, 74, 110, 0.2);
   object-fit: contain;
   background: #fff;
   padding: 6px 8px;
@@ -52,7 +52,7 @@
 }
 
 .student-login .login-brand__logo {
-  box-shadow: 0 8px 24px rgba(6, 95, 70, 0.25);
+  box-shadow: 0 8px 24px rgba(12, 74, 110, 0.25);
 }
 
 /* Bảng: thẻ chồng trên mobile (cần data-label trên td) */

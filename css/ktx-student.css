@@ -1,0 +1,281 @@
+/* Cổng sinh viên — branding, trang chủ, phiếu hóa đơn */
+
+.sidebar-brand--sv {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px !important;
+}
+
+.sidebar-brand--sv .sidebar-brand__logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  padding: 4px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.sidebar-brand--sv > div:last-child {
+  min-width: 0;
+}
+
+.sidebar-brand--sv strong {
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.sidebar-brand--sv span {
+  display: block;
+  font-size: 0.72rem;
+  color: #bae6fd;
+  margin-top: 2px;
+}
+
+.student-topbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.student-topbar-brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fff;
+  padding: 2px;
+  object-fit: contain;
+}
+
+.student-topbar-brand small {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.student-topbar-brand strong {
+  font-size: 0.82rem;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.sv-welcome {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 20px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 100%);
+  border-radius: var(--radius);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(12, 74, 110, 0.25);
+}
+
+.sv-welcome h1 {
+  margin: 0 0 6px;
+  font-size: 1.35rem;
+  color: #fff;
+}
+
+.sv-welcome p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #e0f2fe;
+  max-width: 36rem;
+}
+
+.sv-welcome__meta {
+  text-align: right;
+  font-size: 0.8rem;
+  color: #bae6fd;
+}
+
+.sv-welcome__meta strong {
+  display: block;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.sv-stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.sv-stat {
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.sv-stat__label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.sv-stat__value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.sv-stat__value--warn {
+  color: var(--warning);
+}
+
+.student-app .tile h3 {
+  color: var(--primary);
+}
+
+/* Phiếu hóa đơn — overlay :target */
+.invoice-sheet-host {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.invoice-sheet-host:target {
+  display: flex;
+}
+
+.invoice-sheet-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+}
+
+.invoice-sheet {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.invoice-sheet__brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #0c4a6e;
+}
+
+.invoice-sheet__brand img {
+  width: 56px;
+  height: 56px;
+}
+
+.invoice-sheet__brand h2 {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #0c4a6e;
+  line-height: 1.3;
+}
+
+.invoice-sheet__brand p {
+  margin: 2px 0 0;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.invoice-sheet__title {
+  text-align: center;
+  margin: 0 0 16px;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0f172a;
+}
+
+.invoice-sheet dl {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 8px 12px;
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+}
+
+.invoice-sheet dt {
+  color: #64748b;
+  font-weight: 600;
+}
+
+.invoice-sheet dd {
+  margin: 0;
+  color: #0f172a;
+}
+
+.invoice-sheet__amount {
+  text-align: center;
+  padding: 12px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.invoice-sheet__amount span {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.invoice-sheet__amount strong {
+  font-size: 1.35rem;
+  color: #0c4a6e;
+}
+
+.invoice-sheet__foot {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.invoice-sheet__note {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin: 12px 0 0;
+  text-align: center;
+}
+
+@media print {
+  .invoice-sheet-host {
+    display: block !important;
+    position: static;
+    padding: 0;
+  }
+
+  .invoice-sheet-scrim,
+  .invoice-sheet__foot {
+    display: none !important;
+  }
+
+  .invoice-sheet {
+    box-shadow: none;
+    max-height: none;
+    width: 100%;
+  }
+}

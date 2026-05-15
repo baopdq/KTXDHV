@@ -561,31 +561,22 @@ body.role-sinhvien .nav-item--all {
 }
 
 
-/* Cổng sinh viên KTX — chồng lên ../css/style.css */
-:root {
-  --st-primary: #047857;
-  --st-primary-dark: #065f46;
-  --st-accent: #0d9488;
-  --st-warm: #fff7ed;
-}
-
+/* Cổng sinh viên — cùng palette xanh dương với BQL */
 body.student-logged {
-  --primary: var(--st-primary-dark);
-  --primary-light: var(--st-accent);
-  background: #ecfdf5;
+  background: var(--bg);
 }
 
 .student-login.login-page {
-  background: linear-gradient(160deg, #065f46 0%, #0d9488 45%, #ccfbf1 100%);
+  background: linear-gradient(145deg, #0c4a6e 0%, #075985 40%, #e0f2fe 100%);
 }
 
 .student-login .login-card h1 {
-  color: var(--st-primary-dark);
+  color: var(--primary);
 }
 
 .student-app .sidebar {
   display: flex !important;
-  background: linear-gradient(180deg, #065f46 0%, #047857 100%);
+  background: var(--primary);
 }
 
 .student-app .sidebar-brand strong {
@@ -594,24 +585,20 @@ body.student-logged {
 
 .student-app .nav-link:hover,
 .student-app .nav-link.is-active {
-  border-left-color: #5eead4;
+  border-left-color: #38bdf8;
 }
 
 .student-app .role-badge {
-  background: #d1fae5;
-  color: #065f46;
+  background: #e0f2fe;
+  color: var(--primary);
 }
 
 .student-app .page-title {
-  color: var(--st-primary-dark);
+  color: var(--primary);
 }
 
-.student-app .btn-primary {
-  background: var(--st-primary);
-}
-
-.student-app .btn-primary:hover {
-  background: var(--st-primary-dark);
+.student-app .tile:hover {
+  border-color: var(--primary-light);
 }
 
 .tile-grid {
@@ -634,7 +621,7 @@ body.student-logged {
 }
 
 .tile:hover {
-  border-color: var(--st-accent);
+  border-color: var(--primary-light);
   transform: translateY(-2px);
 }
 
@@ -646,7 +633,7 @@ body.student-logged {
 .tile h3 {
   margin: 0 0 6px;
   font-size: 1rem;
-  color: var(--st-primary-dark);
+  color: var(--primary);
 }
 
 .tile p {

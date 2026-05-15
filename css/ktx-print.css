@@ -1,0 +1,164 @@
+/* In trang — ẩn menu, chỉ giữ nội dung chính */
+.page-actions {
+  margin: 0 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+@media print {
+  @page {
+    margin: 12mm;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000;
+    font-size: 11pt;
+  }
+
+  .sidebar,
+  .topbar,
+  .no-print,
+  .page-actions,
+  .menu-toggle,
+  .mgmt-head__actions,
+  .mgmt-breadcrumb,
+  .toolbar-bql,
+  .dash-header,
+  .dash-quick-links,
+  .toast-area,
+  form .btn,
+  .btn-primary.btn-sm,
+  a.btn-primary.btn-sm {
+    display: none !important;
+  }
+
+  .app,
+  .app.student-app {
+    display: block !important;
+    min-height: auto;
+  }
+
+  .main {
+    width: 100% !important;
+    max-width: none;
+  }
+
+  .content,
+  .content--mgmt {
+    padding: 0 !important;
+  }
+
+  .mgmt-page {
+    max-width: none;
+  }
+
+  .page-title {
+    color: #000 !important;
+    font-size: 16pt;
+    margin-bottom: 4px;
+  }
+
+  .page-desc,
+  .mgmt-sub,
+  .uc-ref {
+    color: #444 !important;
+    font-size: 9pt;
+  }
+
+  .card,
+  .mgmt-panel {
+    box-shadow: none !important;
+    border: 1px solid #ccc;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  .table-wrap {
+    overflow: visible !important;
+  }
+
+  .table-cards-on-mobile .table-wrap table,
+  .table-cards-on-mobile .table-wrap thead {
+    display: table !important;
+    width: 100%;
+  }
+
+  .table-cards-on-mobile .table-wrap tbody {
+    display: table-row-group !important;
+  }
+
+  .table-cards-on-mobile .table-wrap tr {
+    display: table-row !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .table-cards-on-mobile .table-wrap td {
+    display: table-cell !important;
+    padding: 6px 8px !important;
+    border-bottom: 1px solid #ddd !important;
+  }
+
+  .table-cards-on-mobile .table-wrap td::before {
+    display: none !important;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    border: 1px solid #ccc;
+    padding: 6px 8px;
+  }
+
+  thead th {
+    background: #f1f5f9 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .badge,
+  .badge-bql {
+    border: 1px solid #999 !important;
+    background: transparent !important;
+    color: #000 !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
+
+.print-only {
+  display: none;
+}
+
+.print-only__head {
+  margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #0c4a6e;
+}
+
+.print-only__head strong {
+  font-size: 13pt;
+}
+
+.print-only__head span {
+  display: block;
+  font-size: 9pt;
+  color: #64748b;
+  margin-top: 2px;
+}
