@@ -9,82 +9,182 @@
     <link rel="stylesheet" href="css/ktx-ui.css" />
   </head>
   <body>
-    <div class="login-page">
-      <div class="login-card login-card--unified">
-        <div class="login-brand">
-          <img
-            class="login-brand__logo"
-            src="assets/logo-dai-hoc-vinh.webp"
-            width="96"
-            height="96"
-            alt="Trường Đại học Vinh"
-            decoding="async"
-          />
-          <h1 class="login-title">Đăng nhập hệ thống</h1>
-          <p class="subtitle">Ký túc xá · Trường Đại học Vinh</p>
-        </div>
-
-        <input type="radio" name="login-role" id="role-sv" class="login-role-input" checked />
-        <input type="radio" name="login-role" id="role-cb" class="login-role-input" />
-        <input type="radio" name="login-role" id="role-qt" class="login-role-input" />
-
-        <div class="login-role-tabs" role="tablist" aria-label="Loại tài khoản">
-          <label for="role-sv" class="login-role-tab">Sinh viên</label>
-          <label for="role-cb" class="login-role-tab">Cán bộ KTX</label>
-          <label for="role-qt" class="login-role-tab">Quản trị</label>
-        </div>
-
-        <div class="login-form-fields">
-          <div class="form-group">
-            <label for="login-user">Tên đăng nhập</label>
-            <input
-              id="login-user"
-              name="username"
-              type="text"
-              autocomplete="username"
-              placeholder="vd. sv002, canbo01, admin01"
+    <div class="login-page login-page--pro">
+      <div class="login-shell">
+        <aside class="login-hero" aria-hidden="true">
+          <div class="login-hero__inner">
+            <img
+              class="login-hero__logo"
+              src="assets/logo-dai-hoc-vinh.webp"
+              width="80"
+              height="80"
+              alt=""
             />
+            <p class="login-hero__badge">Hệ thống quản lý KTX</p>
+            <h2 class="login-hero__title">Ký túc xá<br />Đại học Vinh</h2>
+            <p class="login-hero__desc">
+              Đăng ký ở, quản lý phòng, hợp đồng, thanh toán và vận hành ký túc xá trên một nền tảng thống nhất.
+            </p>
+            <ul class="login-hero__features">
+              <li>
+                <span class="login-hero__feat-icon" aria-hidden="true">✓</span>
+                Tra cứu phòng &amp; đăng ký trực tuyến
+              </li>
+              <li>
+                <span class="login-hero__feat-icon" aria-hidden="true">✓</span>
+                Hóa đơn, thanh toán minh bạch
+              </li>
+              <li>
+                <span class="login-hero__feat-icon" aria-hidden="true">✓</span>
+                Báo cáo, thống kê cho ban quản lý
+              </li>
+            </ul>
+            <p class="login-hero__footer">© Trường Đại học Vinh · Demo UC 1.2</p>
           </div>
-          <div class="form-group">
-            <label for="login-pass">Mật khẩu</label>
-            <input
-              id="login-pass"
-              name="password"
-              type="password"
-              autocomplete="current-password"
-              placeholder="••••••••"
-            />
+        </aside>
+
+        <main class="login-panel">
+          <div class="login-card login-card--unified">
+            <header class="login-panel__head">
+              <h1 class="login-title">Đăng nhập</h1>
+              <p class="subtitle">Chọn loại tài khoản và nhập thông tin đăng nhập</p>
+            </header>
+
+            <input type="radio" name="login-role" id="role-sv" class="login-role-input" checked />
+            <input type="radio" name="login-role" id="role-cb" class="login-role-input" />
+            <input type="radio" name="login-role" id="role-qt" class="login-role-input" />
+
+            <div class="login-role-tabs" role="tablist" aria-label="Loại tài khoản">
+              <label for="role-sv" class="login-role-tab">
+                <span class="login-role-tab__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z" /><path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5" /></svg>
+                </span>
+                <span class="login-role-tab__text">Sinh viên</span>
+              </label>
+              <label for="role-cb" class="login-role-tab">
+                <span class="login-role-tab__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" /><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" /></svg>
+                </span>
+                <span class="login-role-tab__text">Cán bộ KTX</span>
+              </label>
+              <label for="role-qt" class="login-role-tab">
+                <span class="login-role-tab__icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" /></svg>
+                </span>
+                <span class="login-role-tab__text">Quản trị</span>
+              </label>
+            </div>
+
+            <p class="login-role-desc login-role-desc--sv">Cổng tra cứu phòng, đăng ký ở, thanh toán và theo dõi đơn.</p>
+            <p class="login-role-desc login-role-desc--cb">Ban quản lý: phòng ở, hợp đồng, điểm danh, báo cáo.</p>
+            <p class="login-role-desc login-role-desc--qt">Quản trị tài khoản, phân quyền và cấu hình hệ thống.</p>
+
+            <div class="login-form-fields">
+              
+              <div class="form-group login-field">
+                <label for="login-user">Tên đăng nhập</label>
+                <div class="login-field__wrap">
+                  <span class="login-field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="12" cy="7" r="4" /></svg>
+                  </span>
+                  <input
+                    id="login-user"
+                    name="username"
+                    type="text"
+                    autocomplete="username"
+                    placeholder="Nhập tên đăng nhập"
+                  />
+                </div>
+              </div>
+              <div class="form-group login-field">
+                <label for="login-pass">Mật khẩu</label>
+                
+                <div class="login-field__wrap">
+                  <span class="login-field__icon" aria-hidden="true">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" /><path d="M7 11V7a5 5 0 0 1 10 0v4" /></svg>
+                  </span>
+                  <input
+                    id="login-pass"
+                    name="password"
+                    type="password"
+                    autocomplete="current-password"
+                    placeholder="Nhập mật khẩu"
+                  />
+                </div>
+              </div>
+              <div class="login-form-row">
+                <label class="login-remember">
+                  <input type="checkbox" name="remember" />
+                  <span>Ghi nhớ đăng nhập</span>
+                </label>
+                <span class="login-forgot-wrap">
+                  <a href="sinhvien/doi-mat-khau.html" class="login-forgot login-forgot--sv">Quên mật khẩu?</a>
+                  <a href="doi-mat-khau.html" class="login-forgot login-forgot--cb">Quên mật khẩu?</a>
+                  <a href="doi-mat-khau.html" class="login-forgot login-forgot--qt">Quên mật khẩu?</a>
+                </span>
+              </div>
+            </div>
+
+            <div class="login-demo-card login-demo-card--sv">
+              
+              <div class="login-demo-card__avatar">SV</div>
+              <div>
+                <p class="login-demo-card__title">Tài khoản demo</p>
+                <p class="login-demo-card__meta"><strong>sv002</strong> · Hoàng Văn Dũng</p>
+              </div>
+            </div>
+            <div class="login-demo-card login-demo-card--cb">
+              <div class="login-demo-card__avatar">CB</div>
+              <div>
+                <p class="login-demo-card__title">Tài khoản demo</p>
+                <p class="login-demo-card__meta"><strong>canbo01</strong> · Nguyễn Văn An</p>
+              </div>
+            </div>
+            
+            <div class="login-demo-card login-demo-card--qt">
+              <div class="login-demo-card__avatar">QT</div>
+              <div>
+                <p class="login-demo-card__title">Tài khoản demo</p>
+                <p class="login-demo-card__meta"><strong>admin01</strong> · Lê Văn Tuấn</p>
+              </div>
+            </div>
+
+            <div class="login-actions">
+              <a href="sinhvien/trang-chu.html" class="btn btn-primary login-go login-go--sv">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
+                Đăng nhập
+              </a>
+              <a href="tong-quan.html" class="btn btn-primary login-go login-go--cb">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
+                Đăng nhập
+              </a>
+              <a href="quan-ly-tai-khoan.html" class="btn btn-primary login-go login-go--qt">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4" /><polyline points="10 17 15 12 10 7" /><line x1="15" y1="12" x2="3" y2="12" /></svg>
+                Đăng nhập
+              </a>
+            </div>
+
+            
+            <div class="login-divider"><span>Truy cập nhanh (demo)</span></div>
+            <div class="login-quick">
+              <a href="sinhvien/trang-chu.html" class="login-quick__btn login-quick__btn--sv">Cổng sinh viên</a>
+              <a href="tong-quan.html" class="login-quick__btn login-quick__btn--cb">Trang chủ BQL</a>
+              <a href="quan-ly-tai-khoan.html" class="login-quick__btn login-quick__btn--qt">Quản trị HT</a>
+            </div>
+
+            <footer class="login-panel__foot">
+              <p class="login-static-note">
+                Bản demo <strong>HTML/CSS tĩnh</strong> — không xác thực thật; chọn vai trò và bấm Đăng nhập.
+              </p>
+              <p class="login-panel__links">
+                <a href="index.html">Mục lục</a>
+                <span aria-hidden="true">·</span>
+                <a href="so-do-uc.html">Sơ đồ UC</a>
+              </p>
+              <p class="uc-ref"><code>UC 1.2</code> Đăng nhập hệ thống</p>
+            </footer>
           </div>
-          <p class="login-form-extra">
-            <a href="sinhvien/doi-mat-khau.html" class="login-forgot login-forgot--sv">Quên mật khẩu?</a>
-            <a href="doi-mat-khau.html" class="login-forgot login-forgot--cb">Quên mật khẩu?</a>
-            <a href="doi-mat-khau.html" class="login-forgot login-forgot--qt">Quên mật khẩu?</a>
-          </p>
-        </div>
-
-        <p class="login-demo-hint login-demo-hint--sv">
-          Demo: <strong>sv002</strong> · Hoàng Văn Dũng → <a href="sinhvien/trang-chu.html">Cổng sinh viên</a>
-        </p>
-        <p class="login-demo-hint login-demo-hint--cb">
-          Demo: <strong>canbo01</strong> · Nguyễn Văn An → <a href="tong-quan.html">Trang chủ BQL</a>
-        </p>
-        <p class="login-demo-hint login-demo-hint--qt">
-          Demo: <strong>admin01</strong> · Lê Văn Tuấn → <a href="quan-ly-tai-khoan.html">Quản lý tài khoản</a>
-        </p>
-
-        <div class="login-actions">
-          <a href="sinhvien/trang-chu.html" class="btn btn-primary btn-block login-go login-go--sv">Đăng nhập</a>
-          <a href="tong-quan.html" class="btn btn-primary btn-block login-go login-go--cb">Đăng nhập</a>
-          <a href="quan-ly-tai-khoan.html" class="btn btn-primary btn-block login-go login-go--qt">Đăng nhập</a>
-        </div>
-
-        <p class="hint login-static-note">
-          Bản demo <strong>HTML/CSS tĩnh</strong> — chọn vai trò rồi bấm Đăng nhập để vào khu vực tương ứng.
-        </p>
-        <p class="hint" style="margin-top: 12px; text-align: center">
-          <a href="index.html">Mục lục demo</a> · <a href="so-do-uc.html">Sơ đồ UC</a>
-        </p>
-        <p class="uc-ref"><code>UC 1.2</code></p>
+        </main>
       </div>
     </div>
   </body>

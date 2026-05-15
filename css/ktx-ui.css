@@ -55,9 +55,153 @@
   box-shadow: 0 8px 24px rgba(12, 74, 110, 0.25);
 }
 
-/* Đăng nhập thống nhất — chọn vai trò (CSS, không JS) */
+/* Đăng nhập thống nhất — layout 2 cột (CSS, không JS) */
+.login-page--pro {
+  padding: 20px;
+  background: linear-gradient(135deg, #0c4a6e 0%, #0369a1 35%, #0e7490 70%, #164e63 100%);
+}
+
+.login-page--pro::before {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(56, 189, 248, 0.15) 0%, transparent 45%);
+}
+
+.login-shell {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(340px, 420px);
+  width: 100%;
+  max-width: 920px;
+  min-height: min(640px, calc(100vh - 40px));
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.login-hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 36px;
+  background:
+    linear-gradient(160deg, rgba(12, 74, 110, 0.95) 0%, rgba(7, 89, 133, 0.88) 100%),
+    url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  color: #e0f2fe;
+}
+
+.login-hero__inner {
+  max-width: 320px;
+}
+
+.login-hero__logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #fff;
+  padding: 4px;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.login-hero__badge {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  padding: 4px 10px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #bae6fd;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 999px;
+}
+
+.login-hero__title {
+  margin: 0 0 0.75rem;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.login-hero__desc {
+  margin: 0 0 1.5rem;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #bae6fd;
+  opacity: 0.95;
+}
+
+.login-hero__features {
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+
+.login-hero__features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 0.65rem;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.login-hero__feat-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #0c4a6e;
+  background: #7dd3fc;
+  border-radius: 50%;
+}
+
+.login-hero__footer {
+  margin: 0;
+  font-size: 0.75rem;
+  color: rgba(186, 230, 253, 0.7);
+}
+
+.login-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 24px;
+  background: var(--surface, #fff);
+}
+
 .login-card--unified {
-  max-width: 440px;
+  width: 100%;
+  max-width: 400px;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+}
+
+.login-panel__head {
+  margin-bottom: 1.25rem;
+}
+
+.login-panel__head .login-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.5rem;
+  color: var(--primary, #0c4a6e);
+}
+
+.login-panel__head .subtitle {
+  margin: 0;
+  font-size: 0.88rem;
 }
 
 .login-role-input {
@@ -75,50 +219,117 @@
 .login-role-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 1.25rem;
-  padding: 4px;
-  background: var(--bg, #f1f5f9);
-  border-radius: 10px;
+  gap: 8px;
+  margin-bottom: 0.65rem;
 }
 
 .login-role-tab {
-  display: block;
-  padding: 8px 6px;
-  font-size: 0.78rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 6px;
+  font-size: 0.72rem;
   font-weight: 600;
   text-align: center;
   color: var(--muted, #64748b);
-  border-radius: 8px;
+  background: var(--bg, #f8fafc);
+  border: 2px solid transparent;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background 0.15s, color 0.15s;
+  transition: border-color 0.15s, background 0.15s, color 0.15s, box-shadow 0.15s;
   user-select: none;
+}
+
+.login-role-tab__icon {
+  display: flex;
+  color: inherit;
+  opacity: 0.85;
 }
 
 .login-role-tab:hover {
   color: var(--primary, #0c4a6e);
+  background: #f0f9ff;
 }
 
 #role-sv:checked ~ .login-role-tabs label[for="role-sv"],
 #role-cb:checked ~ .login-role-tabs label[for="role-cb"],
 #role-qt:checked ~ .login-role-tabs label[for="role-qt"] {
-  background: var(--surface, #fff);
   color: var(--primary, #0c4a6e);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+  background: #fff;
+  border-color: #38bdf8;
+  box-shadow: 0 2px 8px rgba(14, 116, 144, 0.12);
+}
+
+.login-role-desc {
+  display: none;
+  margin: 0 0 1rem;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--muted, #64748b);
+  background: #f8fafc;
+  border-radius: 8px;
+  border-left: 3px solid #38bdf8;
+}
+
+#role-sv:checked ~ .login-role-desc--sv,
+#role-cb:checked ~ .login-role-desc--cb,
+#role-qt:checked ~ .login-role-desc--qt {
+  display: block;
 }
 
 .login-form-fields {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
-.login-form-extra {
-  margin: 0 0 1rem;
-  font-size: 0.85rem;
-  text-align: right;
+.login-field__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
-.login-forgot {
+.login-field__icon {
+  position: absolute;
+  left: 12px;
+  display: flex;
+  color: var(--muted, #94a3b8);
+  pointer-events: none;
+}
+
+.login-field__wrap input {
+  padding-left: 40px !important;
+  height: 44px;
+}
+
+.login-form-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.login-remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text, #334155);
+  cursor: pointer;
+}
+
+.login-remember input {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--primary, #0c4a6e);
+}
+
+.login-forgot-wrap .login-forgot {
   display: none;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 #role-sv:checked ~ .login-form-fields .login-forgot--sv,
@@ -127,45 +338,173 @@
   display: inline;
 }
 
-.login-demo-hint {
+.login-demo-card {
   display: none;
-  margin: 0 0 1rem;
-  padding: 10px 12px;
-  font-size: 0.82rem;
-  color: var(--muted, #64748b);
-  background: #f0f9ff;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+  padding: 12px 14px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
   border: 1px solid #bae6fd;
-  border-radius: 8px;
-  line-height: 1.45;
+  border-radius: 10px;
 }
 
-.login-demo-hint strong {
+.login-demo-card__avatar {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #0284c7, #0c4a6e);
+  border-radius: 10px;
+}
+
+.login-demo-card__title {
+  margin: 0 0 2px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--muted, #64748b);
+}
+
+.login-demo-card__meta {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text, #334155);
+}
+
+.login-demo-card__meta strong {
   color: var(--primary, #0c4a6e);
 }
 
-#role-sv:checked ~ .login-demo-hint--sv,
-#role-cb:checked ~ .login-demo-hint--cb,
-#role-qt:checked ~ .login-demo-hint--qt {
-  display: block;
+#role-sv:checked ~ .login-demo-card--sv,
+#role-cb:checked ~ .login-demo-card--cb,
+#role-qt:checked ~ .login-demo-card--qt {
+  display: flex;
 }
 
 .login-actions .login-go {
   display: none;
   width: 100%;
-  text-align: center;
+  padding: 12px 18px;
+  font-size: 1rem;
   box-sizing: border-box;
 }
 
 #role-sv:checked ~ .login-actions .login-go--sv,
 #role-cb:checked ~ .login-actions .login-go--cb,
 #role-qt:checked ~ .login-actions .login-go--qt {
-  display: inline-block;
+  display: inline-flex;
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 1.25rem 0 0.85rem;
+  font-size: 0.75rem;
+  color: var(--muted, #94a3b8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.login-divider::before,
+.login-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border, #e2e8f0);
+}
+
+.login-quick {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.login-quick__btn {
+  display: none;
+  flex: 1;
+  min-width: 0;
+  padding: 8px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--primary, #0c4a6e);
+  background: #fff;
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.login-quick__btn:hover {
+  background: #f0f9ff;
+  border-color: #7dd3fc;
+}
+
+#role-sv:checked ~ .login-quick .login-quick__btn--sv,
+#role-cb:checked ~ .login-quick .login-quick__btn--cb,
+#role-qt:checked ~ .login-quick .login-quick__btn--qt {
+  display: block;
+  flex: 1 1 100%;
+}
+
+.login-panel__foot {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border, #e2e8f0);
+}
+
+.login-panel__links {
+  margin: 0.5rem 0 0;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.login-panel__foot .uc-ref {
+  margin: 0.5rem 0 0;
+  text-align: center;
 }
 
 .login-static-note {
-  margin-top: 1rem;
+  margin: 0;
   text-align: center;
   line-height: 1.45;
+  font-size: 0.78rem;
+}
+
+@media (max-width: 768px) {
+  .login-shell {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    min-height: auto;
+  }
+
+  .login-hero {
+    padding: 28px 24px;
+  }
+
+  .login-hero__title {
+    font-size: 1.35rem;
+  }
+
+  .login-hero__features {
+    margin-bottom: 1rem;
+  }
+
+  .login-hero__footer {
+    display: none;
+  }
+
+  .login-panel {
+    padding: 24px 20px 28px;
+  }
 }
 
 /* Bảng: thẻ chồng trên mobile (cần data-label trên td) */
