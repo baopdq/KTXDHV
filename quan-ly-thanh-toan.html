@@ -94,22 +94,77 @@
                     <button type="button" class="btn-bql btn-bql-primary">Áp dụng</button>
                     <button type="button" class="btn-bql btn-bql-default">Làm mới</button>
                   </form>
-                  <h2 class="mgmt-panel__title">Chi tiết theo tòa</h2>
+                  <h2 class="mgmt-panel__title">Danh sách phiếu thu (minh họa)</h2>
                   <div class="table-wrap">
                     <table class="table-bql table-cards-on-mobile">
-                      <thead><tr>
-      <th>STT</th><th>Mã phiếu</th><th>MSSV</th><th>Họ tên</th><th>Phòng</th>
-      <th>Kỳ thu</th><th>Tổng tiền</th><th>Hạn TT</th><th>Trạng thái</th><th>Chức năng</th>
-    </tr></thead>
+                      <thead>
+                        <tr>
+                          <th>STT</th>
+                          <th>Mã phiếu</th>
+                          <th>MSSV</th>
+                          <th>Họ tên</th>
+                          <th>Phòng</th>
+                          <th>Kỳ thu</th>
+                          <th>Tiền phòng</th>
+                          <th>Tiền điện nước</th>
+                          <th>Tổng tiền</th>
+                          <th>Hạn TT</th>
+                          <th>Trạng thái</th>
+                          <th>Hình thức</th>
+                          <th>Chức năng</th>
+                        </tr>
+                      </thead>
                       <tbody>
-<tr><td>1</td><td>PT-0526-001</td><td>221001</td><td>Nguyễn Văn An</td><td>A-302</td><td>05/2026</td><td>1.420.000 ₫</td><td>25/05/2026</td><td><span class="badge-bql badge-bql--warning">Chưa thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
-<tr><td>2</td><td>PT-0526-002</td><td>221002</td><td>Trần Thị Bình</td><td>A-302</td><td>05/2026</td><td>1.420.000 ₫</td><td>25/05/2026</td><td><span class="badge-bql badge-bql--success">Đã thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
-<tr><td>3</td><td>PT-0426-001</td><td>221001</td><td>Nguyễn Văn An</td><td>A-302</td><td>04/2026</td><td>1.400.000 ₫</td><td>25/04/2026</td><td><span class="badge-bql badge-bql--success">Đã thanh toán</span></td><td><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg></a><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a><button type="button" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa (demo)" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></button></div></td></tr>
+                        <tr>
+                          <td data-label="STT">1</td>
+                          <td data-label="Mã phiếu">PT-0526-001</td>
+                          <td data-label="MSSV">221001</td>
+                          <td data-label="Họ tên">Nguyễn Văn An</td>
+                          <td data-label="Phòng">A-302</td>
+                          <td data-label="Kỳ thu">05/2026</td>
+                          <td data-label="Tiền phòng">1.350.000 ₫</td>
+                          <td data-label="Điện nước">70.000 ₫</td>
+                          <td data-label="Tổng tiền"><strong>1.420.000 ₫</strong></td>
+                          <td data-label="Hạn TT">25/05/2026</td>
+                          <td data-label="TT"><span class="badge-bql badge-bql--warning">Chưa thanh toán</span></td>
+                          <td data-label="Hình thức">—</td>
+                          <td data-label="Thao tác"><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></div></td>
+                        </tr>
+                        <tr>
+                          <td data-label="STT">2</td>
+                          <td data-label="Mã phiếu">PT-0526-002</td>
+                          <td data-label="MSSV">221002</td>
+                          <td data-label="Họ tên">Trần Thị Bình</td>
+                          <td data-label="Phòng">A-302</td>
+                          <td data-label="Kỳ thu">05/2026</td>
+                          <td data-label="Tiền phòng">1.350.000 ₫</td>
+                          <td data-label="Điện nước">70.000 ₫</td>
+                          <td data-label="Tổng tiền"><strong>1.420.000 ₫</strong></td>
+                          <td data-label="Hạn TT">25/05/2026</td>
+                          <td data-label="TT"><span class="badge-bql badge-bql--success">Đã thanh toán</span></td>
+                          <td data-label="Hình thức">ZaloPay</td>
+                          <td data-label="Thao tác"><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></div></td>
+                        </tr>
+                        <tr>
+                          <td data-label="STT">3</td>
+                          <td data-label="Mã phiếu">PT-0426-001</td>
+                          <td data-label="MSSV">221001</td>
+                          <td data-label="Họ tên">Nguyễn Văn An</td>
+                          <td data-label="Phòng">A-302</td>
+                          <td data-label="Kỳ thu">04/2026</td>
+                          <td data-label="Tiền phòng">1.350.000 ₫</td>
+                          <td data-label="Điện nước">50.000 ₫</td>
+                          <td data-label="Tổng tiền"><strong>1.400.000 ₫</strong></td>
+                          <td data-label="Hạn TT">25/04/2026</td>
+                          <td data-label="TT"><span class="badge-bql badge-bql--success">Đã thanh toán</span></td>
+                          <td data-label="Hình thức">VNPay</td>
+                          <td data-label="Thao tác"><div class="table-bql-actions table-bql-actions--tight"><a href="#drawer-tt-detail" class="icon-btn-mgmt icon-btn-mgmt--view" title="Xem" aria-label="Xem"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></a></div></td>
+                        </tr>
                       </tbody>
                     </table>
                   </div>
                   <div class="pagination-bql">
-                    <span>2 dòng tổng hợp (minh họa)</span>
+                    <span>Hiển thị 1 đến 3 của 3 phiếu (minh họa)</span>
                     <a href="#" id="btn-export-revenue" class="btn-bql btn-bql-default">Xuất Excel (demo)</a>
                   </div>
                 </div>
@@ -137,6 +192,43 @@
           </div>
         </main>
       </div>
+    
+    </div>
+
+    <div id="drawer-tt-detail" class="mgmt-drawer-host">
+      <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
+      <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="tt-detail-title" aria-modal="true">
+        <div class="mgmt-drawer-head">
+          <h2 id="tt-detail-title">Chi tiết phiếu thu</h2>
+          <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
+        </div>
+        <div class="mgmt-drawer-body">
+          <section class="mgmt-drawer-section">
+            <h3>Khoản thu</h3>
+            <dl class="mgmt-dl mgmt-dl--grid">
+              <div><dt>Mã phiếu</dt><dd>PT-0526-001</dd></div>
+              <div><dt>Số hợp đồng</dt><dd>HD-2024-0892</dd></div>
+              <div><dt>MSSV</dt><dd>221001</dd></div>
+              <div><dt>Họ tên</dt><dd>Nguyễn Văn An</dd></div>
+              <div><dt>Phòng</dt><dd>A-302</dd></div>
+              <div><dt>Kỳ thu</dt><dd>05/2026</dd></div>
+              <div><dt>Tiền phòng</dt><dd>1.350.000 ₫</dd></div>
+              <div><dt>Tiền điện</dt><dd>45.000 ₫</dd></div>
+              <div><dt>Tiền nước</dt><dd>25.000 ₫</dd></div>
+              <div><dt>Phí dịch vụ</dt><dd>0 ₫</dd></div>
+              <div><dt><strong>Tổng tiền</strong></dt><dd><strong>1.420.000 ₫</strong></dd></div>
+              <div><dt>Hạn thanh toán</dt><dd>25/05/2026</dd></div>
+              <div><dt>Trạng thái</dt><dd>Chưa thanh toán</dd></div>
+              <div><dt>Hình thức</dt><dd>—</dd></div>
+              <div><dt>Ngày thanh toán</dt><dd>—</dd></div>
+              <div><dt>Mã giao dịch VNPay</dt><dd>—</dd></div>
+            </dl>
+          </section>
+        </div>
+        <div class="mgmt-drawer-foot">
+          <button type="button" class="btn-mgmt-block btn-mgmt-block--blue">Ghi nhận thanh toán (demo)</button>
+        </div>
+      </aside>
     </div>
     </body>
 </html>
