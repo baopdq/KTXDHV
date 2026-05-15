@@ -7,30 +7,85 @@
     <link rel="stylesheet" href="css/ktx-base.css" />
     <link rel="stylesheet" href="css/ktx-bql-components.css" />
     <link rel="stylesheet" href="css/ktx-ui.css" />
-
   </head>
   <body>
     <div class="login-page">
-      <div class="login-card">
+      <div class="login-card login-card--unified">
         <div class="login-brand">
           <img
             class="login-brand__logo"
             src="assets/logo-dai-hoc-vinh.webp"
-            width="200"
-            height="auto"
+            width="96"
+            height="96"
             alt="Trường Đại học Vinh"
             decoding="async"
           />
           <h1 class="login-title">Đăng nhập hệ thống</h1>
-          <p class="subtitle">Quản lý ký túc xá · Trường Đại học Vinh (cán bộ &amp; quản trị)</p>
+          <p class="subtitle">Ký túc xá · Trường Đại học Vinh</p>
         </div>
-        <p class="hint">Bản <strong>không dùng JavaScript</strong>. Chọn:</p><ul style="text-align:left;margin:16px 0;padding-left:1.2rem"><li><a class="btn btn-primary" style="display:inline-block;margin:6px 0" href="tong-quan.html">Trang chủ BQL</a></li><li><a class="btn btn-ghost" style="display:inline-block;margin:6px 0" href="so-do-uc.html">Sơ đồ UC</a></li><li><a class="btn btn-primary" style="display:inline-block;margin:6px 0" href="sinhvien/trang-chu.html">Cổng sinh viên</a></li></ul>
-        <p class="hint" style="margin-top: 16px; text-align: center">
-          <a href="sinhvien/trang-chu.html">Cổng dành cho sinh viên →</a> · <a href="index.html">Mục lục</a>
+
+        <input type="radio" name="login-role" id="role-sv" class="login-role-input" checked />
+        <input type="radio" name="login-role" id="role-cb" class="login-role-input" />
+        <input type="radio" name="login-role" id="role-qt" class="login-role-input" />
+
+        <div class="login-role-tabs" role="tablist" aria-label="Loại tài khoản">
+          <label for="role-sv" class="login-role-tab">Sinh viên</label>
+          <label for="role-cb" class="login-role-tab">Cán bộ KTX</label>
+          <label for="role-qt" class="login-role-tab">Quản trị</label>
+        </div>
+
+        <div class="login-form-fields">
+          <div class="form-group">
+            <label for="login-user">Tên đăng nhập</label>
+            <input
+              id="login-user"
+              name="username"
+              type="text"
+              autocomplete="username"
+              placeholder="vd. sv002, canbo01, admin01"
+            />
+          </div>
+          <div class="form-group">
+            <label for="login-pass">Mật khẩu</label>
+            <input
+              id="login-pass"
+              name="password"
+              type="password"
+              autocomplete="current-password"
+              placeholder="••••••••"
+            />
+          </div>
+          <p class="login-form-extra">
+            <a href="sinhvien/doi-mat-khau.html" class="login-forgot login-forgot--sv">Quên mật khẩu?</a>
+            <a href="doi-mat-khau.html" class="login-forgot login-forgot--cb">Quên mật khẩu?</a>
+            <a href="doi-mat-khau.html" class="login-forgot login-forgot--qt">Quên mật khẩu?</a>
+          </p>
+        </div>
+
+        <p class="login-demo-hint login-demo-hint--sv">
+          Demo: <strong>sv002</strong> · Hoàng Văn Dũng → <a href="sinhvien/trang-chu.html">Cổng sinh viên</a>
+        </p>
+        <p class="login-demo-hint login-demo-hint--cb">
+          Demo: <strong>canbo01</strong> · Nguyễn Văn An → <a href="tong-quan.html">Trang chủ BQL</a>
+        </p>
+        <p class="login-demo-hint login-demo-hint--qt">
+          Demo: <strong>admin01</strong> · Lê Văn Tuấn → <a href="quan-ly-tai-khoan.html">Quản lý tài khoản</a>
+        </p>
+
+        <div class="login-actions">
+          <a href="sinhvien/trang-chu.html" class="btn btn-primary btn-block login-go login-go--sv">Đăng nhập</a>
+          <a href="tong-quan.html" class="btn btn-primary btn-block login-go login-go--cb">Đăng nhập</a>
+          <a href="quan-ly-tai-khoan.html" class="btn btn-primary btn-block login-go login-go--qt">Đăng nhập</a>
+        </div>
+
+        <p class="hint login-static-note">
+          Bản demo <strong>HTML/CSS tĩnh</strong> — chọn vai trò rồi bấm Đăng nhập để vào khu vực tương ứng.
+        </p>
+        <p class="hint" style="margin-top: 12px; text-align: center">
+          <a href="index.html">Mục lục demo</a> · <a href="so-do-uc.html">Sơ đồ UC</a>
         </p>
         <p class="uc-ref"><code>UC 1.2</code></p>
       </div>
     </div>
-    
   </body>
 </html>

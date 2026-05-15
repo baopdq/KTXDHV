@@ -55,6 +55,119 @@
   box-shadow: 0 8px 24px rgba(12, 74, 110, 0.25);
 }
 
+/* Đăng nhập thống nhất — chọn vai trò (CSS, không JS) */
+.login-card--unified {
+  max-width: 440px;
+}
+
+.login-role-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.login-role-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  margin-bottom: 1.25rem;
+  padding: 4px;
+  background: var(--bg, #f1f5f9);
+  border-radius: 10px;
+}
+
+.login-role-tab {
+  display: block;
+  padding: 8px 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--muted, #64748b);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  user-select: none;
+}
+
+.login-role-tab:hover {
+  color: var(--primary, #0c4a6e);
+}
+
+#role-sv:checked ~ .login-role-tabs label[for="role-sv"],
+#role-cb:checked ~ .login-role-tabs label[for="role-cb"],
+#role-qt:checked ~ .login-role-tabs label[for="role-qt"] {
+  background: var(--surface, #fff);
+  color: var(--primary, #0c4a6e);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.1);
+}
+
+.login-form-fields {
+  margin-bottom: 0.5rem;
+}
+
+.login-form-extra {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+.login-forgot {
+  display: none;
+}
+
+#role-sv:checked ~ .login-form-fields .login-forgot--sv,
+#role-cb:checked ~ .login-form-fields .login-forgot--cb,
+#role-qt:checked ~ .login-form-fields .login-forgot--qt {
+  display: inline;
+}
+
+.login-demo-hint {
+  display: none;
+  margin: 0 0 1rem;
+  padding: 10px 12px;
+  font-size: 0.82rem;
+  color: var(--muted, #64748b);
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+  border-radius: 8px;
+  line-height: 1.45;
+}
+
+.login-demo-hint strong {
+  color: var(--primary, #0c4a6e);
+}
+
+#role-sv:checked ~ .login-demo-hint--sv,
+#role-cb:checked ~ .login-demo-hint--cb,
+#role-qt:checked ~ .login-demo-hint--qt {
+  display: block;
+}
+
+.login-actions .login-go {
+  display: none;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#role-sv:checked ~ .login-actions .login-go--sv,
+#role-cb:checked ~ .login-actions .login-go--cb,
+#role-qt:checked ~ .login-actions .login-go--qt {
+  display: inline-block;
+}
+
+.login-static-note {
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.45;
+}
+
 /* Bảng: thẻ chồng trên mobile (cần data-label trên td) */
 @media (max-width: 600px) {
   .table-cards-on-mobile .table-wrap table,

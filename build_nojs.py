@@ -350,18 +350,7 @@ def main():
             p.write_text(t, encoding="utf-8")
             continue
         if p.name == "dang-nhap.html":
-            t = strip_scripts(p.read_text(encoding="utf-8"))
-            t = inject_css(t)
-            t = re.sub(
-                r"<form id=\"login-form\">[\s\S]*?</form>",
-                '<p class="hint">Bản <strong>không dùng JavaScript</strong>. Chọn:</p>'
-                '<ul style="text-align:left;margin:16px 0;padding-left:1.2rem">'
-                '<li><a class="btn btn-primary" style="display:inline-block;margin:6px 0" href="tong-quan.html">Trang chủ BQL</a></li>'
-                '<li><a class="btn btn-primary" style="display:inline-block;margin:6px 0" href="sinhvien/trang-chu.html">Cổng sinh viên</a></li>'
-                "</ul>",
-                t,
-                count=1,
-            )
+            t = inject_css(strip_scripts(p.read_text(encoding="utf-8")))
             p.write_text(t, encoding="utf-8")
             continue
         process_bql(p)
@@ -373,15 +362,7 @@ def main():
             p.write_text(t, encoding="utf-8")
             continue
         if p.name == "dang-nhap.html":
-            t = strip_scripts(p.read_text(encoding="utf-8"))
-            t = inject_css(t)
-            t = re.sub(
-                r"<form id=\"student-login-form\">[\s\S]*?</form>",
-                '<p class="hint">Không dùng JS — vào trực tiếp:</p>'
-                '<p><a class="btn btn-primary" href="trang-chu.html">Trang chủ sinh viên</a></p>',
-                t,
-                count=1,
-            )
+            t = inject_css(strip_scripts(p.read_text(encoding="utf-8")))
             p.write_text(t, encoding="utf-8")
             continue
         process_sv(p)
