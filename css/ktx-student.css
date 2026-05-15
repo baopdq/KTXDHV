@@ -248,3 +248,16 @@
     width: 100%;
   }
 }
+
+/* Tra cứu phòng → liên kết sang đăng ký (UC 2.3 → UC 4.1) */
+.student-room-pick {
+  font-weight: 700;
+  color: #0284c7;
+  text-decoration: none;
+}
+
+.student-room-pick:hover,
+.student-room-pick:focus-visible {
+  text-decoration: underline;
+  color: #0369a1;
+}

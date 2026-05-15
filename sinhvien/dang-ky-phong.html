@@ -46,15 +46,16 @@
         </header>
         <main class="content">
           <h1 class="page-title">Đăng ký thuê phòng</h1>
-          <p class="page-desc"><code>UC 4.1</code></p>
-          <div class="card" style="max-width: 520px">
+          <p class="page-desc"><code>UC 4.1</code> — Nếu bạn đến từ «Tra cứu phòng trống», phòng sẽ được chọn sẵn theo dòng đã bấm.</p>
+          <div id="form-dang-ky" class="card" style="max-width: 520px">
             <div class="form-group">
               <label>Phòng</label>
-              <select id="reg-room">
+              <select id="reg-room" name="phong">
                 <option value="">— Chọn —</option>
-                <option>A-302 (còn 2 giường)</option>
-                <option>B-105 (còn 1 giường)</option>
+                <option value="A-302">A-302 (còn 2 giường)</option>
+                <option value="B-105">B-105 (còn 1 giường)</option>
               </select>
+              <p class="hint"><a href="tra-cuu-phong.html">← Quay lại tra cứu</a> nếu muốn đổi phòng khác.</p>
             </div>
             <div class="form-group">
               <label>Ghi chú (tuỳ chọn)</label>
@@ -65,5 +66,28 @@
         </main>
       </div>
     </div>
+    <script>
+      (function () {
+        document.addEventListener('DOMContentLoaded', function () {
+          var sel = document.getElementById("reg-room");
+          var box = document.getElementById("form-dang-ky");
+          if (!sel || !box) return;
+          try {
+            var code = new URLSearchParams(window.location.search).get("phong");
+            if (code) {
+              for (var i = 0; i < sel.options.length; i++) {
+                if (sel.options[i].value === code) {
+                  sel.selectedIndex = i;
+                  break;
+                }
+              }
+            }
+          } catch (e) {}
+          if (window.location.hash === "#form-dang-ky") {
+            box.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      })();
+    </script>
     </body>
 </html>

@@ -45,7 +45,7 @@
         </header>
         <main class="content">
           <h1 class="page-title">Tra cứu phòng trống</h1>
-          <p class="page-desc"><code>UC 2.3</code></p>
+          <p class="page-desc"><code>UC 2.3</code> — Khi thấy phòng còn giường trống, <strong>bấm mã phòng hoặc «Đăng ký»</strong> để sang màn hình gửi đơn đăng ký với phòng đã chọn.</p>
           <div class="card">
             <form data-demo="Đã tìm kiếm (demo).">
               <div class="form-group">
@@ -79,6 +79,7 @@
           </p>
           <div class="card">
             <h2>Kết quả</h2>
+            <p class="hint">Các liên kết mở trang <strong>Đăng ký thuê phòng</strong> và tự điền phòng tương ứng (demo HTML).</p>
             <div class="table-wrap">
               <table>
                 <thead>
@@ -87,20 +88,23 @@
                     <th>Loại</th>
                     <th>Giá</th>
                     <th>Giường trống</th>
+                    <th class="no-print">Thao tác</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>A-302</td>
-                    <td>Tiêu chuẩn</td>
-                    <td>350.000 ₫</td>
-                    <td>2</td>
+                    <td data-label="Phòng"><a href="dang-ky-phong.html?phong=A-302#form-dang-ky" class="student-room-pick">A-302</a></td>
+                    <td data-label="Loại">Tiêu chuẩn</td>
+                    <td data-label="Giá">350.000 ₫</td>
+                    <td data-label="Giường trống">2</td>
+                    <td data-label="Thao tác" class="no-print"><a href="dang-ky-phong.html?phong=A-302#form-dang-ky" class="btn btn-primary btn-sm">Đăng ký phòng này</a></td>
                   </tr>
                   <tr>
-                    <td>B-105</td>
-                    <td>Tiêu chuẩn</td>
-                    <td>320.000 ₫</td>
-                    <td>1</td>
+                    <td data-label="Phòng"><a href="dang-ky-phong.html?phong=B-105#form-dang-ky" class="student-room-pick">B-105</a></td>
+                    <td data-label="Loại">Tiêu chuẩn</td>
+                    <td data-label="Giá">320.000 ₫</td>
+                    <td data-label="Giường trống">1</td>
+                    <td data-label="Thao tác" class="no-print"><a href="dang-ky-phong.html?phong=B-105#form-dang-ky" class="btn btn-primary btn-sm">Đăng ký phòng này</a></td>
                   </tr>
                 </tbody>
               </table>
