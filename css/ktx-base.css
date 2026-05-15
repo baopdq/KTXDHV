@@ -229,7 +229,7 @@ a {
   opacity: 0.85;
 }
 
-/* Logo Đại học Vinh — hình tròn (mọi vị trí dùng file JPG) */
+/* Logo Đại học Vinh — hình tròn (JPG/WebP trong assets) */
 img[src*="logo-dai-hoc-vinh"] {
   border-radius: 50%;
   object-fit: cover;
