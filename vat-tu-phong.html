@@ -77,9 +77,15 @@
                 <h1 class="page-title">Quản lý vật tư phòng</h1>
                 <p class="mgmt-sub"><code>UC 3.1</code> · <code>UC 3.2</code></p>
               </div>
-              <div class="mgmt-head__actions">
-                <a href="#drawer-them-vattu" class="btn-mgmt-primary">+ Thêm vật tư</a>
-                <button type="button" class="btn-mgmt-outline">Xuất Excel (demo)</button>
+                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                <a href="#drawer-them-vattu" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm vật tư</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
+                <button type="button" class="btn-mgmt-outline">Xuất</button>
+                <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
+                  Nhập
+                  <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
+                </label>
               </div>
             </header>
             <div class="mgmt-panel data-panel-bql">
@@ -284,5 +290,28 @@
         </div>
       </aside>
     </div>
-    </body>
+        <div id="modal-mgmt-batch-edit" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal modal--mgmt-crud-tip">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h3>Sửa theo lựa chọn (demo)</h3>
+        <p class="hint">Giao diện tĩnh: thực triển sẽ đồng bộ với checkbox trên lưới dữ liệu.</p>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#" class="btn btn-primary">Tiếp tục chỉnh sửa (demo)</a>
+        </div>
+      </div>
+    </div>
+    <div id="modal-mgmt-batch-delete" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal modal--mgmt-crud-tip">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h3>Xóa theo lựa chọn (demo)</h3>
+        <p class="hint">Mockup chỉ làm động học UX — không có xóa dữ liệu thật trên máy chủ.</p>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#" class="btn btn-danger">Xác nhận xóa (demo)</a>
+        </div>
+      </div>
+    </div>
+
+</body>
 </html>

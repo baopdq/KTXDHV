@@ -238,6 +238,47 @@
   align-items: center;
 }
 
+.mgmt-crud-toolbar {
+  justify-content: flex-end;
+}
+
+.mgmt-crud-toolbar__primary {
+  order: -1;
+}
+
+.mgmt-crud-toolbar__danger {
+  color: #b91c1c;
+  border-color: #fecaca;
+  background: #fffafa;
+}
+
+.mgmt-crud-toolbar__danger:hover {
+  border-color: #f87171;
+  color: #991b1b;
+}
+
+.mgmt-crud-toolbar__import {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0;
+  font-weight: 500;
+}
+
+.mgmt-crud-toolbar__import input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  font-size: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modal--mgmt-crud-tip {
+  max-width: 440px;
+}
+
 /* Nút theo mockup */
 .btn-mgmt-primary {
   display: inline-flex;
