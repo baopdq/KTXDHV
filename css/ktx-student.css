@@ -410,3 +410,293 @@
   gap: 10px;
   margin-bottom: 16px;
 }
+
+/* Đăng ký KTX — layout theo mockup (stepper + form + rail) */
+.content--reg .page-title {
+  margin-bottom: 4px;
+}
+
+.sv-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.sv-breadcrumb a {
+  color: #0369a1;
+  text-decoration: none;
+}
+
+.sv-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.sv-breadcrumb .sep {
+  color: #cbd5e1;
+}
+
+.sv-reg-layout {
+  display: grid;
+  grid-template-columns: 1fr minmax(260px, 300px);
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 960px) {
+  .sv-reg-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sv-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  counter-reset: sv-step;
+}
+
+.sv-stepper li {
+  flex: 1;
+  min-width: 120px;
+  position: relative;
+  padding: 10px 12px 10px 40px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #64748b;
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+  margin-right: -1px;
+}
+
+.sv-stepper li:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.sv-stepper li:last-child {
+  border-radius: 0 8px 8px 0;
+  margin-right: 0;
+}
+
+.sv-stepper li::before {
+  counter-increment: sv-step;
+  content: counter(sv-step);
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #cbd5e1;
+  color: #fff;
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 22px;
+  text-align: center;
+}
+
+.sv-stepper li.is-active {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #93c5fd;
+  z-index: 1;
+}
+
+.sv-stepper li.is-active::before {
+  background: #2563eb;
+}
+
+.sv-stepper li.is-done::before {
+  background: #059669;
+  content: "✓";
+  font-size: 0.65rem;
+}
+
+.sv-reg-form-card {
+  padding: 22px 24px;
+}
+
+.sv-reg-form-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sv-reg-form-head h2 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.sv-reg-section {
+  margin-bottom: 24px;
+}
+
+.sv-reg-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.sv-reg-section h3 .num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: #fff;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sv-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 16px;
+}
+
+.sv-form-grid .span-2 {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 640px) {
+  .sv-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sv-reg-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.sv-reg-rail .sv-rail-card {
+  padding: 16px 18px;
+  margin-bottom: 14px;
+}
+
+.sv-reg-rail h4 {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: #0f172a;
+}
+
+.sv-reg-summary dl {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.sv-reg-summary dt {
+  color: var(--muted);
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.sv-reg-summary dt:first-child {
+  margin-top: 0;
+}
+
+.sv-reg-summary dd {
+  margin: 2px 0 0;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.sv-checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.85rem;
+}
+
+.sv-checklist li {
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 8px;
+  color: #334155;
+}
+
+.sv-checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #059669;
+  font-weight: 700;
+}
+
+.sv-rail-hint {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.82rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.sv-rail-hint li {
+  margin-bottom: 6px;
+}
+
+.sv-support-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  font-size: 0.85rem;
+}
+
+.sv-support-box strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #1e40af;
+}
+
+.contract-doc--full {
+  max-height: min(70vh, 520px);
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.contract-doc--full .contract-party {
+  margin-bottom: 12px;
+}
+
+.contract-doc--full .contract-party li {
+  list-style: none;
+  margin-bottom: 4px;
+}
+
+.modal.modal--contract {
+  max-width: min(760px, 96vw);
+  max-height: 92vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.modal--contract .contract-doc--full {
+  flex: 1;
+  min-height: 0;
+}

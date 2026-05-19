@@ -3,40 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Đăng ký thuê phòng — Cổng SV</title>
+    <title>Đăng ký ở ký túc xá — Cổng SV</title>
     <link rel="stylesheet" href="../css/ktx-base.css" />
     <link rel="stylesheet" href="../css/ktx-bql-components.css" />
     <link rel="stylesheet" href="../css/ktx-ui.css" />
     <link rel="stylesheet" href="../css/ktx-print.css" />
-
     <link rel="stylesheet" href="../css/ktx-student.css" />
-
   </head>
   <body>
     <div class="app student-app is-visible">
       <aside id="sidebar" class="sidebar">
-      <div class="sidebar-brand sidebar-brand--sv sidebar-brand--logo"><img class="sidebar-brand__logo" src="../assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
-      <div class="nav-section">Menu</div>
-      <a href="trang-chu.html" class="nav-link">Trang chủ</a>
-      <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
-      <a href="dang-ky-phong.html" class="nav-link is-active">Đăng ký thuê phòng</a>
-      <a href="phong-dang-thue.html" class="nav-link">Phòng đang thuê</a>
-      <a href="minh-chung-uu-tien.html" class="nav-link">Minh chứng ưu tiên</a>
-      <a href="bao-cao-hu-hong.html" class="nav-link">Báo cáo hư hỏng</a>
-      <a href="hoa-don-thanh-toan.html" class="nav-link">Hóa đơn & thanh toán</a>
-      <a href="don-cua-toi.html" class="nav-link">Đơn của tôi</a>
-      <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
-      <a href="thong-bao.html" class="nav-link">Thông báo</a>
+        <div class="sidebar-brand sidebar-brand--sv sidebar-brand--logo"><img class="sidebar-brand__logo" src="../assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
+        <div class="nav-section">Menu</div>
+        <a href="trang-chu.html" class="nav-link">Trang chủ</a>
+        <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+        <a href="dang-ky-phong.html" class="nav-link is-active">Đăng ký thuê phòng</a>
+        <a href="phong-dang-thue.html" class="nav-link">Phòng đang thuê</a>
+        <a href="minh-chung-uu-tien.html" class="nav-link">Minh chứng ưu tiên</a>
+        <a href="bao-cao-hu-hong.html" class="nav-link">Báo cáo hư hỏng</a>
+        <a href="hoa-don-thanh-toan.html" class="nav-link">Hóa đơn & thanh toán</a>
+        <a href="don-cua-toi.html" class="nav-link">Đơn của tôi</a>
+        <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
+        <a href="thong-bao.html" class="nav-link">Thông báo</a>
       </aside>
       <div class="main">
         <header class="topbar">
           <div class="topbar-left">
             <div class="student-topbar-brand">
               <img src="../assets/logo-dai-hoc-vinh.webp" alt="" width="32" height="32" />
-              <div>
-                <strong>Đại học Vinh</strong>
-                <small>KTX · Cổng sinh viên</small>
-              </div>
+              <div><strong>Đại học Vinh</strong><small>KTX · Cổng sinh viên</small></div>
             </div>
             <span class="role-badge">Sinh viên</span>
           </div>
@@ -45,60 +40,193 @@
             <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Đăng nhập SV</a>
           </div>
         </header>
-        <main class="content">
-          <h1 class="page-title">Đăng ký thuê phòng</h1>
-          <p class="page-desc"><code>UC 4.1</code> — Nếu bạn đến từ «Tra cứu phòng trống», phòng sẽ được chọn sẵn theo dòng đã bấm.</p>
-          <p class="student-action-row no-print">
-            <a href="#mau-don-dang-ky" class="btn btn-secondary">Xem mẫu đơn đăng ký</a>
-          </p>
-          <div id="form-dang-ky" class="card">
-            <h2 style="margin-top:0;font-size:1.05rem">Bên B: Bên thuê ở</h2>
-            <div class="form-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px 16px">
-              <div class="form-group"><label>Họ và tên</label><input type="text" value="Nguyễn Văn An" required /></div>
-              <div class="form-group"><label>Ngày sinh</label><input type="date" value="2004-05-15" required /></div>
-              <div class="form-group"><label>Lớp</label><input type="text" value="K62-CNTT" required /></div>
-              <div class="form-group"><label>Ngành</label><input type="text" value="Công nghệ thông tin" required /></div>
-              <div class="form-group"><label>Khoa</label><input type="text" value="CNTT" required /></div>
-              <div class="form-group"><label>Quốc tịch</label><input type="text" value="Việt Nam" /></div>
-              <div class="form-group"><label>Số hộ chiếu</label><input type="text" placeholder="Nếu có" /></div>
-              <div class="form-group"><label>Mã số HSSV</label><input type="text" value="2157010001" required /></div>
-              <div class="form-group"><label>Số CMND/CCCD</label><input type="text" value="042204001234" required /></div>
+        <main class="content content--reg">
+          <nav class="sv-breadcrumb" aria-label="Breadcrumb">
+            <a href="trang-chu.html">Trang chủ</a><span class="sep">/</span>
+            <a href="dang-ky-phong.html">Đăng ký ở KTX</a><span class="sep">/</span>
+            <span>Đăng ký mới</span>
+          </nav>
+          <h1 class="page-title">Đăng ký ở ký túc xá</h1>
+          <p class="page-desc"><code>UC 4.1</code> — Điền thông tin theo mẫu; có thể xem trước hợp đồng thuê phòng.</p>
+
+          <div class="sv-reg-layout">
+            <div class="sv-reg-main">
+              <ol class="sv-stepper" aria-label="Tiến trình đăng ký">
+                <li class="is-active">Thông tin đăng ký</li>
+                <li>Chọn phòng</li>
+                <li>Xác nhận thông tin</li>
+                <li>Hoàn tất</li>
+              </ol>
+
+              <div id="form-dang-ky" class="card sv-reg-form-card">
+                <header class="sv-reg-form-head">
+                  <h2>Bước 1: Thông tin đăng ký</h2>
+                  <a href="#mau-don-dang-ky" class="btn btn-secondary btn-sm no-print" id="btn-xem-mau-hd">📄 Xem mẫu đơn đăng ký (hợp đồng)</a>
+                </header>
+
+                <section class="sv-reg-section" aria-labelledby="sec-ca-nhan">
+                  <h3 id="sec-ca-nhan"><span class="num">1</span> Thông tin cá nhân</h3>
+                  <div class="sv-form-grid">
+                    <div class="form-group"><label for="f-hoten">Họ và tên</label><input id="f-hoten" type="text" value="Nguyễn Văn An" required /></div>
+                    <div class="form-group"><label for="f-mssv">Mã sinh viên</label><input id="f-mssv" type="text" value="2157010001" required /></div>
+                    <div class="form-group"><label for="f-ngaysinh">Ngày sinh</label><input id="f-ngaysinh" type="date" value="2004-05-15" required /></div>
+                    <div class="form-group"><label for="f-gioitinh">Giới tính</label><select id="f-gioitinh"><option>Nam</option><option>Nữ</option></select></div>
+                    <div class="form-group"><label for="f-khoa">Khoa</label><select id="f-khoa"><option>Công nghệ thông tin</option><option>Kinh tế</option></select></div>
+                    <div class="form-group"><label for="f-lop">Lớp</label><input id="f-lop" type="text" value="K62-CNTT" /></div>
+                    <div class="form-group"><label for="f-khoa-hoc">Khóa</label><input id="f-khoa-hoc" type="text" value="K62" /></div>
+                    <div class="form-group"><label for="f-sdt">Số điện thoại</label><input id="f-sdt" type="tel" value="0912345678" /></div>
+                    <div class="form-group"><label for="f-email">Email</label><input id="f-email" type="email" value="nguyenvanan@vinhuni.edu.vn" /></div>
+                    <div class="form-group"><label for="f-cccd">CMND/CCCD</label><input id="f-cccd" type="text" value="042204001234" /></div>
+                    <div class="form-group"><label for="f-quoctich">Quốc tịch</label><input id="f-quoctich" type="text" value="Việt Nam" /></div>
+                    <div class="form-group"><label for="f-hochieu">Số hộ chiếu</label><input id="f-hochieu" type="text" placeholder="Nếu có" /></div>
+                    <div class="form-group"><label for="f-quequan">Quê quán</label><input id="f-quequan" type="text" value="Nghệ An" /></div>
+                    <div class="form-group span-2"><label for="f-diachi">Địa chỉ thường trú</label><input id="f-diachi" type="text" value="123 Lê Lợi, TP Vinh, Nghệ An" /></div>
+                  </div>
+                </section>
+
+                <section class="sv-reg-section" aria-labelledby="sec-dang-ky">
+                  <h3 id="sec-dang-ky"><span class="num">2</span> Thông tin đăng ký</h3>
+                  <div class="sv-form-grid">
+                    <div class="form-group"><label for="reg-room">Học kỳ / phòng đăng ký</label>
+                      <select id="reg-room" name="phong">
+                        <option value="">— Chọn phòng (bước 2) —</option>
+                        <option value="A-302">A-302 · Tòa A · Tầng 3</option>
+                        <option value="B-105">B-105 · Tòa B · Tầng 1</option>
+                      </select>
+                      <p class="hint"><a href="tra-cuu-phong.html">Tra cứu phòng trống</a></p>
+                    </div>
+                    <div class="form-group"><label for="f-hocky">Học kỳ đăng ký</label><select id="f-hocky"><option>2025–2026 · Học kỳ II</option><option>2025–2026 · Học kỳ I</option></select></div>
+                    <div class="form-group"><label for="f-tungay">Thời gian ở (từ)</label><input id="f-tungay" type="date" value="2025-09-01" /></div>
+                    <div class="form-group"><label for="f-denngay">Thời gian ở (đến)</label><input id="f-denngay" type="date" value="2026-06-30" /></div>
+                    <div class="form-group span-2"><label for="f-lydo">Lý do đăng ký</label><textarea id="f-lydo" rows="3" placeholder="Lý do ở KTX…"></textarea></div>
+                    <div class="form-group span-2"><label for="f-ghichu">Ghi chú thêm</label><textarea id="f-ghichu" rows="2" placeholder="Tuỳ chọn"></textarea></div>
+                  </div>
+                </section>
+
+                <footer class="sv-reg-foot no-print">
+                  <a href="trang-chu.html" class="btn btn-secondary">Hủy bỏ</a>
+                  <a href="#" class="btn btn-primary" id="btn-confirm-register">Tiếp tục →</a>
+                </footer>
+              </div>
             </div>
-            <hr style="margin:20px 0;border:0;border-top:1px solid var(--border)" />
-            <h2 style="font-size:1.05rem">Điều khoản thuê phòng (theo mẫu HĐ)</h2>
-            <div class="form-group">
-              <label>Phòng đăng ký</label>
-              <select id="reg-room" name="phong">
-                <option value="">— Chọn —</option>
-                <option value="A-302">A-302 · Tòa A · Tầng 3 (còn 2 giường)</option>
-                <option value="B-105">B-105 · Tòa B · Tầng 1 (còn 1 giường)</option>
-              </select>
-              <p class="hint"><a href="tra-cuu-phong.html">← Quay lại tra cứu</a> nếu muốn đổi phòng khác.</p>
-            </div>
-            <div class="form-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px 16px">
-              <div class="form-group"><label>Giá phòng (đồng/tháng)</label><input type="number" value="350000" min="0" /></div>
-              <div class="form-group"><label>Tiền tài sản (cọc, đồng)</label><input type="number" value="500000" min="0" /></div>
-              <div class="form-group"><label>Thời gian ở (tháng)</label><input type="number" value="10" min="1" /></div>
-              <div class="form-group"><label>Từ ngày</label><input type="date" value="2025-09-01" /></div>
-              <div class="form-group"><label>Đến ngày</label><input type="date" value="2026-06-30" /></div>
-              <div class="form-group"><label>Giá trị HĐ (đồng)</label><input type="number" value="3500000" min="0" /></div>
-            </div>
-            <div class="form-group">
-              <label>Phương thức thanh toán</label>
-              <input type="text" value="Tiền mặt, thanh toán 1 lần khi ký hợp đồng" readonly />
-            </div>
-            <div class="form-group">
-              <label>Ghi chú (tuỳ chọn)</label>
-              <textarea rows="2" placeholder="Yêu cầu giường tầng dưới…"></textarea>
-            </div>
-            <a href="#" id="btn-confirm-register" class="btn btn-primary">Gửi đơn đăng ký (demo)</a>
+
+            <aside class="sv-reg-rail">
+              <div class="card sv-rail-card sv-reg-summary">
+                <h4>Thông tin đăng ký</h4>
+                <dl>
+                  <dt>Họ tên</dt><dd id="sum-hoten">Nguyễn Văn An</dd>
+                  <dt>MSSV</dt><dd id="sum-mssv">2157010001</dd>
+                  <dt>Khoa / Lớp</dt><dd id="sum-lop">CNTT · K62-CNTT</dd>
+                  <dt>Điện thoại</dt><dd id="sum-sdt">0912345678</dd>
+                </dl>
+              </div>
+              <div class="card sv-rail-card">
+                <h4>Điều kiện đăng ký</h4>
+                <ul class="sv-checklist">
+                  <li>Là sinh viên chính quy</li>
+                  <li>Đã đóng học phí kỳ gần nhất</li>
+                  <li>Không nợ phí KTX</li>
+                  <li>Không vi phạm nội quy KTX</li>
+                </ul>
+              </div>
+              <div class="card sv-rail-card">
+                <h4>Hướng dẫn</h4>
+                <ul class="sv-rail-hint">
+                  <li>Mỗi sinh viên chỉ có một đơn đăng ký đang xử lý.</li>
+                  <li>BQL KTX sẽ duyệt trong 3–5 ngày làm việc.</li>
+                  <li>Kết quả gửi qua email và cổng thông báo.</li>
+                  <li>Bấm <strong>Xem mẫu đơn đăng ký</strong> để xem hợp đồng thuê phòng mẫu.</li>
+                </ul>
+              </div>
+              <div class="sv-support-box">
+                <strong>Cần hỗ trợ?</strong>
+                <span>0238.3855.452 · ktx@vinhuni.edu.vn</span>
+              </div>
+            </aside>
           </div>
         </main>
       </div>
     </div>
+
+    <div id="mau-don-dang-ky" class="modal-backdrop contract-modal-host" role="dialog" aria-modal="true" aria-labelledby="hd-title">
+      <article class="modal modal--contract modal--xl">
+        <header style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px">
+          <div>
+            <h2 id="hd-title" style="margin:0;font-size:1.05rem">Mẫu hợp đồng thuê phòng ở nội trú</h2>
+            <p class="hint" style="margin:4px 0 0">Ban Quản lý KTX — Trường Đại học Vinh (demo)</p>
+          </div>
+          <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        </header>
+        <div class="contract-doc contract-doc--full" id="contract-preview">
+          <h3>Cộng hòa xã hội chủ nghĩa Việt Nam<br />Độc lập — Tự do — Hạnh phúc</h3>
+          <p style="text-align:center;font-weight:700;margin:16px 0">HỢP ĐỒNG THUÊ PHÒNG Ở NỘI TRÚ</p>
+          <p><em>Hôm nay, ……, tại Trường Đại học Vinh, chúng tôi gồm:</em></p>
+          <p><strong>Bên A (Bên cho thuê):</strong> Ban Quản lý Ký túc xá — Trường Đại học Vinh; đại diện theo pháp luật.</p>
+          <p><strong>Bên B (Bên thuê ở):</strong></p>
+          <ul class="contract-party">
+            <li>Họ và tên: <span class="contract-field" data-f="f-hoten">……………………………………</span></li>
+            <li>Ngày sinh: <span class="contract-field" data-f="f-ngaysinh">…/…/………</span></li>
+            <li>Lớp: <span class="contract-field" data-f="f-lop">…………</span> · Ngành: <span class="contract-field" data-f="f-khoa">………………</span> · Khoa: <span class="contract-field" data-f="f-khoa">………………</span></li>
+            <li>Quốc tịch: <span class="contract-field" data-f="f-quoctich">…………</span> · Số hộ chiếu: <span class="contract-field" data-f="f-hochieu">……………………</span></li>
+            <li>Mã số HSSV: <span class="contract-field" data-f="f-mssv">…………</span> · Số CMND/CCCD: <span class="contract-field" data-f="f-cccd">……………………</span></li>
+          </ul>
+          <p>Hai bên thống nhất ký kết hợp đồng thuê phòng ở nội trú tại Trường Đại học Vinh với các điều khoản sau đây:</p>
+          <p><strong>Điều 1.</strong> Bên A cho bên B thuê <strong>01 chỗ ở</strong> tại phòng <span class="contract-field" data-f="reg-room">…………</span>, Tầng <span class="contract-field">……</span>, Ký túc xá số <span class="contract-field">…………</span>.</p>
+          <p>Phòng ở đảm bảo điều kiện sinh hoạt, có các tài sản, thiết bị được ghi tại biên bản giao nhận phòng ở kèm theo.</p>
+          <p><strong>Điều 2.</strong> Giá tiền, thời gian ở và phương thức thanh toán:</p>
+          <ol>
+            <li><strong>2.1.</strong> Giá phòng: <span class="contract-field">…………</span> đồng/tháng.</li>
+            <li><strong>2.2.</strong> Tiền các tài sản (nhận lại khi trả phòng): <span class="contract-field">…………</span> đồng.</li>
+            <li><strong>2.3.</strong> Thời gian ở: <span class="contract-field">……</span> tháng (từ ngày <span class="contract-field" data-f="f-tungay">…/…/202…</span> đến ngày <span class="contract-field" data-f="f-denngay">…/…/202…</span>).</li>
+            <li><strong>2.4.</strong> Phương thức thanh toán: Bằng tiền mặt, thanh toán 1 lần khi ký hợp đồng.</li>
+            <li><strong>2.5.</strong> Giá trị hợp đồng: <span class="contract-field">……………………</span> đồng.<br />Bằng chữ: <span class="contract-field">…………………………………………</span>.</li>
+          </ol>
+          <p style="margin-top:20px"><em>(Các điều khoản tiếp theo: trách nhiệm hai bên, bồi thường, chấm dứt HĐ — theo quy định KTX ĐH Vinh.)</em></p>
+          <table style="width:100%;margin-top:28px;border-collapse:collapse;font-size:0.85rem">
+            <tr>
+              <td style="width:50%;text-align:center;vertical-align:top;padding:8px"><strong>ĐẠI DIỆN BÊN A</strong><br /><br /><br />………………</td>
+              <td style="width:50%;text-align:center;vertical-align:top;padding:8px"><strong>BÊN B</strong><br /><br /><br />………………</td>
+            </tr>
+          </table>
+        </div>
+        <footer class="modal-actions no-print">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <button type="button" class="btn btn-primary" onclick="window.print()">In mẫu hợp đồng</button>
+        </footer>
+      </article>
+    </div>
+
     <script>
       (function () {
-        document.addEventListener('DOMContentLoaded', function () {
+        function fmtDate(iso) {
+          if (!iso) return "…/…/………";
+          var p = iso.split("-");
+          if (p.length !== 3) return iso;
+          return p[2] + "/" + p[1] + "/" + p[0];
+        }
+        function syncContract() {
+          document.querySelectorAll(".contract-field[data-f]").forEach(function (el) {
+            var id = el.getAttribute("data-f");
+            var inp = document.getElementById(id);
+            if (!inp) return;
+            var v = inp.value || inp.options[inp.selectedIndex].text;
+            if (inp.type === "date") v = fmtDate(v);
+            el.textContent = v && v.trim() ? v.trim() : "…………";
+          });
+        }
+        function syncSummary() {
+          var map = { "sum-hoten": "f-hoten", "sum-mssv": "f-mssv", "sum-sdt": "f-sdt" };
+          Object.keys(map).forEach(function (sid) {
+            var el = document.getElementById(sid);
+            var inp = document.getElementById(map[sid]);
+            if (el && inp) el.textContent = inp.value;
+          });
+          var lop = document.getElementById("sum-lop");
+          var fk = document.getElementById("f-khoa");
+          var fl = document.getElementById("f-lop");
+          if (lop && fk && fl) lop.textContent = (fk.value || "") + " · " + (fl.value || "");
+        }
+        document.addEventListener("DOMContentLoaded", function () {
           var sel = document.getElementById("reg-room");
           var box = document.getElementById("form-dang-ky");
           if (!sel || !box) return;
@@ -116,8 +244,21 @@
           if (window.location.hash === "#form-dang-ky") {
             box.scrollIntoView({ behavior: "smooth", block: "start" });
           }
+          document.querySelectorAll("#form-dang-ky input, #form-dang-ky select, #form-dang-ky textarea").forEach(function (inp) {
+            inp.addEventListener("input", syncSummary);
+            inp.addEventListener("change", syncSummary);
+          });
+          syncSummary();
+          var mau = document.getElementById("mau-don-dang-ky");
+          if (mau) {
+            document.getElementById("btn-xem-mau-hd").addEventListener("click", syncContract);
+            if (location.hash === "#mau-don-dang-ky") syncContract();
+            window.addEventListener("hashchange", function () {
+              if (location.hash === "#mau-don-dang-ky") syncContract();
+            });
+          }
         });
       })();
     </script>
-    </body>
+  </body>
 </html>
