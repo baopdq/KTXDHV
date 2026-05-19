@@ -208,46 +208,52 @@
           <a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a>
         </div>
         <div class="mgmt-drawer-body">
-          <form data-demo="Đã gán tài sản vào phòng (UC 3.1).">
+          <form data-demo="Đã gán tài sản vào phòng (UC 3.1)." id="form-them-vattu">
+            <p class="hint" style="margin: 0 0 14px">Nhập <strong>tên vật tư</strong> (chọn gợi ý) — <strong>mã VT</strong> tự điền. Thứ tự: Tên → Mã → SL → Tình trạng → Ngày → Ghi chú.</p>
             <div class="form-group">
-              <label>Tên vật tư <span style="color: #dc2626">*</span></label>
-              <input id="vt-ten" list="vt-ten-list" required placeholder="Giường, tủ, quạt…" />
-              <datalist id="vt-ten-list">
-                <option value="Giường tầng"></option>
-                <option value="Tủ quần áo"></option>
-                <option value="Quạt treo"></option>
-                <option value="Điều hòa"></option>
-              </datalist>
-            </div>
-            <div class="form-group">
-              <label>Mã vật tư <span style="color: #dc2626">*</span></label>
-              <input id="vt-ma" required placeholder="Tự điền khi chọn tên" readonly />
-            </div>
-            <div class="form-group">
-              <label>Phòng <span style="color: #dc2626">*</span></label>
-              <select required>
+              <label for="vt-phong">Phòng gán vật tư <span style="color: #dc2626">*</span></label>
+              <select id="vt-phong" required>
                 <option>A-302</option>
                 <option>B-105</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Số lượng <span style="color: #dc2626">*</span></label>
-              <input type="number" min="1" value="1" required />
+              <label for="vt-ten">Tên vật tư <span style="color: #dc2626">*</span></label>
+              <input id="vt-ten" list="vt-ten-list" required placeholder="VD: Giường tầng, Tủ quần áo…" autocomplete="off" />
+              <datalist id="vt-ten-list">
+                <option value="Giường tầng"></option>
+                <option value="Tủ quần áo"></option>
+                <option value="Bàn học"></option>
+                <option value="Ghế"></option>
+                <option value="Quạt treo"></option>
+                <option value="Điều hòa"></option>
+                <option value="Tủ lạnh mini"></option>
+              </datalist>
             </div>
             <div class="form-group">
-              <label>Tình trạng <span style="color: #dc2626">*</span></label>
-              <select required>
+              <label for="vt-ma">Mã vật tư <span style="color: #dc2626">*</span></label>
+              <input id="vt-ma" required placeholder="Tự điền khi nhập tên" readonly style="background:#f8fafc" />
+            </div>
+
+            <div class="form-group">
+              <label for="vt-sl">Số lượng (SL) <span style="color: #dc2626">*</span></label>
+              <input id="vt-sl" type="number" min="1" value="1" required />
+            </div>
+            <div class="form-group">
+              <label for="vt-tt">Tình trạng <span style="color: #dc2626">*</span></label>
+              <select id="vt-tt" required>
                 <option>Tốt</option>
-                <option>Hỏng / chờ sửa</option>
+                <option>Hỏng</option>
+                <option>Đang sửa</option>
               </select>
             </div>
             <div class="form-group">
-              <label>Ngày cập nhật <span style="color: #dc2626">*</span></label>
-              <input type="date" required />
+              <label for="vt-ngay">Ngày cập nhật <span style="color: #dc2626">*</span></label>
+              <input id="vt-ngay" type="date" required />
             </div>
             <div class="form-group">
-              <label>Ghi chú</label>
-              <textarea rows="3" placeholder="Tuỳ chọn"></textarea>
+              <label for="vt-ghichu">Ghi chú</label>
+              <textarea id="vt-ghichu" rows="3" placeholder="Tuỳ chọn"></textarea>
             </div>
           </form>
         </div>
@@ -272,8 +278,8 @@
             <h3>Thông tin vật tư</h3>
             <dl class="mgmt-dl mgmt-dl--grid">
               
-              <div><dt>Mã vật tư</dt><dd>VT018</dd></div>
               <div><dt>Tên vật tư</dt><dd>Quạt treo</dd></div>
+              <div><dt>Mã vật tư</dt><dd>VT018</dd></div>
               <div><dt>Phòng</dt><dd>B-105</dd></div>
               <div><dt>Tòa</dt><dd>Tòa B</dd></div>
               <div><dt>Số lượng</dt><dd>2</dd></div>
@@ -361,19 +367,41 @@
 
     <script>
       (function () {
-        var map = {
+        var VT_TEN_MA = {
           "Giường tầng": "VT001",
           "Tủ quần áo": "VT002",
+          "Bàn học": "VT005",
+          "Ghế": "VT006",
           "Quạt treo": "VT018",
-          "Điều hòa": "VT021"
+          "Điều hòa": "VT021",
+          "Tủ lạnh mini": "VT024"
         };
-        document.addEventListener("DOMContentLoaded", function () {
+        function lookupMa(ten) {
+          var n = (ten || "").trim();
+          if (!n) return "";
+          if (VT_TEN_MA[n]) return VT_TEN_MA[n];
+          var keys = Object.keys(VT_TEN_MA);
+          var i, low = n.toLowerCase();
+          for (i = 0; i < keys.length; i++) {
+            if (keys[i].toLowerCase() === low) return VT_TEN_MA[keys[i]];
+          }
+          for (i = 0; i < keys.length; i++) {
+            if (keys[i].toLowerCase().indexOf(low) === 0 && low.length >= 2) return VT_TEN_MA[keys[i]];
+          }
+          return "";
+        }
+        function syncMa() {
           var ten = document.getElementById("vt-ten");
           var ma = document.getElementById("vt-ma");
           if (!ten || !ma) return;
-          ten.addEventListener("input", function () {
-            ma.value = map[ten.value.trim()] || "";
-          });
+          ma.value = lookupMa(ten.value);
+        }
+        document.addEventListener("DOMContentLoaded", function () {
+          var ten = document.getElementById("vt-ten");
+          if (!ten) return;
+          ten.addEventListener("input", syncMa);
+          ten.addEventListener("change", syncMa);
+          ten.addEventListener("blur", syncMa);
         });
       })();
     </script>
