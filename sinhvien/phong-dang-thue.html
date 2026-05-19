@@ -42,27 +42,38 @@
         </header>
         <main class="content">
           <h1 class="page-title">Phòng đang thuê</h1>
-          <p class="page-desc">Thông tin chỗ ở hiện tại, hợp đồng và thao tác trả phòng (demo).</p>
-          <div class="card">
-            <div class="mgmt-profile" style="margin-bottom: 0">
-              <span class="mgmt-profile__avatar" aria-hidden="true">NA</span>
-              <div class="mgmt-profile__meta">
-                <strong>Phòng A-302 · Tòa A</strong>
-                <span>Giường 2 · Tiêu chuẩn 4 người</span>
-                <span class="badge badge-success">Đang nội trú</span>
+          <p class="page-desc"><code>UC 4.x</code> — Thông tin chỗ ở hiện tại, xem hợp đồng và gửi yêu cầu trả phòng (demo).</p>
+
+          <div class="card sv-room-card">
+            <div>
+              <span class="sv-room-card__badge">● Đang nội trú</span>
+              <div class="mgmt-profile" style="margin: 14px 0 0">
+                <span class="mgmt-profile__avatar" aria-hidden="true">NA</span>
+                <div class="mgmt-profile__meta">
+                  <strong style="font-size:1.15rem">Phòng A-302 · Tòa A</strong>
+                  <span>Tầng 3 · Giường số 2 · Tiêu chuẩn 4 người/phòng</span>
+                  <span>Nguyễn Văn An · MSSV 2157010001</span>
+                </div>
               </div>
+              <dl class="mgmt-dl" style="margin-top: 18px; max-width: 420px">
+                <dt>Ngày vào ở</dt><dd>01/09/2024</dd>
+                <dt>Hạn hợp đồng</dt><dd>31/08/2025</dd>
+                <dt>Giá phòng/tháng</dt><dd>350.000 ₫</dd>
+                <dt>Số hợp đồng</dt><dd>HD-2024-0892</dd>
+                <dt>Trạng thái thanh toán</dt><dd><span class="badge badge-warning">1 kỳ chưa TT</span></dd>
+              </dl>
             </div>
-            <dl class="mgmt-dl" style="margin-top: 18px">
-              <dt>Ngày vào ở</dt><dd>01/09/2024</dd>
-              <dt>Hạn hợp đồng</dt><dd>31/08/2025</dd>
-              <dt>Giá phòng/tháng</dt><dd>350.000 ₫</dd>
-              <dt>Số HĐ</dt><dd>HD-2024-0892</dd>
-            </dl>
-            <div class="student-action-row" style="margin-top: 20px">
-              <a href="#hop-dong-hien-tai" class="btn btn-primary">Xem hợp đồng</a>
-              <a href="#modal-tra-phong" class="btn btn-danger">Trả phòng (demo)</a>
+            <div class="student-action-row" style="flex-direction:column;align-items:stretch;margin:0;min-width:200px">
+              <a href="#hop-dong-hien-tai" class="btn btn-primary">📄 Xem hợp đồng</a>
+              <a href="#modal-tra-phong" class="btn btn-danger">Trả phòng</a>
               <a href="hoa-don-thanh-toan.html" class="btn btn-secondary">Hóa đơn & thanh toán</a>
+              <a href="bao-cao-hu-hong.html" class="btn btn-ghost btn-sm">Báo cáo hư hỏng phòng</a>
             </div>
+          </div>
+
+          <div class="card" style="margin-top:16px">
+            <h2 style="margin-top:0;font-size:1rem">Lịch sử / ghi chú</h2>
+            <p class="hint" style="margin:0">Gia hạn HĐ, chuyển giường hoặc trả phòng sẽ do Ban quản lý KTX xử lý sau khi bạn gửi yêu cầu.</p>
           </div>
         </main>
       </div>
@@ -70,17 +81,33 @@
 
     <div id="hop-dong-hien-tai" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
-      <article class="invoice-sheet" style="width: min(720px, 96vw)">
+      <article class="invoice-sheet" style="width: min(760px, 96vw)">
         <header class="invoice-sheet__brand">
           <img src="../assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
           <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
         </header>
-        <div class="contract-doc">
-          <h3>Hợp đồng thuê phòng ở nội trú</h3>
-          <p><strong>Bên A:</strong> Ban Quản lý KTX — Trường Đại học Vinh.</p>
-          <p><strong>Bên B (Bên thuê ở):</strong> Nguyễn Văn An · MSSV 2157010001 · Lớp K62-CNTT.</p>
-          <p><strong>Điều 1.</strong> Cho thuê 01 chỗ ở tại phòng <span class="contract-field">A-302</span>, Tầng <span class="contract-field">3</span>, KTX số <span class="contract-field">Tòa A</span>.</p>
-          <p><strong>Điều 2.</strong> Giá phòng 350.000 đồng/tháng; thời gian 01/09/2024 — 31/08/2025; thanh toán tiền mặt một lần khi ký HĐ.</p>
+        <div class="contract-doc contract-doc--full">
+          <h3 style="text-transform:none">HỢP ĐỒNG THUÊ PHÒNG Ở NỘI TRÚ</h3>
+          <p style="text-align:center"><em>Số: HD-2024-0892</em></p>
+          <p><strong>Bên A:</strong> Ban Quản lý Ký túc xá — Trường Đại học Vinh.</p>
+          <p><strong>Bên B — Bên thuê ở:</strong></p>
+          <ul class="contract-party" style="list-style:none;padding:0">
+            <li>Họ và tên: <span class="contract-field">Nguyễn Văn An</span></li>
+            <li>Ngày sinh: <span class="contract-field">15/05/2004</span></li>
+            <li>Lớp: <span class="contract-field">K62-CNTT</span> · Ngành: <span class="contract-field">Công nghệ thông tin</span> · Khoa: <span class="contract-field">CNTT</span></li>
+            <li>Quốc tịch: <span class="contract-field">Việt Nam</span> · Số hộ chiếu: <span class="contract-field">—</span></li>
+            <li>Mã số HSSV: <span class="contract-field">2157010001</span> · Số CMND/CCCD: <span class="contract-field">042204001234</span></li>
+          </ul>
+          <p>Hai bên thống nhất ký kết hợp đồng thuê phòng ở nội trú tại Trường Đại học Vinh với các điều khoản sau:</p>
+          <p><strong>Điều 1.</strong> Bên A cho bên B thuê <strong>01 chỗ ở</strong> tại phòng <span class="contract-field">A-302</span>, Tầng <span class="contract-field">3</span>, Ký túc xá số <span class="contract-field">Tòa A</span>. Phòng đảm bảo điều kiện sinh hoạt, có tài sản theo biên bản giao nhận.</p>
+          <p><strong>Điều 2.</strong> Giá tiền, thời gian ở và phương thức thanh toán:</p>
+          <ol>
+            <li>Giá phòng: <span class="contract-field">350.000</span> đồng/tháng.</li>
+            <li>Tiền tài sản (cọc): <span class="contract-field">500.000</span> đồng.</li>
+            <li>Thời gian ở: từ <span class="contract-field">01/09/2024</span> đến <span class="contract-field">31/08/2025</span>.</li>
+            <li>Phương thức: Tiền mặt, thanh toán 1 lần khi ký hợp đồng.</li>
+            <li>Giá trị hợp đồng: <span class="contract-field">3.500.000</span> đồng.</li>
+          </ol>
         </div>
         <footer class="invoice-sheet__foot no-print">
           <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
@@ -93,10 +120,14 @@
       <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top: 0">Xác nhận trả phòng</h2>
-        <p>Bạn yêu cầu <strong>trả phòng A-302</strong> (demo). Ban quản lý sẽ liên hệ bàn giao và đối soát công nợ.</p>
+        <p>Bạn gửi yêu cầu <strong>trả phòng A-302 · Tòa A</strong> (demo). Ban quản lý sẽ liên hệ bàn giao phòng, đối soát công nợ và hoàn cọc (nếu có).</p>
         <div class="form-group">
-          <label>Lý do / ghi chú</label>
-          <textarea rows="3" placeholder="VD: Hết hạn hợp đồng, chuyển trường…"></textarea>
+          <label for="ly-do-tra">Lý do / ghi chú</label>
+          <textarea id="ly-do-tra" rows="3" placeholder="VD: Hết hạn hợp đồng, chuyển trường, nghỉ học…"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="ngay-tra">Ngày dự kiến trả phòng</label>
+          <input id="ngay-tra" type="date" />
         </div>
         <div class="modal-actions">
           <a href="#" class="btn btn-secondary">Hủy</a>

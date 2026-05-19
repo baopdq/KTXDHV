@@ -411,6 +411,54 @@
   margin-bottom: 16px;
 }
 
+/* Phòng đang thuê */
+.sv-room-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 20px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .sv-room-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sv-room-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #ecfdf5;
+  border: 1px solid #6ee7b7;
+  color: #047857;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.sv-welcome a.sv-welcome__room {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sv-welcome a.sv-welcome__room:hover {
+  color: #bae6fd;
+}
+
+.sv-stat--link {
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.sv-stat--link:hover {
+  border-color: #7dd3fc;
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.12);
+}
+
 /* Đăng ký KTX — layout theo mockup (stepper + form + rail) */
 .content--reg .page-title {
   margin-bottom: 4px;
