@@ -341,9 +341,9 @@ def make_toolbar(add_href: str, add_label: str, export_hint: str) -> str:
 
     return f"""              <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="{html_module.escape(add_href, quote=True)}" class="btn-mgmt-primary mgmt-crud-toolbar__primary">{html_module.escape(add_label)}</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline"{title_attr}>Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export"{title_attr}>Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phòng đang thuê — Cổng SV</title>
+    <link rel="stylesheet" href="../css/ktx-base.css" />
+    <link rel="stylesheet" href="../css/ktx-bql-components.css" />
+    <link rel="stylesheet" href="../css/ktx-ui.css" />
+    <link rel="stylesheet" href="../css/ktx-student.css" />
+    <link rel="stylesheet" href="../css/ktx-print.css" />
+  </head>
+  <body>
+    <div class="app student-app is-visible">
+      <aside id="sidebar" class="sidebar">
+        <div class="sidebar-brand sidebar-brand--sv sidebar-brand--logo"><img class="sidebar-brand__logo" src="../assets/logo-dai-hoc-vinh.webp" alt="Logo Đại học Vinh" width="48" height="48" /><div><strong>Cổng sinh viên KTX</strong><span>Đại học Vinh</span></div></div>
+        <div class="nav-section">Menu</div>
+        <a href="trang-chu.html" class="nav-link">Trang chủ</a>
+        <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
+        <a href="dang-ky-phong.html" class="nav-link">Đăng ký thuê phòng</a>
+        <a href="phong-dang-thue.html" class="nav-link is-active">Phòng đang thuê</a>
+        <a href="minh-chung-uu-tien.html" class="nav-link">Minh chứng ưu tiên</a>
+        <a href="bao-cao-hu-hong.html" class="nav-link">Báo cáo hư hỏng</a>
+        <a href="hoa-don-thanh-toan.html" class="nav-link">Hóa đơn & thanh toán</a>
+        <a href="don-cua-toi.html" class="nav-link">Đơn của tôi</a>
+        <a href="doi-mat-khau.html" class="nav-link">Đổi mật khẩu</a>
+        <a href="thong-bao.html" class="nav-link">Thông báo</a>
+      </aside>
+      <div class="main">
+        <header class="topbar">
+          <div class="topbar-left">
+            <div class="student-topbar-brand">
+              <img src="../assets/logo-dai-hoc-vinh.webp" alt="" width="32" height="32" />
+              <div><strong>Đại học Vinh</strong><small>KTX · Cổng sinh viên</small></div>
+            </div>
+            <span class="role-badge">Sinh viên</span>
+          </div>
+          <div class="topbar-actions">
+            <a href="doi-mat-khau.html" class="btn btn-ghost btn-sm">Đổi mật khẩu</a>
+            <a href="dang-nhap.html" class="btn btn-secondary btn-sm">Đăng nhập SV</a>
+          </div>
+        </header>
+        <main class="content">
+          <h1 class="page-title">Phòng đang thuê</h1>
+          <p class="page-desc">Thông tin chỗ ở hiện tại, hợp đồng và thao tác trả phòng (demo).</p>
+          <div class="card">
+            <div class="mgmt-profile" style="margin-bottom: 0">
+              <span class="mgmt-profile__avatar" aria-hidden="true">NA</span>
+              <div class="mgmt-profile__meta">
+                <strong>Phòng A-302 · Tòa A</strong>
+                <span>Giường 2 · Tiêu chuẩn 4 người</span>
+                <span class="badge badge-success">Đang nội trú</span>
+              </div>
+            </div>
+            <dl class="mgmt-dl" style="margin-top: 18px">
+              <dt>Ngày vào ở</dt><dd>01/09/2024</dd>
+              <dt>Hạn hợp đồng</dt><dd>31/08/2025</dd>
+              <dt>Giá phòng/tháng</dt><dd>350.000 ₫</dd>
+              <dt>Số HĐ</dt><dd>HD-2024-0892</dd>
+            </dl>
+            <div class="student-action-row" style="margin-top: 20px">
+              <a href="#hop-dong-hien-tai" class="btn btn-primary">Xem hợp đồng</a>
+              <a href="#modal-tra-phong" class="btn btn-danger">Trả phòng (demo)</a>
+              <a href="hoa-don-thanh-toan.html" class="btn btn-secondary">Hóa đơn & thanh toán</a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="hop-dong-hien-tai" class="invoice-sheet-host no-print">
+      <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
+      <article class="invoice-sheet" style="width: min(720px, 96vw)">
+        <header class="invoice-sheet__brand">
+          <img src="../assets/logo-dai-hoc-vinh.webp" alt="Đại học Vinh" width="56" height="56" />
+          <div><h2>TRƯỜNG ĐẠI HỌC VINH</h2><p>Ban Quản lý Ký túc xá</p></div>
+        </header>
+        <div class="contract-doc">
+          <h3>Hợp đồng thuê phòng ở nội trú</h3>
+          <p><strong>Bên A:</strong> Ban Quản lý KTX — Trường Đại học Vinh.</p>
+          <p><strong>Bên B (Bên thuê ở):</strong> Nguyễn Văn An · MSSV 2157010001 · Lớp K62-CNTT.</p>
+          <p><strong>Điều 1.</strong> Cho thuê 01 chỗ ở tại phòng <span class="contract-field">A-302</span>, Tầng <span class="contract-field">3</span>, KTX số <span class="contract-field">Tòa A</span>.</p>
+          <p><strong>Điều 2.</strong> Giá phòng 350.000 đồng/tháng; thời gian 01/09/2024 — 31/08/2025; thanh toán tiền mặt một lần khi ký HĐ.</p>
+        </div>
+        <footer class="invoice-sheet__foot no-print">
+          <a href="#" class="btn btn-secondary btn-sm">Đóng</a>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">In hợp đồng</button>
+        </footer>
+      </article>
+    </div>
+
+    <div id="modal-tra-phong" class="modal-backdrop" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top: 0">Xác nhận trả phòng</h2>
+        <p>Bạn yêu cầu <strong>trả phòng A-302</strong> (demo). Ban quản lý sẽ liên hệ bàn giao và đối soát công nợ.</p>
+        <div class="form-group">
+          <label>Lý do / ghi chú</label>
+          <textarea rows="3" placeholder="VD: Hết hạn hợp đồng, chuyển trường…"></textarea>
+        </div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Hủy</a>
+          <a href="#" class="btn btn-danger">Gửi yêu cầu trả phòng (demo)</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

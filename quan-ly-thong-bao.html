@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý thông báo</h1>
                 <p class="mgmt-sub">Soạn và phát hành thông báo tới sinh viên trong KTX (<code>BQL</code>).</p>
               </div>
-                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                                  <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-dang-thong-bao" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Đăng thông báo</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất lịch sử thông báo đã gửi (tiêu đề, đối tượng, trạng thái nháp/đã gửi).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất lịch sử thông báo đã gửi (tiêu đề, đối tượng, trạng thái nháp/đã gửi).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -156,7 +156,7 @@
       </div>
     </div>
 
-    <div id="drawer-dang-thong-bao" class="mgmt-drawer-host">
+    <div id="drawer-dang-thong-bao" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="dtb-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -196,7 +196,7 @@
       </aside>
     </div>
 
-    <div id="drawer-xem-tb" class="mgmt-drawer-host">
+    <div id="drawer-xem-tb" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="xtb-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -241,7 +241,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -254,8 +254,8 @@
           <dt>Nội dung file xuất</dt><dd>Ngày phát hành, tiêu đề, đối tượng nhận (toàn SV / theo tòa / nhóm phòng), trạng thái.</dd>
           <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tiêu đề, trạng thái (đã gửi/nháp).</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel · CSV (demo).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSTB-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSTB-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Phạm vi</span><strong>Các tin sau bộ lọc (demo)</strong></div>

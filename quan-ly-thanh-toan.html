@@ -75,11 +75,11 @@
                 <h1 class="page-title">Quản lý thanh toán</h1>
                 <p class="mgmt-sub"><code>UC 5.1</code> — Theo dõi công nợ, thu phí và đối soát VNPay.</p>
               </div>
-                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                                  <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-tt-detail" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Ghi nhận thanh toán</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất bảng kê phiếu thu / công nợ theo kỳ tháng·năm, phòng, trạng thái thanh toán.">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất bảng kê phiếu thu / công nợ theo kỳ tháng·năm, phòng, trạng thái thanh toán.">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -202,7 +202,7 @@
     
     </div>
 
-    <div id="drawer-tt-detail" class="mgmt-drawer-host">
+    <div id="drawer-tt-detail" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="tt-detail-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -260,7 +260,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -273,8 +273,8 @@
           <dt>Nội dung file xuất</dt><dd>Mã phiếu, MSSV, họ tên, phòng, kỳ thu, tiền phòng, điện nước, tổng tiền, hạn TT, trạng thái, hình thức.</dd>
           <dt>Phạm vi theo kỳ</dt><dd>Theo «Tháng» và «Năm» đã chọn trên bộ lọc; có thể lọc thêm theo phòng hoặc trạng thái công nợ.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel — sheet «Tổng hợp» và «Chi tiết» (demo).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSTT-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSTT-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Tổng dư nợ (demo)</span><strong>Theo dòng «Chưa thanh toán» sau lọc</strong></div>

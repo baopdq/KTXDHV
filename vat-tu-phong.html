@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý vật tư phòng</h1>
                 <p class="mgmt-sub"><code>UC 3.1</code> · <code>UC 3.2</code></p>
               </div>
-                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                                  <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-vattu" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm vật tư</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất kiểm kê vật tư phòng (theo mã VT, phòng, số lượng, tình trạng).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất kiểm kê vật tư phòng (theo mã VT, phòng, số lượng, tình trạng).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -113,73 +113,73 @@
                   <thead>
                     <tr>
                       <th>STT</th>
-                      <th>Mã VT</th>
                       <th>Tên vật tư</th>
-                      <th>Phòng</th>
+                      <th>Mã VT</th>
                       <th>SL</th>
                       <th>Tình trạng</th>
                       <th>Ngày cập nhật</th>
+                      <th>Ghi chú</th>
                       <th>Chức năng</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td data-label="STT">1</td>
-                      <td data-label="Mã">VT001</td>
                       <td data-label="Tên">Giường tầng</td>
-                      <td data-label="Phòng">A-302</td>
+                      <td data-label="Mã">VT001</td>
                       <td data-label="SL">4</td>
                       <td data-label="TT"><span class="badge-bql badge-bql--success">Tốt</span></td>
                       <td data-label="Ngày">02/05/2026</td>
+                      <td data-label="Ghi chú">—</td>
                       <td data-label="Thao tác">
                         <div class="table-bql-actions table-bql-actions--tight">
                           <a href="#drawer-capnhat-vattu" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
-                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa vật tư khỏi phòng" aria-label="Xóa vật tư (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
+                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td data-label="STT">2</td>
-                      <td data-label="Mã">VT002</td>
                       <td data-label="Tên">Tủ quần áo</td>
-                      <td data-label="Phòng">A-302</td>
+                      <td data-label="Mã">VT002</td>
                       <td data-label="SL">4</td>
                       <td data-label="TT"><span class="badge-bql badge-bql--success">Tốt</span></td>
                       <td data-label="Ngày">02/05/2026</td>
+                      <td data-label="Ghi chú">—</td>
                       <td data-label="Thao tác">
                         <div class="table-bql-actions table-bql-actions--tight">
                           <a href="#drawer-capnhat-vattu" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
-                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa vật tư khỏi phòng" aria-label="Xóa vật tư (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
+                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td data-label="STT">3</td>
-                      <td data-label="Mã">VT018</td>
                       <td data-label="Tên">Quạt treo</td>
-                      <td data-label="Phòng">B-105</td>
+                      <td data-label="Mã">VT018</td>
                       <td data-label="SL">2</td>
                       <td data-label="TT"><span class="badge-bql badge-bql--danger">Hỏng</span></td>
                       <td data-label="Ngày">28/04/2026</td>
+                      <td data-label="Ghi chú">Chờ sửa</td>
                       <td data-label="Thao tác">
                         <div class="table-bql-actions table-bql-actions--tight">
                           <a href="#drawer-capnhat-vattu" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
-                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa vật tư khỏi phòng" aria-label="Xóa vật tư (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
+                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                         </div>
                       </td>
                     </tr>
                     <tr>
                       <td data-label="STT">4</td>
-                      <td data-label="Mã">VT021</td>
                       <td data-label="Tên">Điều hòa</td>
-                      <td data-label="Phòng">B-105</td>
+                      <td data-label="Mã">VT021</td>
                       <td data-label="SL">1</td>
                       <td data-label="TT"><span class="badge-bql badge-bql--warning">Đang sửa</span></td>
                       <td data-label="Ngày">10/05/2026</td>
+                      <td data-label="Ghi chú">Bảo hành</td>
                       <td data-label="Thao tác">
                         <div class="table-bql-actions table-bql-actions--tight">
                           <a href="#drawer-capnhat-vattu" class="icon-btn-mgmt icon-btn-mgmt--edit" title="Sửa" aria-label="Sửa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" /><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></a>
-                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa vật tư khỏi phòng" aria-label="Xóa vật tư (demo)"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
+                          <a href="#modal-xoa-muc-vat-tu" class="icon-btn-mgmt icon-btn-mgmt--danger" title="Xóa" aria-label="Xóa"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="3 6 5 6 21 6" /><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" /></svg></a>
                         </div>
                       </td>
                     </tr>
@@ -200,7 +200,7 @@
       </div>
     </div>
 
-    <div id="drawer-them-vattu" class="mgmt-drawer-host">
+    <div id="drawer-them-vattu" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="drawer-them-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -210,12 +210,18 @@
         <div class="mgmt-drawer-body">
           <form data-demo="Đã gán tài sản vào phòng (UC 3.1).">
             <div class="form-group">
-              <label>Mã vật tư <span style="color: #dc2626">*</span></label>
-              <input required placeholder="VD: VT099" />
+              <label>Tên vật tư <span style="color: #dc2626">*</span></label>
+              <input id="vt-ten" list="vt-ten-list" required placeholder="Giường, tủ, quạt…" />
+              <datalist id="vt-ten-list">
+                <option value="Giường tầng"></option>
+                <option value="Tủ quần áo"></option>
+                <option value="Quạt treo"></option>
+                <option value="Điều hòa"></option>
+              </datalist>
             </div>
             <div class="form-group">
-              <label>Tên vật tư <span style="color: #dc2626">*</span></label>
-              <input required placeholder="Giường, tủ, quạt…" />
+              <label>Mã vật tư <span style="color: #dc2626">*</span></label>
+              <input id="vt-ma" required placeholder="Tự điền khi chọn tên" readonly />
             </div>
             <div class="form-group">
               <label>Phòng <span style="color: #dc2626">*</span></label>
@@ -254,7 +260,7 @@
       </aside>
     </div>
 
-    <div id="drawer-capnhat-vattu" class="mgmt-drawer-host">
+    <div id="drawer-capnhat-vattu" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="drawer-cap-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -292,7 +298,7 @@
     </div>
 
     <div id="modal-xoa-muc-vat-tu" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa vật tư phòng</h2>
         <p>Xóa bản <strong>mã vật tư trong phòng</strong> khỏi danh kiểm kê demo. Thao tác không gửi tin lên máy chủ.</p>
@@ -326,7 +332,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -339,8 +345,8 @@
           <dt>Nội dung file xuất</dt><dd>Mã vật tư, tên, phòng đặt VT, số lượng, tình trạng (tốt/hỏng/đang sửa), ngày cập nhật.</dd>
           <dt>Phạm vi theo phòng</dt><dd>Lọc «Phòng» hoặc xuất toàn KTX để báo hỏng và mua sắm bổ sung.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel (.xlsx) — nhóm Sheet theo tòa/phòng (khi triển khai).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSVT-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSVT-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Mục đích</span><strong>Báo cáo bảo trì · đối soát tài sản</strong></div>
@@ -351,6 +357,26 @@
         </footer>
       </article>
     </div>
+
+
+    <script>
+      (function () {
+        var map = {
+          "Giường tầng": "VT001",
+          "Tủ quần áo": "VT002",
+          "Quạt treo": "VT018",
+          "Điều hòa": "VT021"
+        };
+        document.addEventListener("DOMContentLoaded", function () {
+          var ten = document.getElementById("vt-ten");
+          var ma = document.getElementById("vt-ma");
+          if (!ten || !ma) return;
+          ten.addEventListener("input", function () {
+            ma.value = map[ten.value.trim()] || "";
+          });
+        });
+      })();
+    </script>
 
 </body>
 </html>

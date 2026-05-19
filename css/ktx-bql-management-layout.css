@@ -244,17 +244,48 @@
 
 .mgmt-crud-toolbar__primary {
   order: -1;
+  background: #059669 !important;
+  border-color: #059669 !important;
+  color: #fff !important;
+}
+
+.mgmt-crud-toolbar__primary:hover {
+  background: #047857 !important;
+  border-color: #047857 !important;
+}
+
+.mgmt-crud-toolbar__edit {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1d4ed8;
+}
+
+.mgmt-crud-toolbar__edit:hover {
+  background: #dbeafe;
+  border-color: #2563eb;
 }
 
 .mgmt-crud-toolbar__danger {
   color: #b91c1c;
   border-color: #fecaca;
-  background: #fffafa;
+  background: #fef2f2;
 }
 
 .mgmt-crud-toolbar__danger:hover {
   border-color: #f87171;
   color: #991b1b;
+  background: #fee2e2;
+}
+
+.mgmt-crud-toolbar__export {
+  background: #fff7ed;
+  border-color: #f97316;
+  color: #c2410c;
+}
+
+.mgmt-crud-toolbar__export:hover {
+  background: #ffedd5;
+  border-color: #ea580c;
 }
 
 .mgmt-crud-toolbar__import {
@@ -263,6 +294,14 @@
   cursor: pointer;
   margin: 0;
   font-weight: 500;
+  background: #f5f3ff;
+  border-color: #8b5cf6;
+  color: #6d28d9;
+}
+
+.mgmt-crud-toolbar__import:hover {
+  background: #ede9fe;
+  border-color: #7c3aed;
 }
 
 .mgmt-crud-toolbar__import input[type="file"] {
@@ -277,6 +316,36 @@
 
 .modal--mgmt-crud-tip {
   max-width: 440px;
+}
+
+/* Drawer / modal giữa màn hình (xem chi tiết, thêm, sửa) */
+.mgmt-drawer-host--center:target {
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.mgmt-drawer-host--center .mgmt-drawer-scrim {
+  position: absolute;
+  inset: 0;
+  flex: none;
+  width: 100%;
+  height: 100%;
+}
+
+.mgmt-drawer-host--center .mgmt-drawer-panel {
+  width: min(720px, 96vw);
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
+}
+
+.modal--lg {
+  max-width: min(560px, 96vw);
+}
+
+.modal--xl {
+  max-width: min(720px, 96vw);
 }
 
 /* Phiếu xuất / in — đồng bộ UX với cổng SV (invoice-sheet + :target) */

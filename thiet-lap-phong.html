@@ -77,11 +77,11 @@
                 <h1 class="page-title">Thiết lập phòng KTX</h1>
                 <p class="mgmt-sub"><code>UC 2.2</code></p>
               </div>
-                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                      <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-phong" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm phòng</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất cấu hình phòng KTX đang thiết lập (theo tòa, loại, giá, sức chứa).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất cấu hình phòng KTX đang thiết lập (theo tòa, loại, giá, sức chứa).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -157,7 +157,7 @@
       </div>
     </div>
 
-    <div id="drawer-them-phong" class="mgmt-drawer-host">
+    <div id="drawer-them-phong" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="them-phong-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -202,7 +202,7 @@
       </aside>
     </div>
     <div id="modal-xoa-phong" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa phòng</h2>
         <p>Bạn có chắc muốn xóa phòng <strong>A-302</strong>? (Demo — không lưu dữ liệu.)</p>
@@ -213,7 +213,7 @@
       </div>
     </div>
     <div id="modal-xoa-phong-b" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa phòng</h2>
         <p>Bạn có chắc muốn xóa phòng <strong>B-105</strong>? (Demo — không lưu dữ liệu.)</p>
@@ -246,7 +246,7 @@
         </div>
       </div>
     </div>
-            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+                <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -259,8 +259,8 @@
           <dt>Nội dung file xuất</dt><dd>Phòng, tòa, loại giường/phòng, sức chứa quy định, đơn giá theo học kỳ·tháng (theo mockup hiện tại).</dd>
           <dt>Phạm vi theo tòa</dt><dd>Lọc «Tòa» + «Loại phòng» trên thanh công cụ.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel — dùng làm mẫu import hàng loạt khi mở đợt KTX mới.</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSPHCFG-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSPHCFG-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Ghi chú</span><strong>Khớp với «Quản lý phòng» sau khi duyệt cấu hình</strong></div>

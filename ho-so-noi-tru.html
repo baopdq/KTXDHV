@@ -77,11 +77,11 @@
                 <h1 class="page-title">Hồ sơ nội trú</h1>
                 <p class="mgmt-sub"><code>UC 6.1</code> — Quản lý danh mục hồ sơ nội trú CRUD+demo xuất/nhập: thêm · sửa · xóa · xem theo MSSV/phòng/lớp.</p>
               </div>
-                            <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                          <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-hoso" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm hồ sơ nội trú</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách hồ sơ nội trú theo MSSV, phòng và lớp (Excel/CSV demo).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh sách hồ sơ nội trú theo MSSV, phòng và lớp (Excel/CSV demo).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -266,7 +266,7 @@
       </div>
     </div>
 
-    <div id="drawer-hoso-chi-tiet" class="mgmt-drawer-host">
+    <div id="drawer-hoso-chi-tiet" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="hoso-chitiet-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -323,7 +323,7 @@
       </aside>
     </div>
 
-    <div id="drawer-them-hoso" class="mgmt-drawer-host">
+    <div id="drawer-them-hoso" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="hoso-them-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -394,7 +394,7 @@
     </div>
 
     <div id="modal-xoa-muc-hoso" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa hồ sơ nội trú</h2>
         <p>Bạn sắp <strong>gỡ hồ sơ nội trú</strong> khỏi danh mục vận hành (một dòng đang chọn). <strong>Demo:</strong> không xóa dữ liệu thật.</p>
@@ -428,7 +428,7 @@
       </div>
     </div>
 
-    <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -442,8 +442,8 @@
           <dt>Phạm vi · bộ lọc</dt><dd>Theo kết quả tìm MSSV và lọc phòng · lớp trên form — xuất đúng các dòng đang hiển thị sau lọc.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel (.xlsx) · CSV UTF-8 (demo).</dd>
           <dt>Nhập ngược chiều</dt><dd>Mẫu CSV đối chiếu với cổng sinh viên khi có API đồng bộ.</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSHSNT-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSHSNT-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Số lượng bản ghi</span><strong>Giống tổng dòng trong bảng sau lọc (demo)</strong></div>

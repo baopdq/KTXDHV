@@ -75,11 +75,11 @@
                 <h1 class="page-title">Quản lý đăng ký</h1>
                 <p class="mgmt-sub"><code>UC 4.3</code> — Tiếp nhận, duyệt và theo dõi đơn đăng ký ở KTX.</p>
               </div>
-                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                                  <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-dk-detail" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm đơn (form chi tiết)</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách đơn đăng ký (theo phòng DK, MSSV, trạng thái duyệt).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh sách đơn đăng ký (theo phòng DK, MSSV, trạng thái duyệt).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -135,7 +135,7 @@
     </div>
 
 
-    <div id="drawer-dk-detail" class="mgmt-drawer-host">
+    <div id="drawer-dk-detail" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="drawer-dk-detail-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -188,7 +188,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -201,8 +201,8 @@
           <dt>Nội dung file xuất</dt><dd>Mã đơn, MSSV, họ tên, phòng đăng ký mong muốn, ngày nộp, ưu tiên, trạng thái duyệt, người duyệt.</dd>
           <dt>Phạm vi theo phòng · trạng thái</dt><dd>Lọc theo «Phòng» và «Trạng thái» (chờ duyệt/đã duyệt/từ chối); xuất để phục vụ phê duyệt nhanh.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel · CSV · tổng hợp theo ngày (demo).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSDK-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSDK-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Trạng thái báo cáo</span><strong>Theo trạng thái lọc hiện tại (demo)</strong></div>

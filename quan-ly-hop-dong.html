@@ -75,11 +75,11 @@
                 <h1 class="page-title">Quản lý hợp đồng</h1>
                 <p class="mgmt-sub"><code>UC 4.4</code> — Lập, gia hạn và thanh lý hợp đồng thuê phòng.</p>
               </div>
-                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                                  <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-hd-detail" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm hợp đồng (form chi tiết)</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách hợp đồng thuê (MSSV, phòng, thời hạn, trạng thái hiệu lực/thanh lý).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh sách hợp đồng thuê (MSSV, phòng, thời hạn, trạng thái hiệu lực/thanh lý).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -123,7 +123,7 @@
     </div>
 
 
-    <div id="drawer-hd-detail" class="mgmt-drawer-host">
+    <div id="drawer-hd-detail" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="drawer-hd-detail-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -156,7 +156,7 @@
     </div>
 
     <div id="modal-xoa-muc-hop-dong" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa hợp đồng</h2>
         <p>Xóa bản <strong>hợp đồng</strong> (theo một dòng bạn đang thao tác trên demo) — đây chỉ là mô phỏng; không có tệp PDF hay chứng từ nào bị đổi trên máy chủ.</p>
@@ -190,7 +190,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -203,8 +203,8 @@
           <dt>Nội dung file xuất</dt><dd>Số HĐ, MSSV, họ tên, phòng, ngày bắt đầu/kết thúc, giá/tháng, tiền cọc, trạng thái, ngày thanh lý.</dd>
           <dt>Phạm vi</dt><dd>Theo từ khóa mã HĐ/MSSV và lọc trạng thái (hiệu lực/sắp hết hạn/đã thanh lý).</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel (.xlsx) — kèm sheet tóm tắt theo phòng (khi triển khai).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSHD-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSHD-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Kỳ báo cáo</span><strong>Toàn bộ HĐ sau lọc (demo)</strong></div>

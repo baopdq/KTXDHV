@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý tòa nhà</h1>
                 <p class="mgmt-sub"><code>UC 2.1</code></p>
               </div>
-                                                        <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                      <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-toa" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm tòa nhà</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh mục tòa nhà (mã, tên, số tầng, tổng phòng, số SV đang ở).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh mục tòa nhà (mã, tên, số tầng, tổng phòng, số SV đang ở).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -106,6 +106,7 @@
                         <th>Mã</th>
                         <th>Tên</th>
                         <th>Số tầng</th>
+                        <th>Sức chứa</th>
                         <th>Tổng phòng</th>
                         <th>Đang ở</th>
                         <th>Chức năng</th>
@@ -117,6 +118,7 @@
                         <td data-label="Mã">A</td>
                         <td data-label="Tên">Tòa A</td>
                         <td data-label="Tầng">5</td>
+                        <td data-label="Sức chứa">192</td>
                         <td data-label="Tổng phòng">48</td>
                         <td data-label="Đang ở">192</td>
                         <td data-label="Thao tác">
@@ -133,6 +135,7 @@
                         <td data-label="Mã">B</td>
                         <td data-label="Tên">Tòa B</td>
                         <td data-label="Tầng">6</td>
+                        <td data-label="Sức chứa">224</td>
                         <td data-label="Tổng phòng">56</td>
                         <td data-label="Đang ở">198</td>
                         <td data-label="Thao tác">
@@ -147,7 +150,7 @@
                   </table>
                 </div>
                 <div class="pagination-bql">
-                  <span>Hiển thị 1 đến 2 của 2 tòa · Tổng <strong>104</strong> phòng · <strong>390</strong> SV đang ở</span>
+                  <span>Hiển thị 1 đến 2 của 2 tòa · Tổng sức chứa <strong>416</strong> giường · <strong>104</strong> phòng · <strong>390</strong> SV đang ở</span>
                   <div class="pagination-bql__pages">
                     <button type="button" disabled>‹</button>
                     <button type="button" class="is-active">1</button>
@@ -167,7 +170,7 @@
       </div>
     </div>
 
-    <div id="drawer-toa-detail" class="mgmt-drawer-host">
+    <div id="drawer-toa-detail" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="toa-detail-title" aria-modal="true">
         
@@ -184,6 +187,7 @@
               
               
               
+              <div><dt>Sức chứa</dt><dd>192 giường</dd></div>
               <div><dt>Số tầng</dt><dd>5</dd></div>
               <div><dt>Tổng phòng</dt><dd>48</dd></div>
               <div><dt>Phòng đang dùng</dt><dd>48</dd></div>
@@ -206,7 +210,7 @@
       </aside>
     </div>
 
-    <div id="drawer-them-toa" class="mgmt-drawer-host">
+    <div id="drawer-them-toa" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel" role="dialog" aria-labelledby="them-toa-title" aria-modal="true">
         <div class="mgmt-drawer-head">
@@ -260,7 +264,7 @@
     </div>
 
     <div id="modal-xoa-toa-a" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa tòa nhà</h2>
         <p>Bạn có chắc muốn xóa <strong>Tòa A</strong>? Các phòng thuộc tòa cũng bị ảnh hưởng. (Demo.)</p>
@@ -271,7 +275,7 @@
       </div>
     </div>
     <div id="modal-xoa-toa-b" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa tòa nhà</h2>
         <p>Bạn có chắc muốn xóa <strong>Tòa B</strong>? (Demo.)</p>
@@ -304,7 +308,7 @@
         </div>
       </div>
     </div>
-            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+                <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -317,8 +321,8 @@
           <dt>Nội dung file xuất</dt><dd>Mã tòa, tên hiển thị, số tầng, tổng phòng, số sinh viên đang ở (tổng hợp).</dd>
           <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tìm theo tên hoặc mã tòa.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel · PDF bảng tóm tắt (demo).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSTOA-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSTOA-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Phạm vi</span><strong>Toàn danh mục tòa hiện có (demo)</strong></div>

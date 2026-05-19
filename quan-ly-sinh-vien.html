@@ -77,11 +77,11 @@
                 <h1 class="page-title">Quản lý sinh viên</h1>
                 <p class="mgmt-sub"><code>UC 6.1</code> — Danh sách, tra cứu và cập nhật hồ sơ sinh viên nội trú KTX.</p>
               </div>
-                                                                      <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
+                                                                                    <div class="mgmt-head__actions mgmt-crud-toolbar" role="toolbar" aria-label="Thêm sửa xóa nhập xuất">
                 <a href="#drawer-them-sv" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm sinh viên</a>
-                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline">Sửa</a>
+                <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline" title="Xuất danh sách sinh viên theo bộ lọc; nhóm và lọc theo tòa · phòng đang ở (CSV/Excel demo).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh sách sinh viên theo bộ lọc; nhóm và lọc theo tòa · phòng đang ở (CSV/Excel demo).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -248,7 +248,7 @@
       </div>
     </div>
 
-    <div id="drawer-sv-detail" class="mgmt-drawer-host">
+    <div id="drawer-sv-detail" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="sv-detail-title" aria-modal="true">
         
@@ -324,7 +324,7 @@
       </aside>
     </div>
 
-    <div id="drawer-them-sv" class="mgmt-drawer-host">
+    <div id="drawer-them-sv" class="mgmt-drawer-host mgmt-drawer-host--center">
       <a href="#" class="mgmt-drawer-scrim" aria-label="Đóng"></a>
       <aside class="mgmt-drawer-panel mgmt-drawer-panel--wide" role="dialog" aria-labelledby="them-sv-title" aria-modal="true">
         <div class="mgmt-drawer-head"><h2 id="them-sv-title">Thêm sinh viên</h2><a href="#" class="mgmt-drawer-close" aria-label="Đóng">×</a></div>
@@ -351,7 +351,7 @@
     </div>
 
     <div id="modal-xoa-muc-sinh-vien" class="modal-backdrop" role="dialog" aria-modal="true">
-      <div class="modal">
+      <div class="modal modal--lg">
         <a href="#" class="modal-close" aria-label="Đóng">×</a>
         <h2 style="margin-top:0">Xác nhận xóa sinh viên</h2>
         <p>Bạn sắp <strong>xóa hồ sơ sinh viên</strong> đang chọn khỏi danh mục nội trú demo. Không có dữ liệu thực được ghi nhận hoặc gỡ bỏ trên máy chủ trong bản HTML tĩnh này.</p>
@@ -385,7 +385,7 @@
       </div>
     </div>
 
-        <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
+            <div id="phieu-xuat-mgmt" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -400,8 +400,8 @@
           <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tìm kiếm, khoa, khóa, trạng thái — đúng như thanh công cụ phía trên bảng.</dd>
           <dt>Định dạng gợi ý</dt><dd>Microsoft Excel (.xlsx) · CSV UTF-8 (mẫu demo).</dd>
           <dt>Nhập ngược chiều</dt><dd>Nhập CSV/Excel mẫu để bổ sung/cập nhật hàng loạt (khi triển khai backend).</dd>
-          <dt>Thời gian xuất</dt><dd>16/05/2026</dd>
-          <dt>Mã phiếu</dt><dd>KTX-DSSV-20260516-001</dd>
+          <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
+          <dt>Mã phiếu</dt><dd>KTX-DSSV-20260519-001</dd>
           <dt>Người lập phiếu</dt><dd>Nguyễn Văn A — Cán bộ KTX (demo)</dd>
         </dl>
         <div class="invoice-sheet__amount"><span>Ước tính số dòng</span><strong>Theo số dòng đang hiển thị trên lưới (demo)</strong></div>

@@ -261,3 +261,152 @@
   text-decoration: underline;
   color: #0369a1;
 }
+
+/* Thanh thanh toán nhanh (hóa đơn) */
+.sv-pay-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+  padding: 16px 18px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%);
+  border: 1px solid #bae6fd;
+  border-radius: var(--radius);
+  margin-bottom: 20px;
+}
+
+.sv-pay-bar .form-group {
+  margin: 0;
+  flex: 1;
+  min-width: 160px;
+}
+
+.sv-pay-bar label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #0369a1;
+}
+
+.sv-pay-bar input {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.sv-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 24px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border);
+}
+
+.sv-section-title--warn {
+  color: #b45309;
+  border-bottom-color: #fcd34d;
+}
+
+.sv-section-title--ok {
+  color: #047857;
+  border-bottom-color: #6ee7b7;
+}
+
+/* Tab thông báo (radio, không JS) */
+.sv-tabs-wrap {
+  margin-bottom: 16px;
+}
+
+.sv-tabs-wrap input[name="sv-tb"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sv-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 0;
+}
+
+.sv-tabs label {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: #fff;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #64748b;
+}
+
+
+.sv-tab-panel {
+  display: none;
+}
+
+.sv-tabs-wrap:has(#sv-tb-all:checked) #panel-all,
+.sv-tabs-wrap:has(#sv-tb-new:checked) #panel-new,
+.sv-tabs-wrap:has(#sv-tb-read:checked) #panel-read {
+  display: block;
+}
+
+.sv-tabs-wrap:has(#sv-tb-all:checked) .sv-tabs label[for="sv-tb-all"],
+.sv-tabs-wrap:has(#sv-tb-new:checked) .sv-tabs label[for="sv-tb-new"],
+.sv-tabs-wrap:has(#sv-tb-read:checked) .sv-tabs label[for="sv-tb-read"] {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
+}
+
+.sv-tabs-wrap .sv-tabs {
+  margin-bottom: 14px;
+}
+
+.notice-list li.notice--new {
+  border-left: 4px solid #f59e0b;
+  padding-left: 12px;
+}
+
+.notice-list li.notice--read {
+  opacity: 0.85;
+}
+
+/* Hợp đồng / mẫu đơn đăng ký */
+.contract-doc {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #1e293b;
+}
+
+.contract-doc h3 {
+  text-align: center;
+  font-size: 1rem;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+}
+
+.contract-doc .contract-field {
+  border-bottom: 1px dotted #94a3b8;
+  min-width: 120px;
+  display: inline-block;
+}
+
+.contract-doc ol {
+  padding-left: 1.25rem;
+}
+
+.contract-doc li {
+  margin-bottom: 8px;
+}
+
+.modal--contract {
+  max-width: min(720px, 96vw);
+  width: 100%;
+}
+
+.student-action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}

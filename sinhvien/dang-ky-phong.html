@@ -20,6 +20,7 @@
       <a href="trang-chu.html" class="nav-link">Trang chủ</a>
       <a href="tra-cuu-phong.html" class="nav-link">Tra cứu phòng trống</a>
       <a href="dang-ky-phong.html" class="nav-link is-active">Đăng ký thuê phòng</a>
+      <a href="phong-dang-thue.html" class="nav-link">Phòng đang thuê</a>
       <a href="minh-chung-uu-tien.html" class="nav-link">Minh chứng ưu tiên</a>
       <a href="bao-cao-hu-hong.html" class="nav-link">Báo cáo hư hỏng</a>
       <a href="hoa-don-thanh-toan.html" class="nav-link">Hóa đơn & thanh toán</a>
@@ -47,19 +48,48 @@
         <main class="content">
           <h1 class="page-title">Đăng ký thuê phòng</h1>
           <p class="page-desc"><code>UC 4.1</code> — Nếu bạn đến từ «Tra cứu phòng trống», phòng sẽ được chọn sẵn theo dòng đã bấm.</p>
-          <div id="form-dang-ky" class="card" style="max-width: 520px">
+          <p class="student-action-row no-print">
+            <a href="#mau-don-dang-ky" class="btn btn-secondary">Xem mẫu đơn đăng ký</a>
+          </p>
+          <div id="form-dang-ky" class="card">
+            <h2 style="margin-top:0;font-size:1.05rem">Bên B: Bên thuê ở</h2>
+            <div class="form-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px 16px">
+              <div class="form-group"><label>Họ và tên</label><input type="text" value="Nguyễn Văn An" required /></div>
+              <div class="form-group"><label>Ngày sinh</label><input type="date" value="2004-05-15" required /></div>
+              <div class="form-group"><label>Lớp</label><input type="text" value="K62-CNTT" required /></div>
+              <div class="form-group"><label>Ngành</label><input type="text" value="Công nghệ thông tin" required /></div>
+              <div class="form-group"><label>Khoa</label><input type="text" value="CNTT" required /></div>
+              <div class="form-group"><label>Quốc tịch</label><input type="text" value="Việt Nam" /></div>
+              <div class="form-group"><label>Số hộ chiếu</label><input type="text" placeholder="Nếu có" /></div>
+              <div class="form-group"><label>Mã số HSSV</label><input type="text" value="2157010001" required /></div>
+              <div class="form-group"><label>Số CMND/CCCD</label><input type="text" value="042204001234" required /></div>
+            </div>
+            <hr style="margin:20px 0;border:0;border-top:1px solid var(--border)" />
+            <h2 style="font-size:1.05rem">Điều khoản thuê phòng (theo mẫu HĐ)</h2>
             <div class="form-group">
-              <label>Phòng</label>
+              <label>Phòng đăng ký</label>
               <select id="reg-room" name="phong">
                 <option value="">— Chọn —</option>
-                <option value="A-302">A-302 (còn 2 giường)</option>
-                <option value="B-105">B-105 (còn 1 giường)</option>
+                <option value="A-302">A-302 · Tòa A · Tầng 3 (còn 2 giường)</option>
+                <option value="B-105">B-105 · Tòa B · Tầng 1 (còn 1 giường)</option>
               </select>
               <p class="hint"><a href="tra-cuu-phong.html">← Quay lại tra cứu</a> nếu muốn đổi phòng khác.</p>
             </div>
+            <div class="form-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px 16px">
+              <div class="form-group"><label>Giá phòng (đồng/tháng)</label><input type="number" value="350000" min="0" /></div>
+              <div class="form-group"><label>Tiền tài sản (cọc, đồng)</label><input type="number" value="500000" min="0" /></div>
+              <div class="form-group"><label>Thời gian ở (tháng)</label><input type="number" value="10" min="1" /></div>
+              <div class="form-group"><label>Từ ngày</label><input type="date" value="2025-09-01" /></div>
+              <div class="form-group"><label>Đến ngày</label><input type="date" value="2026-06-30" /></div>
+              <div class="form-group"><label>Giá trị HĐ (đồng)</label><input type="number" value="3500000" min="0" /></div>
+            </div>
+            <div class="form-group">
+              <label>Phương thức thanh toán</label>
+              <input type="text" value="Tiền mặt, thanh toán 1 lần khi ký hợp đồng" readonly />
+            </div>
             <div class="form-group">
               <label>Ghi chú (tuỳ chọn)</label>
-              <textarea rows="3"></textarea>
+              <textarea rows="2" placeholder="Yêu cầu giường tầng dưới…"></textarea>
             </div>
             <a href="#" id="btn-confirm-register" class="btn btn-primary">Gửi đơn đăng ký (demo)</a>
           </div>
