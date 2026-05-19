@@ -582,6 +582,48 @@
   color: #64748b;
 }
 
+.mgmt-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.mgmt-kpi {
+  padding: 12px 14px;
+  border: 1px solid var(--mgmt-border);
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.mgmt-kpi--highlight {
+  background: linear-gradient(135deg, #eff6ff 0%, #ecfdf5 100%);
+  border-color: #93c5fd;
+}
+
+.mgmt-kpi__label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.mgmt-kpi__value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.2;
+}
+
+.mgmt-kpi__value small {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
 /* Toolbar reuse + spacing */
 .mgmt-panel .toolbar-bql {
   margin-top: 0;

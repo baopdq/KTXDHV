@@ -81,7 +81,7 @@
                 <a href="#drawer-them-toa" class="btn-mgmt-primary mgmt-crud-toolbar__primary">+ Thêm tòa nhà</a>
                 <a href="#modal-mgmt-batch-edit" class="btn-mgmt-outline mgmt-crud-toolbar__edit">Sửa</a>
                 <a href="#modal-mgmt-batch-delete" class="btn-mgmt-outline mgmt-crud-toolbar__danger">Xóa</a>
-                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh mục tòa nhà (mã, tên, số tầng, tổng phòng, số SV đang ở).">Xuất</a>
+                <a href="#phieu-xuat-mgmt" class="btn-mgmt-outline mgmt-crud-toolbar__export" title="Xuất danh mục tòa nhà (mã, tên, số tầng, sức chứa, tổng phòng, SV đang ở).">Xuất</a>
                 <label class="btn-mgmt-outline mgmt-crud-toolbar__import">
                   Nhập
                   <input type="file" accept=".csv,.xlsx,.xls" aria-label="Nhập từ file (demo)" />
@@ -97,6 +97,24 @@
                   </div>
                   <button type="button" class="btn-bql btn-bql-primary">Tìm kiếm</button>
                 </form>
+                <div class="mgmt-kpi-row" aria-label="Tổng hợp sức chứa">
+                  <div class="mgmt-kpi mgmt-kpi--highlight">
+                    <span class="mgmt-kpi__label">Tổng sức chứa</span>
+                    <span class="mgmt-kpi__value">416 <small>giường</small></span>
+                  </div>
+                  <div class="mgmt-kpi">
+                    <span class="mgmt-kpi__label">SV đang ở</span>
+                    <span class="mgmt-kpi__value">390 <small>/ 416</small></span>
+                  </div>
+                  <div class="mgmt-kpi">
+                    <span class="mgmt-kpi__label">Chỗ trống</span>
+                    <span class="mgmt-kpi__value">26 <small>giường</small></span>
+                  </div>
+                  <div class="mgmt-kpi">
+                    <span class="mgmt-kpi__label">Tổng phòng</span>
+                    <span class="mgmt-kpi__value">104 <small>phòng</small></span>
+                  </div>
+                </div>
                 <h2 class="mgmt-panel__title">Danh sách tòa</h2>
                 <div class="table-wrap">
                   <table class="table-bql table-cards-on-mobile">
@@ -106,7 +124,7 @@
                         <th>Mã</th>
                         <th>Tên</th>
                         <th>Số tầng</th>
-                        <th>Sức chứa</th>
+                        <th>Sức chứa (giường)</th>
                         <th>Tổng phòng</th>
                         <th>Đang ở</th>
                         <th>Chức năng</th>
@@ -158,10 +176,27 @@
                   </div>
                 </div>
               </div>
-              <aside class="mgmt-rail">
+              <aside class="mgmt-rail" aria-label="Tóm tắt">
+                <div class="mgmt-panel">
+                  <h2 class="mgmt-panel__title">Tổng sức chứa</h2>
+                  <div class="mgmt-stat">
+                    <span class="mgmt-stat__icon mgmt-stat__icon--blue" aria-hidden="true">🏢</span>
+                    <div class="mgmt-stat__body">
+                      <strong>416 giường</strong>
+                      <span>Tòa A: 192 + Tòa B: 224</span>
+                    </div>
+                  </div>
+                  <div class="mgmt-stat">
+                    <span class="mgmt-stat__icon mgmt-stat__icon--green" aria-hidden="true">🛏</span>
+                    <div class="mgmt-stat__body">
+                      <strong>93,8% lấp đầy</strong>
+                      <span>390 SV / 416 chỗ</span>
+                    </div>
+                  </div>
+                </div>
                 <div class="mgmt-panel">
                   <h2 class="mgmt-panel__title">Gợi ý</h2>
-                  <p class="hint" style="margin: 0">Thêm tòa trước khi thiết lập phòng (<code>UC 2.2</code>).</p>
+                  <p class="hint" style="margin: 0">Thêm tòa trước khi thiết lập phòng (<code>UC 2.2</code>). Sức chứa = tổng số giường tối đa của tòa.</p>
                 </div>
               </aside>
             </div>
@@ -231,6 +266,10 @@
             <div class="form-group">
               <label for="building-floors">Số tầng</label>
               <input id="building-floors" type="number" min="1" value="5" required />
+            </div>
+            <div class="form-group">
+              <label for="building-capacity">Sức chứa (tổng giường)</label>
+              <input id="building-capacity" type="number" min="1" value="192" placeholder="VD: 192" required />
             </div>
             <div class="form-group">
               <label for="building-type">Loại tòa</label>
@@ -318,7 +357,8 @@
         <h3 class="invoice-sheet__title">Phiếu xuất danh mục tòa nhà</h3>
         <dl>
           <dt>Chức năng</dt><dd>Quản lý tòa nhà · UC 2.1</dd>
-          <dt>Nội dung file xuất</dt><dd>Mã tòa, tên hiển thị, số tầng, tổng phòng, số sinh viên đang ở (tổng hợp).</dd>
+          <dt>Nội dung file xuất</dt><dd>Mã tòa, tên, số tầng, sức chứa (giường), tổng phòng, SV đang ở; kèm tổng sức chứa toàn KTX.</dd>
+          <dt>Tổng sức chứa</dt><dd>416 giường (Tòa A: 192 + Tòa B: 224)</dd>
           <dt>Bộ lọc đi kèm</dt><dd>Từ khóa tìm theo tên hoặc mã tòa.</dd>
           <dt>Định dạng gợi ý</dt><dd>Excel · PDF bảng tóm tắt (demo).</dd>
           <dt>Thời gian xuất</dt><dd>19/05/2026</dd>
