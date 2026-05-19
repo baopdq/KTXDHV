@@ -318,28 +318,6 @@
   max-width: 440px;
 }
 
-/* Drawer / modal giữa màn hình (xem chi tiết, thêm, sửa) */
-.mgmt-drawer-host--center:target {
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.mgmt-drawer-host--center .mgmt-drawer-scrim {
-  position: absolute;
-  inset: 0;
-  flex: none;
-  width: 100%;
-  height: 100%;
-}
-
-.mgmt-drawer-host--center .mgmt-drawer-panel {
-  width: min(720px, 96vw);
-  max-height: 90vh;
-  border-radius: 12px;
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
-}
-
 .modal--lg {
   max-width: min(560px, 96vw);
 }
@@ -687,7 +665,7 @@
   gap: 4px;
 }
 
-/* Drawer / panel chi tiết — :target, không JS */
+/* Hộp thoại quản lý (xem / thêm / sửa) — giữa màn hình, không drawer bên phải */
 .mgmt-drawer-host {
   display: none;
   position: fixed;
@@ -695,13 +673,17 @@
   z-index: 400;
 }
 
-.mgmt-drawer-host:target {
+.mgmt-drawer-host:target,
+.mgmt-drawer-host--center:target {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
 }
 
 .mgmt-drawer-scrim {
-  flex: 1;
-  min-width: 0;
+  position: absolute;
+  inset: 0;
   background: rgba(15, 23, 42, 0.45);
   cursor: default;
 }
@@ -713,13 +695,38 @@ a.mgmt-drawer-scrim {
 }
 
 .mgmt-drawer-panel {
-  width: min(440px, 100%);
+  position: relative;
+  z-index: 1;
+  width: min(560px, 96vw);
+  max-height: 90vh;
   background: var(--mgmt-card);
-  box-shadow: -8px 0 32px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.2);
   display: flex;
   flex-direction: column;
-  max-height: 100vh;
   overflow: hidden;
+}
+
+.mgmt-drawer-panel--wide {
+  width: min(720px, 96vw);
+}
+
+/* Modal xóa / CRUD toolbar — giữa màn, trên drawer */
+.content--mgmt .modal-backdrop {
+  z-index: 450;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.content--mgmt .modal-backdrop:target {
+  display: flex;
+}
+
+.content--mgmt .modal-backdrop .modal {
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 .mgmt-drawer-head {
@@ -819,10 +826,7 @@ a.mgmt-drawer-scrim {
   color: #64748b;
 }
 
-/* Panel chi tiết (drawer) — 10–15 trường */
-.mgmt-drawer-panel--wide {
-  width: min(520px, 100%);
-}
+/* Panel chi tiết rộng — đã gộp ở block drawer phía trên */
 
 .mgmt-profile {
   display: flex;
