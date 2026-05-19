@@ -609,7 +609,7 @@
   margin-top: 0;
 }
 
-/* Icon nút hàng (sửa / xem / xóa) */
+/* Icon nút hàng (xem / sửa / xóa) — màu phân biệt toàn BQL */
 .icon-btn-mgmt {
   width: 34px;
   height: 34px;
@@ -623,30 +623,64 @@
   justify-content: center;
   color: #64748b;
   text-decoration: none;
-  transition: border-color 0.15s, color 0.15s, background 0.15s;
+  transition: border-color 0.15s, color 0.15s, background 0.15s, box-shadow 0.15s;
 }
 
-.icon-btn-mgmt:hover {
+.icon-btn-mgmt:hover:not(:disabled) {
   border-color: #94a3b8;
   color: #0f172a;
 }
 
-.icon-btn-mgmt--view:hover {
-  border-color: #38bdf8;
-  color: #0284c7;
+.icon-btn-mgmt:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+/* Xem — xanh dương */
+.icon-btn-mgmt--view {
+  border-color: #7dd3fc;
+  color: #0369a1;
   background: #f0f9ff;
 }
 
-.icon-btn-mgmt--edit:hover {
-  border-color: #fbbf24;
+.icon-btn-mgmt--view:hover {
+  border-color: #0ea5e9;
+  color: #075985;
+  background: #e0f2fe;
+  box-shadow: 0 1px 3px rgba(14, 165, 233, 0.25);
+}
+
+/* Sửa — cam/vàng */
+.icon-btn-mgmt--edit {
+  border-color: #fcd34d;
   color: #b45309;
   background: #fffbeb;
 }
 
-.icon-btn-mgmt--danger:hover {
+.icon-btn-mgmt--edit:hover {
+  border-color: #f59e0b;
+  color: #92400e;
+  background: #fef3c7;
+  box-shadow: 0 1px 3px rgba(245, 158, 11, 0.25);
+}
+
+/* Xóa — đỏ */
+.icon-btn-mgmt--danger {
   border-color: #fca5a5;
-  color: #b91c1c;
+  color: #dc2626;
   background: #fef2f2;
+}
+
+.icon-btn-mgmt--danger:hover {
+  border-color: #f87171;
+  color: #b91c1c;
+  background: #fee2e2;
+  box-shadow: 0 1px 3px rgba(239, 68, 68, 0.25);
+}
+
+.icon-btn-mgmt:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
 }
 
 .table-bql-actions--tight {
