@@ -310,6 +310,57 @@
   border-bottom-color: #6ee7b7;
 }
 
+.sv-invoice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.sv-breakdown-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0 8px;
+  font-size: 0.9rem;
+}
+
+.sv-breakdown-table th,
+.sv-breakdown-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.sv-breakdown-table th {
+  background: #f8fafc;
+  font-weight: 600;
+  color: #475569;
+  width: 55%;
+}
+
+.sv-breakdown-table tr:last-child th,
+.sv-breakdown-table tr:last-child td {
+  border-bottom: 0;
+  font-weight: 700;
+  background: #f0f9ff;
+}
+
+.sv-breakdown-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  margin-top: 8px;
+  background: #eff6ff;
+  border-radius: 8px;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.modal.modal--lg {
+  max-width: min(520px, 96vw);
+}
+
 /* Tab thông báo (radio, không JS) */
 .sv-tabs-wrap {
   margin-bottom: 16px;

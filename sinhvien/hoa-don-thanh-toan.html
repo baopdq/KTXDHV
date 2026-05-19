@@ -51,56 +51,292 @@
             <strong>KTX Đại học Vinh — Cổng sinh viên</strong>
             <span>Hóa đơn &amp; thanh toán</span>
           </div>
+
           <div class="sv-pay-bar no-print">
             <div class="form-group">
               <label for="pay-amount">Nhập số tiền thanh toán (₫)</label>
-              <input id="pay-amount" type="number" min="0" step="1000" value="485000" />
+              <input id="pay-amount" type="number" min="0" step="1000" value="485000" placeholder="VD: 485000" />
             </div>
-            <button type="button" class="btn btn-primary">Thanh toán (demo)</button>
-            <p class="hint" style="margin:0;flex:1 1 100%">Áp dụng khoản <strong>chưa nộp</strong> gần nhất · <code>UC 5.2</code></p>
+            <button type="button" class="btn btn-primary" id="btn-pay-demo">Thanh toán (demo)</button>
+            <p class="hint" style="margin:0;flex:1 1 100%">Thanh toán khoản <strong>chưa nộp</strong> gần nhất (04/2026 · 485.000 ₫).</p>
           </div>
+
           <p class="page-actions no-print">
             <button type="button" class="btn btn-secondary btn-sm" onclick="window.print()">In lịch sử thanh toán</button>
           </p>
+
           <h2 class="sv-section-title sv-section-title--warn">Khoản chưa nộp</h2>
-          <div class="card table-cards-on-mobile"><div class="table-wrap"><table><thead><tr>
-            <th>Kỳ</th><th>Nội dung</th><th>Số tiền</th><th>Hạn</th><th>Thao tác</th>
-          </tr></thead><tbody><tr>
-            <td data-label="Kỳ">04/2026</td><td data-label="Nội dung">Phòng + điện nước</td>
-            <td data-label="Số tiền">485.000 ₫</td><td data-label="Hạn">10/05/2026</td>
-            <td data-label="Thao tác" class="no-print">
-              <a href="#chi-tiet-042026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-              <a href="#" class="btn btn-primary btn-sm">VNPay (demo)</a>
-              <a href="#phieu-hd-042026" class="btn btn-ghost btn-sm">In HĐ</a>
-            </td>
-          </tr></tbody></table></div></div>
+          <div class="card table-cards-on-mobile">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Kỳ</th>
+                    <th>Nội dung</th>
+                    <th>Số tiền</th>
+                    <th>Hạn</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Kỳ">04/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">485.000 ₫</td>
+                    <td data-label="Hạn">10/05/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-warning">Chưa thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-042026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#" class="btn btn-primary btn-sm">VNPay (demo)</a>
+                        <a href="#phieu-hd-042026" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
           <h2 class="sv-section-title sv-section-title--ok">Khoản đã nộp</h2>
-          <div class="card table-cards-on-mobile"><div class="table-wrap"><table><thead><tr>
-            <th>Kỳ</th><th>Nội dung</th><th>Số tiền</th><th>Hạn</th><th>Thao tác</th>
-          </tr></thead><tbody>
-          <tr><td>03/2026</td><td>Phòng + điện nước</td><td>472.000 ₫</td><td>10/04/2026</td><td class="no-print">
-            <a href="#chi-tiet-032026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-            <a href="#phieu-hd-032026" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          <tr><td>02/2026</td><td>Phòng + điện nước</td><td>468.000 ₫</td><td>10/03/2026</td><td class="no-print">
-            <a href="#chi-tiet-022026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-            <a href="#phieu-hd-022026" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          <tr><td>01/2026</td><td>Phòng + điện nước</td><td>460.000 ₫</td><td>10/02/2026</td><td class="no-print">
-            <a href="#chi-tiet-012026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-            <a href="#phieu-hd-012026" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          <tr><td>12/2025</td><td>Phòng + điện nước</td><td>455.000 ₫</td><td>10/01/2026</td><td class="no-print">
-            <a href="#chi-tiet-122025" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-            <a href="#phieu-hd-122025" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          <tr><td>11/2025</td><td>Cọc + phí ĐK</td><td>200.000 ₫</td><td>05/12/2025</td><td class="no-print">
-            <a href="#phieu-hd-112025-coc" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          <tr><td>11/2025</td><td>Phòng + điện nước</td><td>448.000 ₫</td><td>10/12/2025</td><td class="no-print">
-            <a href="#chi-tiet-112025" class="btn btn-secondary btn-sm">Xem chi tiết</a>
-            <a href="#phieu-hd-112025" class="btn btn-ghost btn-sm">In HĐ</a></td></tr>
-          </tbody></table></div></div>
+          <div class="card table-cards-on-mobile">
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Kỳ</th>
+                    <th>Nội dung</th>
+                    <th>Số tiền</th>
+                    <th>Hạn</th>
+                    <th>Trạng thái</th>
+                    <th>Thao tác</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Kỳ">03/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">472.000 ₫</td>
+                    <td data-label="Hạn">10/04/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-032026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-032026" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">02/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">468.000 ₫</td>
+                    <td data-label="Hạn">10/03/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-022026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-022026" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">01/2026</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">460.000 ₫</td>
+                    <td data-label="Hạn">10/02/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-012026" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-012026" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">12/2025</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">455.000 ₫</td>
+                    <td data-label="Hạn">10/01/2026</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-122025" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-122025" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">11/2025</td>
+                    <td data-label="Nội dung">Cọc + phí đăng ký</td>
+                    <td data-label="Số tiền">200.000 ₫</td>
+                    <td data-label="Hạn">05/12/2025</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-112025-coc" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-112025-coc" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td data-label="Kỳ">11/2025</td>
+                    <td data-label="Nội dung">Phòng + điện nước</td>
+                    <td data-label="Số tiền">448.000 ₫</td>
+                    <td data-label="Hạn">10/12/2025</td>
+                    <td data-label="Trạng thái"><span class="badge badge-success">Đã thanh toán</span></td>
+                    <td data-label="Thao tác" class="no-print">
+                      <div class="sv-invoice-actions">
+                        <a href="#chi-tiet-112025" class="btn btn-secondary btn-sm">Xem chi tiết</a>
+                        <a href="#phieu-hd-112025" class="btn btn-ghost btn-sm">In HĐ</a>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </main>
+
       </div>
     </div>
 
-    <div id="phieu-hd-042026" class="invoice-sheet-host no-print">
+
+    <div id="chi-tiet-042026" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 04/2026</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Chưa thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>85.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>50.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>485.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-042026" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-032026" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 03/2026</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Đã thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>82.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>40.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>472.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-032026" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-022026" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 02/2026</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Đã thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>78.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>40.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>468.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-022026" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-012026" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 01/2026</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Đã thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>75.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>35.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>460.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-012026" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-122025" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 12/2025</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Đã thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>70.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>35.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>455.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-122025" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-112025" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 11/2025</h2>
+        <p class="hint">Phòng A-302 · Nguyễn Văn An · Trạng thái: <strong>Đã thanh toán</strong></p>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Tiền phòng</th><td>350.000 ₫</td></tr>
+            <tr><th>Tiền điện</th><td>68.000 ₫</td></tr>
+            <tr><th>Tiền nước</th><td>30.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng cộng</span><span>448.000 ₫</span></div>
+        <div class="modal-actions">
+          <a href="#" class="btn btn-secondary">Đóng</a>
+          <a href="#phieu-hd-112025" class="btn btn-primary">In phiếu / HĐ</a>
+        </div>
+      </div>
+    </div>
+
+    <div id="chi-tiet-112025-coc" class="modal-backdrop no-print" role="dialog" aria-modal="true">
+      <div class="modal modal--lg">
+        <a href="#" class="modal-close" aria-label="Đóng">×</a>
+        <h2 style="margin-top:0">Chi tiết khoản 11/2025 — Cọc</h2>
+        <table class="sv-breakdown-table">
+          <tbody>
+            <tr><th>Cọc phòng</th><td>150.000 ₫</td></tr>
+            <tr><th>Phí đăng ký KTX</th><td>50.000 ₫</td></tr>
+          </tbody>
+        </table>
+        <div class="sv-breakdown-total"><span>Tổng</span><span>200.000 ₫</span></div>
+        <div class="modal-actions"><a href="#" class="btn btn-secondary">Đóng</a></div>
+      </div>
+    </div>
+<div id="phieu-hd-042026" class="invoice-sheet-host no-print">
       <a href="#" class="invoice-sheet-scrim" aria-label="Đóng"></a>
       <article class="invoice-sheet">
         <header class="invoice-sheet__brand">
@@ -274,6 +510,16 @@
         </footer>
       </article>
     </div>
+
+    </body>
+</html>
+
+    <script>
+      document.getElementById("btn-pay-demo")?.addEventListener("click", function () {
+        var v = document.getElementById("pay-amount")?.value;
+        alert("Demo thanh toán: " + (v ? Number(v).toLocaleString("vi-VN") + " ₫" : "0 ₫"));
+      });
+    </script>
 
     </body>
 </html>
